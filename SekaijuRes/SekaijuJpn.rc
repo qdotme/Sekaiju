@@ -1,0 +1,3556 @@
+//******************************************************************************
+// MIDIシーケンサーソフト『世界樹』
+// リソーススクリプトファイル
+// (C)2002-2012 おーぷんMIDIぷろじぇくと／くず
+//******************************************************************************
+
+/* This library is free software; you can redistribute it and/or */
+/* modify it under the terms of the GNU Lesser General Public */
+/* License as published by the Free Software Foundation; either */
+/* version 2.1 of the License, or (at your option) any later version. */
+
+/* This library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU */
+/* Lesser General Public License for more details. */
+
+/* You should have received a copy of the GNU Lesser General Public */
+/* License along with this library; if not, write to the Free Software */
+/* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA */
+
+// このファイルは、MIDITesterRes.rcから#includeされている。
+
+// 警告：このファイルはVisualC++のリソースエディタで編集しないでください。
+// 警告：このファイルはテキストエディタで編集してください。
+
+//-----------------------------------------------------------------------------
+// アイコン
+//-----------------------------------------------------------------------------
+
+IDR_MAINFRAME           ICON    DISCARDABLE      "..\\res\\MainFrame.ico"
+IDR_SEKAIJUTYPE         ICON    DISCARDABLE      "..\\res\\SekaijuType.ico"
+
+//-----------------------------------------------------------------------------
+// ビットマップ(ツールバー用)
+//-----------------------------------------------------------------------------
+
+IDR_MAINFRAME1           BITMAP  MOVEABLE PURE   "..\\res\\Toolbar1.bmp"
+IDR_MAINFRAME2           BITMAP  MOVEABLE PURE   "..\\res\\Toolbar2.bmp"
+IDR_TRACKLIST1           BITMAP  MOVEABLE PURE   "..\\res\\TrackList1.bmp"
+IDR_PIANOROLL1           BITMAP  MOVEABLE PURE   "..\\res\\PianoRoll1.bmp"
+IDR_EVENTLIST1           BITMAP  MOVEABLE PURE   "..\\res\\EventList1.bmp"
+IDR_MUSICALSCORE1        BITMAP  MOVEABLE PURE   "..\\res\\MusicalScore1.bmp"
+
+//-----------------------------------------------------------------------------
+// ツールバー
+//-----------------------------------------------------------------------------
+
+// ツールバー1
+IDR_MAINFRAME1 TOOLBAR DISCARDABLE  16, 15 {
+	BUTTON      ID_FILE_NEW
+	BUTTON      ID_FILE_OPEN
+	BUTTON      ID_FILE_SAVE
+	SEPARATOR
+	BUTTON      ID_FILE_PRINT
+	BUTTON      ID_FILE_PRINT_PREVIEW
+	SEPARATOR
+	BUTTON      ID_EDIT_CUT
+	BUTTON      ID_EDIT_COPY
+	BUTTON      ID_EDIT_PASTE
+	BUTTON      ID_EDIT_DELETE
+	SEPARATOR
+	BUTTON      ID_EDIT_UNDO
+	BUTTON      ID_EDIT_REDO
+	SEPARATOR
+	BUTTON      ID_VIEW_TRACKLIST
+	BUTTON      ID_VIEW_PIANOROLL
+	BUTTON      ID_VIEW_EVENTLIST
+	BUTTON      ID_VIEW_MUSICALSCORE 
+	SEPARATOR
+	
+	BUTTON      ID_HELP_ABOUT
+}
+
+// ツールバー2
+IDR_MAINFRAME2 TOOLBAR DISCARDABLE 16, 15 {
+	SEPARATOR   // 時分:秒:ミリ秒
+	SEPARATOR
+	SEPARATOR   // 小節:拍:ティック
+	SEPARATOR
+	BUTTON      ID_CONTROL_TOBEGIN
+	BUTTON      ID_CONTROL_PLAY
+	BUTTON      ID_CONTROL_RECORD
+	BUTTON      ID_CONTROL_TOEND
+	SEPARATOR
+	SEPARATOR   // 演奏位置
+	SEPARATOR
+	BUTTON      ID_CONTROL_SPEEDNONE
+	BUTTON      ID_CONTROL_SPEEDSLOW
+	BUTTON      ID_CONTROL_SPEEDNORMAL
+	BUTTON      ID_CONTROL_SPEEDFAST
+	BUTTON      ID_CONTROL_SPEEDSLAVE
+	SEPARATOR
+	BUTTON      ID_CONTROL_AUTOREPEAT
+	SEPARATOR
+	SEPARATOR   // 拍子・調整
+	SEPARATOR
+	SEPARATOR   // テンポ
+}
+
+// ツールバー(トラックリスト用)
+IDR_TRACKLIST1 TOOLBAR DISCARDABLE 16, 15 {
+	BUTTON      ID_TRACKLIST_INSERTTRACK
+	BUTTON      ID_TRACKLIST_DUPLICATETRACK
+	BUTTON      ID_TRACKLIST_DELETETRACK
+	BUTTON      ID_TRACKLIST_MOVEUPTRACK
+	BUTTON      ID_TRACKLIST_MOVEDOWNTRACK
+	SEPARATOR
+	BUTTON      ID_TRACKLIST_SELECT
+	BUTTON      ID_TRACKLIST_SPEAKER
+	SEPARATOR
+	BUTTON      ID_TRACKLIST_AUTOPAGEUPDATE
+	SEPARATOR
+	BUTTON      ID_TRACKLIST_SAVEAS
+}
+
+// ツールバー(ピアノロール用)
+IDR_PIANOROLL1 TOOLBAR DISCARDABLE 16, 15 {
+	BUTTON      ID_PIANOROLL_PEN
+	BUTTON      ID_PIANOROLL_LINE
+	BUTTON      ID_PIANOROLL_ERASER
+	BUTTON      ID_PIANOROLL_SELECT
+	BUTTON      ID_PIANOROLL_SPEAKER
+	SEPARATOR
+	SEPARATOR   // トラック
+	SEPARATOR
+	SEPARATOR   // チャンネル
+	SEPARATOR
+	SEPARATOR   // スナップ
+	SEPARATOR
+	SEPARATOR   // ベロシティ
+	SEPARATOR
+	SEPARATOR   // 長さ
+	SEPARATOR
+	SEPARATOR   // グラフの種類
+	SEPARATOR
+	SEPARATOR   // グラフのスナップ
+	SEPARATOR
+	BUTTON      ID_PIANOROLL_ONLYCURTRACK
+	BUTTON      ID_PIANOROLL_SHOWALLTRACK
+	SEPARATOR
+	BUTTON      ID_PIANOROLL_ONLYCURGRAPH
+	BUTTON      ID_PIANOROLL_SHOWALLGRAPH
+	SEPARATOR
+	BUTTON      ID_PIANOROLL_AUTOPAGEUPDATE
+
+
+}
+
+// ツールバー(イベントリスト用)
+IDR_EVENTLIST1 TOOLBAR DISCARDABLE 16, 15 {
+	BUTTON      ID_EVENTLIST_INSERTEVENT
+	BUTTON      ID_EVENTLIST_DUPLICATEEVENT
+	BUTTON      ID_EVENTLIST_DELETEEVENT
+	SEPARATOR
+	SEPARATOR   // イベントトラック
+	SEPARATOR
+	SEPARATOR   // イベントタイム
+	SEPARATOR
+	SEPARATOR   // イベント種類
+	SEPARATOR
+	SEPARATOR   // イベントデータ
+	SEPARATOR
+	BUTTON      ID_EVENTLIST_ONLYCURTRACK
+	BUTTON      ID_EVENTLIST_SHOWALLTRACK
+	SEPARATOR
+	BUTTON      ID_EVENTLIST_ONLYCURGRAPH
+	BUTTON      ID_EVENTLIST_SHOWALLGRAPH
+	SEPARATOR
+	BUTTON      ID_EVENTLIST_AUTOPAGEUPDATE
+	SEPARATOR
+	BUTTON      ID_EVENTLIST_SAVEAS
+}
+
+
+// ツールバー(譜面用)
+IDR_MUSICALSCORE1 TOOLBAR DISCARDABLE 16, 15 {
+	BUTTON      ID_MUSICALSCORE_PEN
+	BUTTON      ID_MUSICALSCORE_ERASER
+	BUTTON      ID_MUSICALSCORE_SELECT
+	BUTTON      ID_MUSICALSCORE_SPEAKER
+	SEPARATOR
+	SEPARATOR   // トラック
+	SEPARATOR
+	SEPARATOR   // チャンネル
+	SEPARATOR
+	SEPARATOR   // スナップ
+	SEPARATOR
+	SEPARATOR   // ベロシティ
+	SEPARATOR
+	SEPARATOR   // 長さ
+	SEPARATOR
+	BUTTON      ID_MUSICALSCORE_WHOLENOTE
+	BUTTON      ID_MUSICALSCORE_HALFNOTE
+	BUTTON      ID_MUSICALSCORE_QUARTERNOTE
+	BUTTON      ID_MUSICALSCORE_QUAVERNOTE
+	BUTTON      ID_MUSICALSCORE_SEMIQUAVERNOTE
+	BUTTON      ID_MUSICALSCORE_DEMISEMIQUAVERNOTE
+	BUTTON      ID_MUSICALSCORE_DOTTED
+	BUTTON      ID_MUSICALSCORE_TRIPLET
+	SEPARATOR
+	SEPARATOR   // 表示精度
+	SEPARATOR
+	BUTTON      ID_MUSICALSCORE_ONLYCURTRACK
+	BUTTON      ID_MUSICALSCORE_SHOWALLTRACK
+	SEPARATOR
+	BUTTON      ID_MUSICALSCORE_AUTOPAGEUPDATE
+}
+
+
+//-----------------------------------------------------------------------------
+// メニュー
+//-----------------------------------------------------------------------------
+
+// メインメニュー(ドキュメントがない場合)
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE {
+	POPUP "ファイル(&F)" {
+		MENUITEM "新規作成(&N)\tCtrl+N",                    ID_FILE_NEW
+		MENUITEM "開く(&O)...\tCtrl+O",                     ID_FILE_OPEN
+		MENUITEM SEPARATOR
+		MENUITEM "プリンタの設定(&R)...",                   ID_FILE_PRINT_SETUP
+		MENUITEM SEPARATOR
+		MENUITEM "最新のファイル",                          ID_FILE_MRU_FILE1,GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "アプリケーションの終了(&X)",              ID_APP_EXIT
+	}
+	POPUP "表示(&V)" {
+		MENUITEM "ツールバー1(&T)",                         ID_VIEW_TOOLBAR1
+		MENUITEM "ツールバー2(&T)",                         ID_VIEW_TOOLBAR2
+		MENUITEM "ステータスバー(&S)",                      ID_VIEW_STATUS_BAR
+	}
+	POPUP "コントロール(&C)" {
+		MENUITEM "スピード=静止[0%]"                        ID_CONTROL_SPEEDNONE
+		MENUITEM "スピード=低速[?%]"                        ID_CONTROL_SPEEDSLOW
+		MENUITEM "スピード=標準[?%]"                        ID_CONTROL_SPEEDNORMAL
+		MENUITEM "スピード=高速[?%]"                        ID_CONTROL_SPEEDFAST
+		MENUITEM "スピード=他機器にスレーブ"                ID_CONTROL_SPEEDSLAVE
+		MENUITEM SEPARATOR
+		MENUITEM "オートリピート(&A)"                       ID_CONTROL_AUTOREPEAT
+	}
+	POPUP "設定(&S)" {
+		MENUITEM "MIDIデバイスとインストゥルメント(&D)..."  ID_SETUP_MIDIDEVICE
+		MENUITEM "MIDI同期モード(&S)..."                    ID_SETUP_MIDISYNCMODE
+		MENUITEM "メトロノーム(&M)..."                      ID_SETUP_METRONOME
+		MENUITEM "自動保存(&A)..."                          ID_SETUP_AUTOSAVE
+		MENUITEM "言語(&Language)..."                       ID_SETUP_LANGUAGE
+		MENUITEM "オプション(&O)..."                        ID_SETUP_OPTIONS
+	}
+	POPUP "ヘルプ(&H)" {
+		MENUITEM "readme.txt(&R)...",                       ID_HELP_README
+		MENUITEM "ライセンス(&L)...",                       ID_HELP_LICENSE
+		MENUITEM "取扱説明書(PDF)(&M)...",                  ID_HELP_MANUAL
+		MENUITEM "プロジェクトホームページ(&P)...",         ID_HELP_PROJECTHOMEPAGE
+		MENUITEM SEPARATOR
+		MENUITEM "ヴァージョン情報(&A)...",                 ID_HELP_ABOUT
+	}
+}
+
+// メインメニュー(CSekaijuDocクラスのドキュメントがある場合)
+IDR_SEKAIJUTYPE MENU PRELOAD DISCARDABLE {
+	POPUP "ファイル(&F)" {
+		MENUITEM "新規作成(&N)\tCtrl+N",                    ID_FILE_NEW
+		MENUITEM "開く(&O)...\tCtrl+O",                     ID_FILE_OPEN
+		MENUITEM "閉じる(&C)",                              ID_FILE_CLOSE
+		MENUITEM "上書き保存(&S)\tCtrl+S",                  ID_FILE_SAVE
+		MENUITEM "名前を付けて保存(&A)...",                 ID_FILE_SAVE_AS
+		MENUITEM SEPARATOR
+		MENUITEM "プロパティ(&P)..."                        ID_FILE_PROPERTY
+		MENUITEM SEPARATOR
+		MENUITEM "印刷(&P)...\tCtrl+P",                     ID_FILE_PRINT
+		MENUITEM "印刷プレビュー(&V)",                      ID_FILE_PRINT_PREVIEW
+		MENUITEM "プリンタの設定(&R)...",                   ID_FILE_PRINT_SETUP
+		MENUITEM SEPARATOR
+		MENUITEM "最新のファイル",                          ID_FILE_MRU_FILE1,GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "アプリケーションの終了(&X)",              ID_APP_EXIT
+	}
+	POPUP "編集(&E)" {
+		MENUITEM "元に戻す(&U)\tCtrl+Z",                    ID_EDIT_UNDO
+		MENUITEM "やり直し(&R)\tCtrl+Y",                    ID_EDIT_REDO
+		MENUITEM "作業履歴の初期化",                        ID_EDIT_INITHISTORY
+		MENUITEM SEPARATOR
+		MENUITEM "切り取り(&T)\tCtrl+X",                    ID_EDIT_CUT
+		MENUITEM "コピー(&C)\tCtrl+C",                      ID_EDIT_COPY
+		MENUITEM "貼り付け(&P)\tCtrl+V",                    ID_EDIT_PASTE
+		MENUITEM "削除(&D)\tCtrl+Del",                      ID_EDIT_DELETE
+		MENUITEM SEPARATOR
+		MENUITEM "すべて選択(&A)\tCtrl+A",                  ID_EDIT_SELECTALL
+		MENUITEM "すべて選択解除(&N)\tCtrl+D",              ID_EDIT_SELECTNONE
+		MENUITEM "現在位置より前のイベントを追加選択",      ID_EDIT_SELECTBEFORE
+		MENUITEM "現在位置より前のイベントを選択解除",      ID_EDIT_DESELECTBEFORE
+		MENUITEM "現在位置より後のイベントを追加選択",      ID_EDIT_SELECTAFTER
+		MENUITEM "現在位置より後のイベントを選択解除",      ID_EDIT_DESELECTAFTER
+		MENUITEM SEPARATOR
+		MENUITEM "イベントのトラック変更..."                ID_EDIT_TRACK
+		MENUITEM "イベントのタイム変更...",                 ID_EDIT_TIME
+		MENUITEM "イベントのチャンネル変更...",             ID_EDIT_CHANNEL
+		MENUITEM "イベントの音程の変更...",                 ID_EDIT_KEY
+		MENUITEM "イベントのベロシティ変更...",             ID_EDIT_VELOCITY
+		MENUITEM "イベントの音長さ変更...",                 ID_EDIT_DURATION
+		MENUITEM "イベントの値変更...",                     ID_EDIT_VALUE
+		MENUITEM "クォンタイズ...",                         ID_EDIT_QUANTIZE
+		MENUITEM "音符の細分化とトリル化...",               ID_EDIT_BREAKUPANDTRILL
+		MENUITEM "ビート検出とテンポ自動挿入...",           ID_EDIT_BEATSCAN
+		MENUITEM SEPARATOR
+		MENUITEM "小節を挿入..."                            ID_EDIT_INSERTMEASURE
+		MENUITEM "小節を除去..."                            ID_EDIT_REMOVEMEASURE
+	}
+	POPUP "表示(&V)" {
+		MENUITEM "再表示(&R)\tF5"                           ID_VIEW_REDRAW
+		MENUITEM SEPARATOR
+		MENUITEM "ツールバー&1",                            ID_VIEW_TOOLBAR1
+		MENUITEM "ツールバー&2",                            ID_VIEW_TOOLBAR2
+		MENUITEM "ステータスバー(&S)",                      ID_VIEW_STATUS_BAR
+		MENUITEM SEPARATOR
+		MENUITEM "新規トラックリストウィンドウ表示(&T)",    ID_VIEW_TRACKLIST
+		MENUITEM "新規ピアノロールウィンドウ表示(&P)",      ID_VIEW_PIANOROLL
+		MENUITEM "新規イベントリストウィンドウ表示(&E)",    ID_VIEW_EVENTLIST
+		MENUITEM "新規譜面ウィンドウ表示(&M)",              ID_VIEW_MUSICALSCORE
+	}
+	POPUP "コントロール(&C)" {
+		MENUITEM "最初に戻る(&W)\tCtrl+Home",               ID_CONTROL_TOBEGIN
+		MENUITEM "演奏(&P)\tスペース"                       ID_CONTROL_PLAY
+		MENUITEM "録音(&R)\tCtrl+R",                        ID_CONTROL_RECORD
+		MENUITEM "最後に進む\tCtrl+End",                    ID_CONTROL_TOEND
+		MENUITEM SEPARATOR
+		MENUITEM "前の小節\tCtrl+PgUp,Ctrl+←"              ID_CONTROL_PREVMEASURE
+		MENUITEM "次の小節\tCtrl+PgDn,Ctrl+→"              ID_CONTROL_NEXTMEASURE
+		MENUITEM SEPARATOR
+		MENUITEM "スピード=静止[0%]"                        ID_CONTROL_SPEEDNONE
+		MENUITEM "スピード=低速[?%]"                        ID_CONTROL_SPEEDSLOW
+		MENUITEM "スピード=標準[?%]"                        ID_CONTROL_SPEEDNORMAL
+		MENUITEM "スピード=高速[?%]"                        ID_CONTROL_SPEEDFAST
+		MENUITEM "スピード=他機器にスレーブ"                ID_CONTROL_SPEEDSLAVE
+		MENUITEM SEPARATOR
+		MENUITEM "オートリピート(&A)"                       ID_CONTROL_AUTOREPEAT
+	}
+	POPUP "設定(&S)" {
+		MENUITEM "MIDIデバイスとインストゥルメント(&D)..."  ID_SETUP_MIDIDEVICE
+		MENUITEM "MIDI同期モード(&S)..."                    ID_SETUP_MIDISYNCMODE
+		MENUITEM "メトロノーム(&M)..."                      ID_SETUP_METRONOME
+		MENUITEM "自動保存(&A)..."                          ID_SETUP_AUTOSAVE
+		MENUITEM "言語(&Language)..."                       ID_SETUP_LANGUAGE
+		MENUITEM "オプション(&O)..."                        ID_SETUP_OPTIONS
+	}
+	POPUP "ウィンドウ(&W)" {
+		MENUITEM "新しいウィンドウを開く(&N)",              ID_WINDOW_NEW
+		MENUITEM "重ねて表示(&C)",                          ID_WINDOW_CASCADE
+		MENUITEM "上下に並べて表示(&H)",                    ID_WINDOW_TILE_HORZ
+		MENUITEM "左右に並べて表示(&V)",                    ID_WINDOW_TILE_VERT
+		MENUITEM "アイコンの整列(&A)",                      ID_WINDOW_ARRANGE
+	}
+	POPUP "ヘルプ(&H)" {
+		MENUITEM "readme.txt(&R)...",                       ID_HELP_README
+		MENUITEM "ライセンス(&L)...",                       ID_HELP_LICENSE
+		MENUITEM "取扱説明書(PDF)(&D)...",                  ID_HELP_MANUAL
+		MENUITEM "プロジェクトホームページ(&P)...",         ID_HELP_PROJECTHOMEPAGE
+		MENUITEM SEPARATOR
+		MENUITEM "ヴァージョン情報(&A)...",                 ID_HELP_ABOUT
+	}
+}
+
+// トラックリストウィンドウ用ポップアップメニュー(1)
+IDR_POPUPMENU01 MENU {
+	POPUP "" {
+		MENUITEM "このトラックのピアノロール表示",          ID_POPUP_SHOWPIANOROLL
+		MENUITEM "このトラックのイベントリスト表示",        ID_POPUP_SHOWEVENTLIST
+		MENUITEM "このトラックの譜面表示",                  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "このトラックのみ入力ON",                  ID_POPUP_TRACKINPUTON
+		MENUITEM "このトラックのみ入力OFF",                 ID_POPUP_TRACKINPUTOFF
+		MENUITEM "全トラック入力ON",                        ID_POPUP_TRACKINPUTALL
+		MENUITEM SEPARATOR
+		MENUITEM "このトラックのみ出力ON(ソロ)",            ID_POPUP_TRACKOUTPUTON
+		MENUITEM "このトラックのみ出力OFF(ミュート)",       ID_POPUP_TRACKOUTPUTOFF
+		MENUITEM "全トラック出力ON"                         ID_POPUP_TRACKOUTPUTALL 
+	}
+}
+
+// トラックリストウィンドウ用ポップアップメニュー(2)
+IDR_POPUPMENU02 MENU {
+	POPUP "" {
+		MENUITEM "このトラックのピアノロール表示",          ID_POPUP_SHOWPIANOROLL
+		MENUITEM "このトラックのイベントリスト表示",        ID_POPUP_SHOWEVENTLIST
+		MENUITEM "このトラックの譜面表示",                  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "このトラックのみ入力ON",                  ID_POPUP_TRACKINPUTON
+		MENUITEM "このトラックのみ入力OFF",                 ID_POPUP_TRACKINPUTOFF
+		MENUITEM "全トラック入力ON",                        ID_POPUP_TRACKINPUTALL
+		MENUITEM SEPARATOR
+		MENUITEM "このトラックのみ出力ON(ソロ)",            ID_POPUP_TRACKOUTPUTON
+		MENUITEM "このトラックのみ出力OFF(ミュート)",       ID_POPUP_TRACKOUTPUTOFF
+		MENUITEM "全トラック出力ON"                         ID_POPUP_TRACKOUTPUTALL 
+		MENUITEM SEPARATOR
+		MENUITEM "切り取り(&T)",                            ID_POPUP_CUT
+		MENUITEM "コピー(&C)",                              ID_POPUP_COPY
+		MENUITEM "貼り付け(&P)",                            ID_POPUP_PASTE
+	}
+}
+
+// ピアノロールウィンドウ用ポップアップメニュー
+IDR_POPUPMENU11 MENU {
+	POPUP "" {
+		MENUITEM "このトラックのピアノロール表示",          ID_POPUP_SHOWPIANOROLL
+		MENUITEM "このトラックのイベントリスト表示",        ID_POPUP_SHOWEVENTLIST
+		MENUITEM "このトラックの譜面表示",                  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "このトラックのみ表示ON",                  ID_POPUP_TRACKVISIBLEON
+		MENUITEM "このトラックのみ表示OFF",                 ID_POPUP_TRACKVISIBLEOFF
+		MENUITEM "全トラック表示ON",                        ID_POPUP_TRACKVISIBLEALL
+		MENUITEM SEPARATOR
+		MENUITEM "このイベントのプロパティ...",             ID_POPUP_EVENTPROPERTY
+	}
+}
+
+// イベントリストウィンドウ用ポップアップメニュー
+IDR_POPUPMENU21 MENU {
+	POPUP "" {
+		MENUITEM "このトラックのピアノロール表示",          ID_POPUP_SHOWPIANOROLL
+		MENUITEM "このトラックのイベントリスト表示",        ID_POPUP_SHOWEVENTLIST
+		MENUITEM "このトラックの譜面表示",                  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "このトラックのみ表示ON",                  ID_POPUP_TRACKVISIBLEON
+		MENUITEM "このトラックのみ表示OFF",                 ID_POPUP_TRACKVISIBLEOFF
+		MENUITEM "全トラック表示ON",                        ID_POPUP_TRACKVISIBLEALL
+		MENUITEM SEPARATOR
+		MENUITEM "このイベントの種類のみ表示ON",            ID_POPUP_EVENTKINDVISIBLEON
+		MENUITEM "このイベントの種類のみ表示OFF",           ID_POPUP_EVENTKINDVISIBLEOFF
+		MENUITEM "全てのイベントの種類表示ON",              ID_POPUP_EVENTKINDVISIBLEALL
+	}
+}
+
+// 譜面ウィンドウ用ポップアップメニュー
+IDR_POPUPMENU31 MENU {
+	POPUP "" {
+		MENUITEM "このトラックのピアノロール表示",          ID_POPUP_SHOWPIANOROLL
+		MENUITEM "このトラックのイベントリスト表示",        ID_POPUP_SHOWEVENTLIST
+		MENUITEM "このトラックの譜面表示",                  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "このトラックのみ表示ON",                  ID_POPUP_TRACKVISIBLEON
+		MENUITEM "このトラックのみ表示OFF",                 ID_POPUP_TRACKVISIBLEOFF
+		MENUITEM "全トラック表示ON",                        ID_POPUP_TRACKVISIBLEALL
+		MENUITEM SEPARATOR
+		MENUITEM "このイベントのプロパティ...",             ID_POPUP_EVENTPROPERTY
+	}
+}
+
+
+//-----------------------------------------------------------------------------
+// アクセラレーター
+//-----------------------------------------------------------------------------
+
+// 共通用
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	"N",            ID_FILE_NEW,             VIRTKEY,CONTROL
+	"O",            ID_FILE_OPEN,            VIRTKEY,CONTROL
+	"S",            ID_FILE_SAVE,            VIRTKEY,CONTROL
+	"P",            ID_FILE_PRINT,           VIRTKEY,CONTROL
+	"Z",            ID_EDIT_UNDO,            VIRTKEY,CONTROL
+	"Y",            ID_EDIT_REDO,            VIRTKEY,CONTROL
+	"X",            ID_EDIT_CUT,             VIRTKEY,CONTROL
+	"C",            ID_EDIT_COPY,            VIRTKEY,CONTROL
+	"V",            ID_EDIT_PASTE,           VIRTKEY,CONTROL
+	"A",            ID_EDIT_SELECTALL,       VIRTKEY,CONTROL
+	"D",            ID_EDIT_SELECTNONE,      VIRTKEY,CONTROL
+	VK_DELETE,      ID_EDIT_DELETE,          VIRTKEY,CONTROL
+	VK_F6,          ID_NEXT_PANE,            VIRTKEY 
+	VK_F6,          ID_PREV_PANE,            VIRTKEY,SHIFT
+	VK_SPACE,       ID_CONTROL_PLAY,         VIRTKEY
+	VK_HOME,        ID_CONTROL_TOBEGIN,      VIRTKEY,CONTROL
+	VK_END,         ID_CONTROL_TOEND,        VIRTKEY,CONTROL
+	VK_PRIOR,       ID_CONTROL_PREVMEASURE,  VIRTKEY,CONTROL
+	VK_NEXT,        ID_CONTROL_NEXTMEASURE,  VIRTKEY,CONTROL
+	VK_LEFT,        ID_CONTROL_PREVMEASURE,  VIRTKEY,CONTROL
+	VK_RIGHT,       ID_CONTROL_NEXTMEASURE,  VIRTKEY,CONTROL
+	"R",            ID_CONTROL_RECORD,       VIRTKEY,CONTROL
+END
+
+// トラックリスト用
+IDR_TRACKLIST ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	//VK_INSERT,      ID_TRACKLIST_INSERTTRACK,    VIRTKEY
+	//VK_INSERT,      ID_TRACKLIST_DUPLICATETRACK, VIRTKEY,CONTROL
+	//VK_DELETE,      ID_TRACKLIST_DELETETRACK,    VIRTKEY
+	"S",            ID_TRACKLIST_SELECT,         VIRTKEY
+	"B",            ID_TRACKLIST_SPEAKER,        VIRTKEY
+END
+
+
+// ピアノロール用
+IDR_PIANOROLL ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	"P",            ID_PIANOROLL_PEN,            VIRTKEY
+	"D",            ID_PIANOROLL_PEN,            VIRTKEY
+	"L",            ID_PIANOROLL_LINE,           VIRTKEY
+	"E",            ID_PIANOROLL_ERASER,         VIRTKEY
+	"S",            ID_PIANOROLL_SELECT,         VIRTKEY
+	"B",            ID_PIANOROLL_SPEAKER,        VIRTKEY
+	VK_F9,          ID_PIANOROLL_ONLYCURTRACK,   VIRTKEY
+	VK_F10,         ID_PIANOROLL_SHOWALLTRACK,   VIRTKEY
+	VK_F11,         ID_PIANOROLL_ONLYCURGRAPH,   VIRTKEY
+	VK_F12,         ID_PIANOROLL_SHOWALLGRAPH,   VIRTKEY
+
+END
+
+// イベントリスト用
+IDR_EVENTLIST ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	VK_INSERT,      ID_EVENTLIST_INSERTEVENT,    VIRTKEY
+	VK_INSERT,      ID_EVENTLIST_DUPLICATEEVENT, VIRTKEY,CONTROL
+	VK_DELETE,      ID_EVENTLIST_DELETEEVENT,    VIRTKEY
+	VK_F9,          ID_EVENTLIST_ONLYCURTRACK,   VIRTKEY
+	VK_F10,         ID_EVENTLIST_SHOWALLTRACK,   VIRTKEY
+	VK_F11,         ID_EVENTLIST_ONLYCURGRAPH,   VIRTKEY
+	VK_F12,         ID_EVENTLIST_SHOWALLGRAPH,   VIRTKEY
+END
+
+// 譜面用
+IDR_MUSICALSCORE ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	"P",            ID_MUSICALSCORE_PEN,            VIRTKEY
+	"D",            ID_MUSICALSCORE_PEN,            VIRTKEY
+	"L",            ID_MUSICALSCORE_LINE,           VIRTKEY
+	"E",            ID_MUSICALSCORE_ERASER,         VIRTKEY
+	"S",            ID_MUSICALSCORE_SELECT,         VIRTKEY
+	"B",            ID_MUSICALSCORE_SPEAKER,        VIRTKEY
+	"1",            ID_MUSICALSCORE_WHOLENOTE,      VIRTKEY
+	"2",            ID_MUSICALSCORE_HALFNOTE,       VIRTKEY
+	"4",            ID_MUSICALSCORE_QUARTERNOTE,    VIRTKEY
+	"8",            ID_MUSICALSCORE_QUAVERNOTE,     VIRTKEY
+	"6",            ID_MUSICALSCORE_SEMIQUAVERNOTE, VIRTKEY
+	"9",            ID_MUSICALSCORE_DEMISEMIQUAVERNOTE, VIRTKEY
+	0xBE,           ID_MUSICALSCORE_DOTTED,         VIRTKEY
+	"t",            ID_MUSICALSCORE_TRIPLET,        VIRTKEY
+	VK_F9,          ID_MUSICALSCORE_ONLYCURTRACK,   VIRTKEY
+	VK_F10,         ID_MUSICALSCORE_SHOWALLTRACK,   VIRTKEY
+	VK_F11,         ID_MUSICALSCORE_ONLYCURGRAPH,   VIRTKEY
+	VK_F12,         ID_MUSICALSCORE_SHOWALLGRAPH,   VIRTKEY
+
+END
+
+
+//-----------------------------------------------------------------------------
+// ダイアログ
+//-----------------------------------------------------------------------------
+
+// ヴァージョン情報ダイアログ
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 300, 55
+CAPTION "ヴァージョン情報(世界樹)"
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	ICON            IDR_MAINFRAME, IDC_STATIC,
+	                8, 16, 20, 20
+	LTEXT           "MIDIシーケンサーソフト『世界樹3.1』", IDC_STATIC, 
+	                40, 8, 200, 8,
+	                SS_NOPREFIX
+	LTEXT           "(C) 2002-2012 くず / おーぷんMIDIぷろじぇくと", IDC_STATIC,
+	                40, 24, 200, 8
+	LTEXT           "http://openmidiproject.sourceforge.jp/", IDC_STATIC,
+	                40, 40, 200, 8
+	DEFPUSHBUTTON   "閉じる", IDCANCEL, 
+	                248, 8, 40, 14, WS_GROUP
+END
+
+// ファイルのプロパティダイアログ
+IDD_FILEPROPERTY DIALOG DISCARDABLE  0, 0, 320, 340
+CAPTION "ファイルのプロパティ"
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "タイトル", IDC_STATIC,
+	                8, 8, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_TITLE, 
+	                60, 8, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "サブタイトル", IDC_STATIC,
+	                8, 24, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_SUBTITLE, 
+	                60, 24, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "著作権", IDC_STATIC,
+	                8, 40, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_COPYRIGHT, 
+	                60, 40, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "コメント1", IDC_STATIC,
+	                8, 56, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_COMMENT1, 
+	                60, 56, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "コメント2", IDC_STATIC,
+	                8, 72, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_COMMENT2, 
+	                60, 72, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "コメント3", IDC_STATIC,
+	                8, 88, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_COMMENT3, 
+	                60, 88, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "トラック数", IDC_STATIC,
+	                8, 104, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_NUMTRACK, 
+	                60, 104, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL | ES_READONLY
+	LTEXT           "イベント数", IDC_STATIC,
+	                8, 120, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_NUMEVENT, 
+	                60, 120, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL | ES_READONLY
+	LTEXT           "曲の長さ", IDC_STATIC,
+	                8, 136, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_ENDMILLISEC, 
+	                60, 136, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL | ES_READONLY
+	LTEXT           "曲の長さ", IDC_STATIC,
+	                8, 152, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_ENDTIME, 
+	                60, 152, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL | ES_READONLY
+
+	GROUPBOX        "SMFフォーマット", IDC_FILEPROPERTY_SMFFORMAT,
+	                4, 176, 256, 52
+	AUTORADIOBUTTON "SMFフォーマット0", IDC_FILEPROPERTY_SMFFORMAT0,
+	                8, 188, 248, 12, WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "SMFフォーマット1(推奨)", IDC_FILEPROPERTY_SMFFORMAT1,
+	                8, 200, 248, 12
+	AUTORADIOBUTTON "SMFフォーマット2", IDC_FILEPROPERTY_SMFFORMAT2,
+	                8, 212, 248, 12
+
+	GROUPBOX        "タイムモードと分解能", IDC_FILEPROPERTY_TIMEMODE,
+	                4, 236, 256, 96,  WS_GROUP
+	AUTORADIOBUTTON "TPQNベース(推奨)", IDC_FILEPROPERTY_TPQNBASE,
+	                8, 248, 248, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "SMPTE24ベース(24フレーム/秒)", IDC_FILEPROPERTY_SMPTE24BASE,
+	                8, 260, 248, 12
+	AUTORADIOBUTTON "SMPTE25ベース(25フレーム/秒)", IDC_FILEPROPERTY_SMPTE25BASE,
+	                8, 272, 248, 12
+	AUTORADIOBUTTON "SMPTE30ベースドロップ(29.97フレーム/秒)", IDC_FILEPROPERTY_SMPTE29BASE,
+	                8, 284, 248, 12
+	AUTORADIOBUTTON "SMPTE30ベースノンドロップ(30フレーム/秒)", IDC_FILEPROPERTY_SMPTE30BASE,
+	                8, 296, 248, 12
+
+	LTEXT           "分解能", IDC_STATIC,
+	                8, 314, 52, 12, WS_GROUP;
+	COMBOBOX        IDC_FILEPROPERTY_RESOLUTION, 
+	                60, 312, 40, 120, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWN
+	LTEXT           "[ティック/四分音符]", IDC_FILEPROPERTY_RESOLUTIONU,
+	                104, 314, 152, 12;
+
+
+	DEFPUSHBUTTON   "OK", IDOK,
+	                268, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                268, 24, 48, 14, WS_TABSTOP | WS_GROUP
+
+END
+
+// イベントのトラック変更ダイアログ
+IDD_EDITTRACK DIALOG DISCARDABLE 0, 0, 232, 72
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "イベントのトラック変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "トラック番号又は変更量", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITTRACK_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITTRACK_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "単位", IDC_EDITTRACK_UNIT,
+	                4, 24, 168, 44,  WS_GROUP
+	AUTORADIOBUTTON "絶対指定", IDC_EDITTRACK_ABSOLUTEUNIT,
+	                8, 36, 160, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "相対変化", IDC_EDITTRACK_RELATIVEUNIT,
+	                8, 48, 160, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+// イベントのタイム変更ダイアログ(TPQNベース用)
+IDD_EDITTIME DIALOG DISCARDABLE 0, 0, 232, 72
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "イベントのタイム変更(TPQNベース用)"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "タイムの変更量", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITTIME_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITTIME_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "単位", IDC_EDITTIME_UNIT,
+	                4, 24, 168, 44,  WS_GROUP
+	AUTORADIOBUTTON "ティック", IDC_EDITTIME_TICKUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "拍", IDC_EDITTIME_BEATUNIT,
+	                88, 36, 80, 12
+	AUTORADIOBUTTON "小節", IDC_EDITTIME_MEASUREUNIT,
+	                8, 48, 80, 12
+	AUTORADIOBUTTON "ﾊﾟｰｾﾝﾄ", IDC_EDITTIME_PERCENTUNIT,
+	                88, 48, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// イベントのタイム変更ダイアログ(SMPTEベース用)
+IDD_EDITTIMESMP DIALOG DISCARDABLE 0, 0, 232, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "イベントのタイム変更(SMPTEベース用)"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "タイムの変更量", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITTIMESMP_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITTIMESMP_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "単位", IDC_EDITTIMESMP_UNIT,
+	                4, 24, 168, 56,  WS_GROUP
+	AUTORADIOBUTTON "サブフレーム", IDC_EDITTIMESMP_TICKUNIT,
+	                8, 36, 160, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "フレーム", IDC_EDITTIMESMP_FRAMEUNIT,
+	                8, 48, 160, 12
+	AUTORADIOBUTTON "パーセント", IDC_EDITTIMESMP_PERCENTUNIT,
+	                8, 60, 160, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+// イベントのチャンネル変更ダイアログ
+IDD_EDITCHANNEL DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "イベントのチャンネル変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "ﾁｬﾝﾈﾙ番号又は変更量", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITCHANNEL_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITCHANNEL_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "モード", IDC_EDITCHANNEL_UNIT,
+	                4, 24, 168, 60,  WS_GROUP
+	AUTORADIOBUTTON "ﾄﾗｯｸの出力ﾁｬﾝﾈﾙに合わせる", IDC_EDITCHANNEL_BYTRACKUNIT,
+	                8, 36, 160, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "絶対指定", IDC_EDITCHANNEL_ABSOLUTEUNIT,
+	                8, 48, 160, 12
+	AUTORADIOBUTTON "相対変化", IDC_EDITCHANNEL_RELATIVEUNIT,
+	                8, 60, 160, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+
+
+// イベントの音程変更ダイアログ
+IDD_EDITKEY DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "イベントの音程変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "音程の変更量", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITKEY_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITKEY_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "単位", IDC_EDITKEY_UNIT,
+	                4, 24, 168, 30,  WS_GROUP
+	AUTORADIOBUTTON "半音", IDC_EDITKEY_HALFUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "オクターブ", IDC_EDITKEY_OCTAVEUNIT,
+	                88, 36, 80, 12
+	GROUPBOX        "対象", IDC_EDITKEY_TARGET,
+	                4, 60, 168, 30,  WS_GROUP
+	AUTOCHECKBOX    "ノートオン･ノートオフ", IDC_EDITKEY_TARGETNOTE,
+	                8, 72, 80, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "キーアフタータッチ", IDC_EDITKEY_TARGETKEYAFTER,
+	                88, 72, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+// イベントのベロシティ変更ダイアログ
+IDD_EDITVELOCITY DIALOG DISCARDABLE 0, 0, 232, 108
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "イベントのベロシティ変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "ベロシティ又は変更量", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITVELOCITY_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITVELOCITY_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "単位", IDC_EDITVELOCITY_UNIT,
+	                4, 24, 168, 42,  WS_GROUP
+	AUTORADIOBUTTON "絶対指定", IDC_EDITVELOCITY_ABSOLUTEUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "相対増減", IDC_EDITVELOCITY_RELATIVEUNIT,
+	                88, 36, 80, 12,
+	AUTORADIOBUTTON "パーセント", IDC_EDITVELOCITY_PERCENTUNIT,
+	                8, 48, 80, 12
+	GROUPBOX        "対象", IDC_EDITVELOCITY_TARGET,
+	                4, 72, 168, 30,  WS_GROUP
+	AUTOCHECKBOX    "ノートオン", IDC_EDITVELOCITY_TARGETNOTEON,
+	                8, 84, 80, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "ノートオフ", IDC_EDITVELOCITY_TARGETNOTEOFF,
+	                88, 84, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+// イベントの音長さ変更ダイアログ
+IDD_EDITDURATION DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "イベントの音長さ変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "音長さ又は変更量", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITDURATION_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITDURATION_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "単位", IDC_EDITDURATION_UNIT,
+	                4, 24, 168, 42,  WS_GROUP
+	AUTORADIOBUTTON "絶対ティック", IDC_EDITDURATION_ABSOLUTEUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "相対ティック", IDC_EDITDURATION_RELATIVEUNIT,
+	                88, 36, 80, 12,
+	AUTORADIOBUTTON "パーセント", IDC_EDITDURATION_PERCENTUNIT,
+	                8, 48, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// イベントの値変更ダイアログ
+IDD_EDITVALUE DIALOG DISCARDABLE 0, 0, 232, 120
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "イベントの値変更"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "値又は変更量", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITVALUE_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITVALUE_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "単位", IDC_EDITVALUE_UNIT,
+	                4, 24, 168, 42,  WS_GROUP
+	AUTORADIOBUTTON "絶対指定", IDC_EDITVALUE_ABSOLUTEUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "相対増減", IDC_EDITVALUE_RELATIVEUNIT,
+	                88, 36, 80, 12,
+	AUTORADIOBUTTON "パーセント", IDC_EDITVALUE_PERCENTUNIT,
+	                8, 48, 80, 12
+	GROUPBOX        "対象", IDC_EDITVALUE_TARGET,
+	                4, 72, 168, 42,  WS_GROUP
+	AUTOCHECKBOX    "チャンネルアフター", IDC_EDITVALUE_TARGETKEYAFTER,
+	                8, 84, 80, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "コントロールチェンジ", IDC_EDITVALUE_TARGETCONTROLCHANGE,
+	                88, 84, 80, 12,
+	AUTOCHECKBOX    "キーアフタータッチ", IDC_EDITVALUE_TARGETCHANNELAFTER,
+	                8, 96, 80, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "ピッチベンド", IDC_EDITVALUE_TARGETPITCHBEND,
+	                88, 96, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// クォンタイズダイアログ
+IDD_EDITQUANTIZE DIALOG DISCARDABLE 0, 0, 252, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "クォンタイズ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "スナップタイム[ティック]", IDC_STATIC,
+	                4, 8, 116, 12,
+	COMBOBOX        IDC_EDITQUANTIZE_SNAPTIME, 
+	                120, 8, 72, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+	LTEXT           "強度[%]", IDC_STATIC,
+	                4, 24, 116, 12,
+	EDITTEXT        IDC_EDITQUANTIZE_STRENGTH, 
+	                120, 24, 72, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "",	IDC_EDITQUANTIZE_STRENGTHSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	
+	GROUPBOX        "対象", IDC_EDITQUANTIZE_TARGET,
+	                4, 60, 192, 30,  WS_GROUP
+	AUTOCHECKBOX    "ノートオン", IDC_EDITQUANTIZE_TARGETNOTEON,
+	                8, 72, 90, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "ノートオフ", IDC_EDITQUANTIZE_TARGETNOTEOFF,
+	                98, 72, 90, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                200, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                200, 24, 48, 14, WS_TABSTOP
+END
+
+// 音符の細分化とトリル化ダイアログ
+IDD_EDITBREAKUPANDTRILL DIALOG DISCARDABLE 0, 0, 256, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "音符の細分化とトリル化"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "1音の音長さ[ティック]", IDC_STATIC,
+	                4, 8, 116, 12,
+	COMBOBOX        IDC_EDITBREAKUPANDTRILL_DURATION, 
+	                120, 8, 72, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	AUTOCHECKBOX    "トリル機能を有効にする", IDC_EDITBREAKUPANDTRILL_ENABLETRILL,
+	                4, 24, 188, 12, WS_TABSTOP
+	LTEXT           "トリルのキーシフト", IDC_STATIC,
+	                4, 40, 116, 12,
+	EDITTEXT        IDC_EDITBREAKUPANDTRILL_KEYSHIFT, 
+	                120, 40, 72, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITBREAKUPANDTRILL_KEYSHIFTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	DEFPUSHBUTTON   "OK", IDOK,
+	                200, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                200, 24, 48, 14, WS_TABSTOP
+END
+
+// ビート検出とテンポ自動挿入ダイアログ
+IDD_EDITBEATSCAN DIALOG DISCARDABLE 0, 0, 256, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ビート検出とテンポ自動挿入"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "ビート記録トラック", IDC_STATIC,
+	                4, 8, 116, 12,
+	COMBOBOX        IDC_EDITBEATSCAN_BEATTRACK, 
+	                120, 8, 72, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "ビートの間隔[ティック]", IDC_STATIC,
+	                4, 24, 116, 12,
+	COMBOBOX        IDC_EDITBEATSCAN_BEATINTERVAL, 
+	                120, 24, 72, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST				
+	AUTOCHECKBOX    "元の速度を維持するためにテンポイベントを自動挿入する"
+	                IDC_EDITBEATSCAN_INSERTTEMPO,
+	                4, 40, 188, 12, WS_TABSTOP	
+	LTEXT          "ビート検出は、指定したトラックの選択されているノートイベントをビートとして検出し、\
+	                ビートが等間隔になるように該当範囲のイベントの位置を調整します。"
+	                IDC_STATIC,
+	                4, 56, 188, 40,
+	DEFPUSHBUTTON   "OK", IDOK,
+	                200, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                200, 24, 48, 14, WS_TABSTOP
+END
+
+// 小節を挿入ダイアログ
+IDD_EDITINSERTMEASURE DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "小節を挿入"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "挿入位置", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITINSERTMEASURE_POSITION, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITINSERTMEASURE_POSITIONSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "小節数", IDC_STATIC,
+	                4, 24, 116, 12,
+	EDITTEXT        IDC_EDITINSERTMEASURE_NUMMEASURE, 
+	                120, 24, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITINSERTMEASURE_NUMMEASURESP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// 小節を除去ダイアログ
+IDD_EDITREMOVEMEASURE DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "小節を除去"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "除去位置", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITREMOVEMEASURE_POSITION, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITREMOVEMEASURE_POSITIONSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "小節数", IDC_STATIC,
+	                4, 24, 116, 12,
+	EDITTEXT        IDC_EDITREMOVEMEASURE_NUMMEASURE, 
+	                120, 24, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITREMOVEMEASURE_NUMMEASURESP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// ノートダイアログ
+IDD_PROPERTYNOTE DIALOG DISCARDABLE 0, 0, 256, 144
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ノートのプロパティ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "トラック", IDC_STATIC,
+	                4, 8, 124, 12,
+	COMBOBOX        IDC_PROPERTYNOTE_TRACKINDEX, 
+	                128, 8, 124, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "タイム", IDC_STATIC,
+	                4, 24, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_TIME, 
+	                128, 24, 124, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "チャンネル(1～16)", IDC_STATIC,
+	                4, 40, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_CHANNEL, 
+	                200, 40, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_PROPERTYNOTE_CHANNELSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "キー(0～127)", IDC_STATIC,
+	                4, 56, 124, 12,
+	COMBOBOX        IDC_PROPERTYNOTE_KEY, 
+	                128, 56, 124, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "打鍵ベロシティ(1～127)", IDC_STATIC,
+	                4, 72, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_ONVELOCITY, 
+	                200, 72, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_PROPERTYNOTE_ONVELOCITYSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "離鍵ベロシティ(0～127)", IDC_STATIC,
+	                4, 88, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_OFFVELOCITY, 
+	                200, 88, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_PROPERTYNOTE_OFFVELOCITYSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "長さ(1～)", IDC_STATIC,
+	                4, 104, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_DURATION, 
+	                200, 104, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_PROPERTYNOTE_DURATIONSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	DEFPUSHBUTTON   "OK", IDOK,
+	                152, 120, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                204, 120, 48, 14, WS_TABSTOP
+END
+
+
+
+
+// MIDI入力デバイスページ
+IDD_MIDIINDEVICE DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI入力ﾃﾞﾊﾞｲｽ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "入力ポート01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+END
+
+// MIDI出力デバイスページ
+IDD_MIDIOUTDEVICE DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI出力ﾃﾞﾊﾞｲｽ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "出力ポート01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+// MIDIインストゥルメント定義(通常)ページ
+IDD_MIDIINSTDEFNORM DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDIｲﾝｽﾄｩﾙﾒﾝﾄ定義(通常)"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "出力ポート01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+// MIDIインストゥルメント定義(ドラム)ページ
+IDD_MIDIINSTDEFDRUM DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDIｲﾝｽﾄｩﾙﾒﾝﾄ定義(ﾄﾞﾗﾑ)"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "出力ポート01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+
+// MIDI同期(受信)ページ
+IDD_MIDIINSYNCMODE DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI同期(受信)"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "入力ポート01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "入力ポート16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+// MIDI同期(送信)ページ
+IDD_MIDIOUTSYNCMODE DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI同期(送信)"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "出力ポート01", IDC_STATIC,
+	                8, 8, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート02", IDC_STATIC,
+	                8, 24, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート03", IDC_STATIC,
+	                8, 40, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート04", IDC_STATIC,
+	                8, 56, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート05", IDC_STATIC,
+	                8, 72, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート06", IDC_STATIC,
+	                8, 88, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート07", IDC_STATIC,
+	                8, 104, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート08", IDC_STATIC,
+	                8, 120, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート09", IDC_STATIC,
+	                8, 136, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート10", IDC_STATIC,
+	                8, 152, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート11", IDC_STATIC,
+	                8, 168, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート12", IDC_STATIC,
+	                8, 184, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート13", IDC_STATIC,
+	                8, 200, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート14", IDC_STATIC,
+	                8, 216, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート15", IDC_STATIC,
+	                8, 232, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力ポート16", IDC_STATIC,
+	                8, 248, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+
+
+
+
+// メトロノームダイアログ
+IDD_METRONOME DIALOG DISCARDABLE 0, 0, 252, 196
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "メトロノーム"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	AUTOCHECKBOX    "録音中はメトロノームを鳴らす", IDC_METRONOME_ON,
+	                4, 8, 244, 12
+	GROUPBOX        "出力先", IDC_METRONOME_OUTPUT,
+	                4, 24, 244, 52,  WS_GROUP
+	LTEXT           "出力ポート", IDC_STATIC,
+	                8, 40, 92, 12,
+	COMBOBOX        IDC_METRONOME_OUTPUTPORT, 
+	                100, 40, 140, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "出力チャンネル", IDC_STATIC,
+	                8, 56, 152, 12,
+	EDITTEXT        IDC_METRONOME_OUTPUTCHANNEL, 
+	                200, 56, 40, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_METRONOME_OUTPUTCHANNELSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+
+	GROUPBOX        "パターン", IDC_METRONOME_PATTERN,
+	                4, 84, 244, 84,  WS_GROUP
+	LTEXT           "強打ノート・キー", IDC_STATIC,
+	                8, 100, 92, 12,
+	COMBOBOX        IDC_METRONOME_NOTEKEY1, 
+	                100, 100, 140, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "強打ベロシティ", IDC_STATIC,
+	                8, 116, 192, 12,
+	EDITTEXT        IDC_METRONOME_NOTEVEL1, 
+	                200, 116, 40, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_METRONOME_NOTEVEL1SP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "弱打ノート・キー", IDC_STATIC,
+	                8, 132, 92, 12,
+	COMBOBOX        IDC_METRONOME_NOTEKEY2, 
+	                100, 132, 140, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "弱打ベロシティ", IDC_STATIC,
+	                8, 148, 192, 12,
+	EDITTEXT        IDC_METRONOME_NOTEVEL2, 
+	                200, 148, 40, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "",	IDC_METRONOME_NOTEVEL2SP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+
+	DEFPUSHBUTTON   "OK", IDOK,
+	                148, 176, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                200, 176, 48, 14, WS_TABSTOP
+END
+
+// 自動保存ダイアログ
+IDD_AUTOSAVE DIALOG 0, 0, 252, 216
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "自動保存" 
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	AUTOCHECKBOX    "自動保存をする(ドキュメントが変更されている場合のみ)",
+	                IDC_AUTOSAVE_ON, 4, 8, 240, 11, WS_TABSTOP | SS_LEFT
+	GROUPBOX        "自動保存の設定", IDC_AUTOSAVE_SETUP,
+	                4, 24, 244, 92,  WS_GROUP
+	LTEXT           "自動保存間隔(1～120)[分]", IDC_STATIC,
+	                8, 40, 192, 16, SS_NOPREFIX
+	EDITTEXT        IDC_AUTOSAVE_INTERVAL
+	                200, 40, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         ""
+	                IDC_AUTOSAVE_INTERVALSP    UPDOWN, UDS_DEFAULT, 0, 0, 0, 0
+	AUTOCHECKBOX    "演奏中には自動保存しない。",
+	                IDC_AUTOSAVE_DISABLEWHILEPLAYING, 8, 56, 236, 12, WS_TABSTOP | SS_LEFT
+	AUTOCHECKBOX    "リアルタイム入力中には自動保存しない。",
+	                IDC_AUTOSAVE_DISABLEWHILERECORDING, 8, 72, 236, 12, WS_TABSTOP | SS_LEFT
+	LTEXT           "※自動保存動作時には、約1秒間、演奏やリアルタイム入力が中断されます。", IDC_STATIC,
+	                8, 88, 236, 24, SS_NOPREFIX | WS_GROUP
+	GROUPBOX        "自動保存ファイルの削除", IDC_AUTOSAVE_DELETE,
+	                4, 120, 244, 40,  WS_GROUP
+	PUSHBUTTON      "今すぐすべての自動保存ファイルを削除する", IDC_AUTOSAVE_DELETEALLFILENOW,
+	                8, 136, 236, 14, WS_TABSTOP | WS_GROUP
+	LTEXT           "※自動保存は、世界樹が突然異常終了した場合に備えて、\
+	                作業中のファイルを定期的にautosaveフォルダ内に保存する機能です。" IDC_STATIC,
+	                4, 164, 244, 36, SS_NOPREFIX | WS_GROUP
+	DEFPUSHBUTTON   "OK", IDOK,
+	                148, 192, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                200, 192, 48, 14, WS_TABSTOP
+
+END
+
+// 言語ダイアログ
+IDD_LANGUAGE DIALOG 20, 20, 184, 64
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "言語(Language)" 
+FONT 9, "ＭＳ Ｐゴシック" {
+	LTEXT           "言語(Language)", IDC_NONE, 
+	                4, 8, 76, 12, SS_NOPREFIX;
+	COMBOBOX        IDC_LANGUAGE_COMBO, 
+	                80, 8, 100, 200, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	DEFPUSHBUTTON   "OK", IDOK, 
+	                80, 40, 48, 15, WS_TABSTOP
+	PUSHBUTTON      "キャンセル", IDCANCEL, 
+	                132, 40, 48, 15, WS_TABSTOP
+}
+
+// オプションダイアログ
+IDD_GENERALOPTION DIALOG 20, 20, 320, 308
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "全般" 
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	CHECKBOX        "複数の世界樹を起動すること許可する",
+	                IDC_GENERALOPTION_ENABLEMULTIEXEC, 4, 4, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "複数のMIDIデータを開くことを許可する",
+	                IDC_GENERALOPTION_ENABLEMULTIOPEN, 4, 20, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "起動時に前回のウィンドウ位置を復元する",
+	                IDC_GENERALOPTION_RESTOREWINDOWPLACEMENT, 4, 36, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "起動時に最後に開いたMIDIデータを自動的に開く",
+	                IDC_GENERALOPTION_EXECOPEN, 4, 52, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "MIDIデータを開くと自動的に演奏を開始する",
+	                IDC_GENERALOPTION_OPENPLAY, 4, 68, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "演奏位置移動時にパッチ･コントローラ･ピッチベンド･RPN･NRPNを最新値に更新する",
+	                IDC_GENERALOPTION_SEARCHUPDATE, 4, 84, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "演奏開始時にパッチ･コントローラ･ピッチベンド･RPN･NRPNを最新値に更新する"
+	                IDC_GENERALOPTION_PLAYUPDATE, 4, 100, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "オートリピート時にCC#111の位置からループ開始する(RPGツクール方式)",
+	                IDC_GENERALOPTION_ENABLECC111LOOP, 4, 116, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "CC#0･CC#32･ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ操作時に有効な音色だけを検索する",
+	                IDC_GENERALOPTION_PATCHSEARCH, 4, 132, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "Ctrl+マウスホイール回転時の演奏位置移動方向を反転する",
+	                IDC_GENERALOPTION_INVERTCTRLMOUSEWHEEL, 4, 148, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "トラック番号を0から数える",
+	                IDC_GENERALOPTION_TRACKZEROORIGIN, 4, 164, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "イベント番号を0から数える",
+	                IDC_GENERALOPTION_EVENTZEROORIGIN, 4, 180, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "演奏開始時・位置移動時に自動ページ更新をオンにする",
+	                IDC_GENERALOPTION_ENABLEAUTOPAGEUPDATE, 4, 196, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "曲の終端に達したときノートオフやホールドオフを送信する"
+	                IDC_GENERALOPTION_SENDNOTEOFFHOLDOFFATEND, 4, 212, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	LTEXT           "スピード=低速で演奏時のテンポ倍率(1～<50>～1000)[%]", IDC_STATIC,
+	                4, 228, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_SPEEDSLOW
+	                276, 228, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         ""
+	                IDC_GENERALOPTION_SPEEDSLOWSP    UPDOWN, UDS_DEFAULT, 0, 0, 0, 0
+	LTEXT           "スピード=標準で演奏時のテンポ倍率(1～<100>～1000)[%]", IDC_NONE,
+	                4, 244, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_SPEEDNORMAL
+	                276, 244, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "",	IDC_GENERALOPTION_SPEEDNORMALSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "スピード=高速で演奏時のテンポ倍率(1～<200>～1000)[%]", IDC_STATIC,
+	                4, 260, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_SPEEDFAST
+	                276, 260, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_GENERALOPTION_SPEEDFASTSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "MIDIデータ録音演奏用のwhileループ間隔(1～1000)[ミリ秒]", IDC_STATIC,
+	                4, 276, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_PLAYRECORDINTERVAL
+	                276, 276, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_GENERALOPTION_PLAYRECORDINTERVALSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "中央のド(キー60)のオクターブ番号表記(3～5)", IDC_STATIC,
+	                4, 292, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_OCTAVESIGNATURE
+	                276, 292, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_GENERALOPTION_OCTAVESIGNATURESP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+
+END
+
+
+// トラックリストオプションダイアログ(1)
+IDD_TRACKLISTOPTION1 DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "トラックリスト(1)" 
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "デフォルトの行方向ズーム倍率(16～64)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFROWZOOM
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFROWZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの列方向ズーム倍率(2～16)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFCOLUMNZOOM
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFCOLUMNZOOMSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの時間方向ズーム倍率(2～16)", IDC_STATIC,
+	                4, 36, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFTIMEZOOM
+	                276, 36, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION1_DEFTIMEZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのトラック名の幅(1～32)", IDC_STATIC,
+	                4, 52, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFNAMEWIDTH
+	                276, 52, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION1_DEFNAMEWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの色の幅(1～32)", IDC_STATIC,
+	                4, 68, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFCOLORWIDTH
+	                276, 68, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFCOLORWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの入力ONの幅(1～32)", IDC_STATIC,
+	                4, 84, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFINPUTONWIDTH
+	                276, 84, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFINPUTONWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの入力ポートの幅(1～32)", IDC_STATIC,
+	                4, 100, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFINPUTPORTWIDTH
+	                276, 100, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFINPUTPORTWIDTHSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの入力チャンネルの幅(1～32)", IDC_STATIC,
+	                4, 116, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFINPUTCHWIDTH
+	                276, 116, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION1_DEFINPUTCHWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの出力ONの幅(1～32)", IDC_STATIC,
+	                4, 132, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFOUTPUTONWIDTH
+	                276, 132, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION1_DEFOUTPUTONWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの出力ポートの幅(1～32)", IDC_STATIC,
+	                4, 148, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFOUTPUTPORTWIDTH
+	                276, 148, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFOUTPUTPORTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの出力チャンネルの幅(1～32)", IDC_STATIC,
+	                4, 164, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFOUTPUTCHWIDTH
+	                276, 164, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFOUTPUTCHWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの表示モードの幅(1～32)", IDC_STATIC,
+	                4, 180, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFVIEWMODEWIDTH
+	                276, 180, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFVIEWMODEWIDTHSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+END
+
+
+// トラックリストオプションダイアログ(2)
+IDD_TRACKLISTOPTION2 DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "トラックリスト(2)" 
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "デフォルトのCC#0の幅(1～32)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC000WIDTH
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "",	IDC_TRACKLISTOPTION2_DEFCC000WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのCC#32の幅(1～32)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC032WIDTH
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         ""
+	                IDC_TRACKLISTOPTION2_DEFCC032WIDTHSP    UPDOWN, UDS_DEFAULT, 0, 0, 0, 0
+	LTEXT           "デフォルトのプログラムナンバーの幅(1～32)", IDC_STATIC,
+	                4, 36, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFPCWIDTH
+	                276, 36, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         ""
+	                IDC_TRACKLISTOPTION2_DEFPCWIDTHSP    UPDOWN, UDS_DEFAULT, 0, 0, 0, 0
+	LTEXT           "デフォルトのボリュームの幅(1～32)", IDC_STATIC,
+	                4, 52, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC007WIDTH
+	                276, 52, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "",	IDC_TRACKLISTOPTION2_DEFCC007WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのパンの幅(1～32)", IDC_STATIC,
+	                4, 68, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC010WIDTH
+	                276, 68, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION2_DEFCC010WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのリバーブの幅(1～32)", IDC_STATIC,
+	                4, 84, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC091WIDTH
+	                276, 84, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFCC091WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのコーラスの幅(1～32)", IDC_STATIC,
+	                4, 100, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC093WIDTH
+	                276, 100, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFCC093WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのディレイの幅(1～32)", IDC_STATIC,
+	                4, 116, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC094WIDTH
+	                276, 116, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFCC094WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのキーシフトの幅(1～32)", IDC_STATIC,
+	                4, 132, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFKEYSHIFTWIDTH
+	                276, 132, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFKEYSHIFTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのベロシティシフトの幅(1～32)", IDC_STATIC,
+	                4, 148, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFVELSHIFTWIDTH
+	                276, 148, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFVELSHIFTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのタイムシフトの幅(1～32)", IDC_STATIC,
+	                4, 164, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFTIMESHIFTWIDTH
+	                276, 164, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFTIMESHIFTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのイベント数の幅(1～32)", IDC_STATIC,
+	                4, 180, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFNUMEVENTWIDTH
+	                276, 180, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFNUMEVENTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+END
+
+
+
+// ピアノロールオプションダイアログ
+IDD_PIANOROLLOPTION DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "ピアノロール" 
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "デフォルトの鍵盤方向ズーム倍率(4～16)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_PIANOROLLOPTION_DEFKEYZOOM
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_PIANOROLLOPTION_DEFKEYZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのベロシティ方向ズーム倍率(1～4)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_PIANOROLLOPTION_DEFVELZOOM
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_PIANOROLLOPTION_DEFVELZOOMSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの時間方向ズーム倍率(1～16)", IDC_STATIC,
+	                4, 36, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_PIANOROLLOPTION_DEFTIMEZOOM
+	                276, 36, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_PIANOROLLOPTION_DEFTIMEZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+END
+
+// イベントリストオプションダイアログ
+IDD_EVENTLISTOPTION DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "イベントリスト" 
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "デフォルトの行方向ズーム倍率(16～32)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFROWZOOM
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFROWZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの列方向ズーム倍率(1～16)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFCOLUMNZOOM
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFCOLUMNZOOMSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのトラックの幅(1～32)", IDC_STATIC,
+	                4, 36, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFTRACKWIDTH
+	                276, 36, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_EVENTLISTOPTION_DEFTRACKWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの時:分:秒:ミリ秒の幅(1～32)", IDC_STATIC,
+	                4, 52, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFMILLISECWIDTH
+	                276, 52, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_EVENTLISTOPTION_DEFMILLISECWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのタイムの幅(1～32)", IDC_STATIC,
+	                4, 68, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFTIMEWIDTH
+	                276, 68, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFTIMEWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの種類の幅(1～32)", IDC_STATIC,
+	                4, 84, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFKINDWIDTH
+	                276, 84, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFKINDWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトのチャンネルの幅(1～32)", IDC_STATIC,
+	                4, 100, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFCHWIDTH
+	                276, 100, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFCHWIDTHSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの値1の幅(1～32)", IDC_STATIC,
+	                4, 116, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFVAL1WIDTH
+	                276, 116, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "",	IDC_EVENTLISTOPTION_DEFVAL1WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの値2の幅(1～32)", IDC_STATIC,
+	                4, 132, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFVAL2WIDTH
+	                276, 132, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_EVENTLISTOPTION_DEFVAL2WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの値3の幅(1～32)", IDC_STATIC,
+	                4, 148, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFVAL3WIDTH
+	                276, 148, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFVAL3WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+
+	GROUPBOX        "イベントの挿入", IDC_EVENTLISTOPTION_INSERTEVENT,
+	                4, 164, 272, 42,  WS_GROUP
+	AUTORADIOBUTTON "同時刻のイベントの直前に挿入する", IDC_EVENTLISTOPTION_INSERTEVENTBEFORE,
+	                8, 176, 264, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "同時刻のイベントの直後に挿入する", IDC_EVENTLISTOPTION_INSERTEVENTAFTER,
+	                8, 188, 264, 12,
+	GROUPBOX        "イベントの複写", IDC_EVENTLISTOPTION_DUPLICATEEVENT,
+	                4, 208, 272, 42,  WS_GROUP
+	AUTORADIOBUTTON "現在のイベントの直前に挿入する", IDC_EVENTLISTOPTION_DUPLICATEEVENTBEFORE,
+	                8, 220, 264, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "現在のイベントの直後に挿入する", IDC_EVENTLISTOPTION_DUPLICATEEVENTAFTER,
+	                8, 232, 264, 12,
+	GROUPBOX        "イベントの削除", IDC_EVENTLISTOPTION_DELETEEVENT,
+	                4, 252, 272, 42,  WS_GROUP
+	AUTORADIOBUTTON "削除したイベントの前のイベントにフォーカスを合わせる", IDC_EVENTLISTOPTION_DELETEEVENTBEFORE,
+	                8, 264, 264, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "削除したイベントの次のイベントにフォーカスを合わせる", IDC_EVENTLISTOPTION_DELETEEVENTAFTER,
+	                8, 276, 264, 12,
+					
+
+END
+
+
+// Musical Score Option Page
+IDD_MUSICALSCOREOPTION DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "譜面" 
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+	LTEXT           "デフォルトのトラック方向ズーム倍率 (1～8)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_MUSICALSCOREOPTION_DEFTRACKZOOM
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_MUSICALSCOREOPTION_DEFTRACKZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "デフォルトの時間方向ズーム倍率 (1～16)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_MUSICALSCOREOPTION_DEFTIMEZOOM
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_MUSICALSCOREOPTION_DEFTIMEZOOMSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+END
+
+
+
+
+
+//-----------------------------------------------------------------------------
+// 文字列テーブル
+//-----------------------------------------------------------------------------
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+	IDR_MAINFRAME           "世界樹"
+	IDR_SEKAIJUTYPE         "\n無題\nMIDIData\n\n\nSekaiju.Document\nSekaiju Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+	AFX_IDS_APP_TITLE       "世界樹3.1"
+	AFX_IDS_IDLEMESSAGE     "レディ"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_INDICATOR_EXT        "EXT"
+	ID_INDICATOR_CAPS       "CAP"
+	ID_INDICATOR_NUM        "NUM"
+	ID_INDICATOR_SCRL       "SCRL"
+	ID_INDICATOR_OVR        "上書"
+	ID_INDICATOR_REC        "記録"
+	ID_INDICATOR_KANA       "カナ"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_FILE_NEW             "新規にファイルを作成\n新規ファイル"
+	ID_FILE_OPEN            "既存のファイルを開く\n開く"
+	ID_FILE_CLOSE           "作業中のファイルを閉じる\n閉じる"
+	ID_FILE_SAVE            "作業中のファイルを保存\n保存"
+	ID_FILE_SAVE_AS         "作業中のファイルに名前を付けて保存\n名前をつけて保存"
+	ID_FILE_PAGE_SETUP      "印刷設定の変更\n印刷設定"
+	ID_FILE_PRINT_SETUP     "プリンタ/印刷設定の変更\nプリンタの設定"
+	ID_FILE_PRINT           "作業中のファイルを印刷\n印刷"
+	ID_FILE_PRINT_PREVIEW   "フルスクリーンで表示\n印刷プレビュー"
+	ID_APP_ABOUT            "プログラムの情報、ヴァージョンそして著作権を表示\nヴァージョン情報"
+	ID_APP_EXIT             "アプリケーションを終了し、ファイルの保存を指示\n終了"
+	ID_FILE_MRU_FILE1       "指定のファイルを開く"
+	ID_FILE_MRU_FILE2       "指定のファイルを開く"
+	ID_FILE_MRU_FILE3       "指定のファイルを開く"
+	ID_FILE_MRU_FILE4       "指定のファイルを開く"
+	ID_FILE_MRU_FILE5       "指定のファイルを開く"
+	ID_FILE_MRU_FILE6       "指定のファイルを開く"
+	ID_FILE_MRU_FILE7       "指定のファイルを開く"
+	ID_FILE_MRU_FILE8       "指定のファイルを開く"
+	ID_FILE_MRU_FILE9       "指定のファイルを開く"
+	ID_FILE_MRU_FILE10      "指定のファイルを開く"
+	ID_FILE_MRU_FILE11      "指定のファイルを開く"
+	ID_FILE_MRU_FILE12      "指定のファイルを開く"
+	ID_FILE_MRU_FILE13      "指定のファイルを開く"
+	ID_FILE_MRU_FILE14      "指定のファイルを開く"
+	ID_FILE_MRU_FILE15      "指定のファイルを開く"
+	ID_FILE_MRU_FILE16      "指定のファイルを開く"
+	ID_NEXT_PANE             "次のウィンドウに切り替える\n次ﾍﾟｰｼﾞ"
+	ID_PREV_PANE             "前のウィンドウに切り替える\n前ﾍﾟｰｼﾞ"
+	ID_WINDOW_NEW            "作業中のウィンドウを複写して表示\n新規ウィンドウ"
+	ID_WINDOW_ARRANGE        "ウィンドウの下部にｱｲｺﾝを整列\nｱｲｺﾝの整列"
+	ID_WINDOW_CASCADE        "ウィンドウを重ねて表示\n重ねて表示"
+	ID_WINDOW_TILE_HORZ      "ウィンドウを上下に並べて表示\n上下に並べて表示"
+	ID_WINDOW_TILE_VERT      "ウィンドウを左右に並べて表示\n左右に並べて表示"
+	ID_WINDOW_SPLIT          "作業中のウィンドウを分割\n分割"
+	ID_EDIT_CUT              "選択イベントを切り取ってクリップボードに保存\n切り取り"
+	ID_EDIT_COPY             "選択イベントをコピーしてクリップボードに保存\nコピー"
+	ID_EDIT_PASTE            "クリップボードの内容を貼り付け\n貼り付け"
+	ID_EDIT_DELETE           "選択イベントを削除\n削除"
+	ID_EDIT_SELECTALL        "すべてのイベントを選択\nすべてのイベントを選択"
+	ID_EDIT_SELECTNONE       "すべてのイベントを選択解除\nすべてのイベントを選択解除"
+	ID_EDIT_SELECTBEFORE     "現在位置より前のイベントを追加選択\n現在位置より前のイベントを追加選択"
+	ID_EDIT_DESELECTBEFORE   "現在位置より前のイベントを選択解除\n現在位置より前のイベントを選択解除"
+	ID_EDIT_SELECTAFTER      "現在位置より後のイベントを追加選択\n現在位置より後のイベントを追加選択"
+	ID_EDIT_DESELECTAFTER    "現在位置より後のイベントを選択解除\n現在位置より後のイベントを選択解除"
+	ID_EDIT_FIND             "指定した文字列の検索\n検索"
+	ID_EDIT_REPEAT           "直前に行った動作を繰り返す\nﾘﾋﾟｰﾄ"
+	ID_EDIT_REPLACE          "指定した文字列を他の文字列で置換\n置換"
+	ID_EDIT_SELECT_ALL       "ファイル全体を選択\nすべて選択"
+	ID_EDIT_UNDO             "直前に行った動作を元に戻す\n元に戻す"
+	ID_EDIT_REDO             "直前に行った動作を繰り返す\nやり直し"
+	ID_EDIT_INITHISTORY      "作業履歴の初期化\n作業履歴の初期化"
+	ID_EDIT_TRACK            "イベントのトラック変更\nイベントのトラック変更" 
+	ID_EDIT_TIME             "イベントのタイムの変更\nイベントのタイム変更"
+	ID_EDIT_CHANNEL          "イベントのチャンネル変更\nイベントのチャンネル変更"
+	ID_EDIT_KEY              "イベントの音程変更\nイベントの音程変更"
+	ID_EDIT_VELOCITY         "イベントのベロシティ変更\nイベントのベロシティ変更"
+	ID_EDIT_DURATION         "イベントの音長さ変更\nイベントの音長さ変更"
+	ID_EDIT_VALUE            "イベントの値変更\nイベントの値変更"
+	ID_EDIT_BREAKUPANDTRILL  "音符の細分化とトリル化"
+	ID_EDIT_QUANTIZE         "クォンタイズ\nクォンタイズ"
+	ID_EDIT_BEATSCAN         "ビート検出とテンポ自動挿入\nビート検出とテンポ自動挿入"
+	ID_EDIT_INSERTMEASURE    "小節を挿入\n小節を挿入"
+	ID_EDIT_REMOVEMEASURE    "小節を除去\n小節を除去"
+END
+
+STRINGTABLE DISCARDABLE {
+	ID_VIEW_TOOLBAR1             "ツールバー1の表示/非表示\nツールバー1の表示/非表示"
+	ID_VIEW_TOOLBAR2             "ツールバー2の表示/非表示\nツールバー2の表示/非表示"
+	ID_VIEW_STATUS_BAR           "ステータスバーの表示/非表示\nステータスバーの表示/非表示"
+	ID_VIEW_TRACKLIST            "新規トラックリストウィンドウ表示\n新規トラックリストウィンドウ表示"
+	ID_VIEW_PIANOROLL            "新規ピアノロールウィンドウ表示\n新規ピアノロールウィンドウ表示"
+	ID_VIEW_EVENTLIST            "新規イベントリストウィンドウ表示\n新規イベントリストウィンドウ表示"
+	ID_VIEW_MUSICALSCORE         "新規譜面ウィンドウ表示\n新規譜面ウィンドウ表示"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_CONTROL_TOBEGIN           "最初に戻る\n最初に戻る"
+	ID_CONTROL_PLAY              "演奏/停止\n演奏/停止"
+	ID_CONTROL_RECORD            "録音/停止\n録音/停止"
+	ID_CONTROL_TOEND             "最後に進む\n最後に進む"
+	ID_CONTROL_SPEEDNONE         "スピード=静止\nスピード=静止"
+	ID_CONTROL_SPEEDSLOW         "スピード=低速\nスピード=低速"
+	ID_CONTROL_SPEEDNORMAL       "スピード=標準\nスピード=標準"
+	ID_CONTROL_SPEEDFAST         "スピード=高速\nスピード=高速"
+	ID_CONTROL_SPEEDSLAVE        "スピード=他機器にスレーブ\nスピード=他機器にスレーブ"
+	ID_CONTROL_AUTOREPEAT        "オートリピート\nオートリピート"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_SETUP_MIDIDEVICE          "MIDIデバイスとインストゥルメント\nMIDIデバイスとインストゥルメント"
+	ID_SETUP_METRONOME           "メトロノーム\nメトロノーム"
+	ID_SETUP_AUTOSAVE            "自動保存\n自動保存"
+	ID_SETUP_LANGUAGE            "言語(Language)\n言語(Language)"
+	ID_SETUP_OPTIONS             "オプション\nオプション"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_HELP_README               "readme.txt\nreadme.txt"
+	ID_HELP_LICENSE              "ライセンス\nライセンス"
+	ID_HELP_MANUAL               "取扱説明書\n取扱説明書"
+	ID_HELP_PROJECTHOMEPAGE      "プロジェクトホームページ\nプロジェクトホームページ"
+	ID_HELP_ABOUT                "ヴァージョン情報\nヴァージョン情報"
+}
+
+STRINGTABLE DISCARDABLE {
+	IDC_MILLISECEDIT             "時:分:秒:ミリ秒\n時:分:秒:ミリ秒"
+	IDC_TIMEEDIT                 "小節:拍:ティック\n小節:拍:ティック"
+	IDC_POSITIONSCROLL           "演奏･記録位置\n演奏･記録位置"
+	IDC_MEASUREEDIT              "拍子･調性\n拍子･調性"
+	IDC_TEMPOEDIT                "テンポ[BPM]\nテンポ[BPM]"
+}
+
+STRINGTABLE DISCARDABLE {
+	IDC_TRACKCOMBO               "トラック\nトラック"
+	IDC_CHANNELCOMBO             "チャンネル\nチャンネル"
+	IDC_SNAPCOMBO                "スナップ[ティック]\nスナップ[ティック]"
+	IDC_VELOCITYCOMBO            "ベロシティ\nベロシティ"
+	IDC_DURATIONCOMBO            "長さ[ティック]\n長さ[ティック]"
+	IDC_GRAPHKINDCOMBO           "グラフの種類\nグラフの種類"
+	IDC_GRAPHSNAPCOMBO           "グラフのスナップ[ティック]\nグラフのスナップ[ティック"
+	IDC_RESOLUTIONCOMBO          "表示精度[ティック]\n表示精度[ティック]"
+}
+
+
+STRINGTABLE DISCARDABLE {
+	IDC_EVENTTRACKCOMBO          "トラック\nトラック"
+	IDC_EVENTTIMEEDIT            "イベントの時刻\nイベントの時刻"
+	IDC_EVENTKINDCOMBO           "イベントの種類\nイベントの種類"
+	IDC_EVENTCHANNELCOMBO        "イベントのチャンネル\nイベントのチャンネル"
+}
+
+
+STRINGTABLE DISCARDABLE {
+	ID_TRACKLIST_INSERTTRACK     "トラックを1行挿入\nトラックを1行挿入(Ins)"
+	ID_TRACKLIST_DUPLICATETRACK  "トラックを1行複写\nトラックを1行複写(Ctrl+Ins)"
+	ID_TRACKLIST_DELETETRACK     "トラックを1行削除\nトラックを1行削除(Del)"
+	ID_TRACKLIST_MOVEUPTRACK     "トラックを1行上へ移動\nトラックを1行上へ移動"
+	ID_TRACKLIST_MOVEDOWNTRACK   "トラックを1行下へ移動\nトラックを1行下へ移動"
+	ID_TRACKLIST_SELECT          "選択\n選択(S)"
+	ID_TRACKLIST_SPEAKER         "試聴\n試聴(B)"
+	ID_TRACKLIST_AUTOPAGEUPDATE  "自動ページ更新\n自動ページ更新"
+	ID_TRACKLIST_SAVEAS          "トラックリストをCSV又はテキストで保存\nトラックリストをCSV又はテキストで保存"
+}
+
+
+STRINGTABLE DISCARDABLE {
+	ID_PIANOROLL_PEN            "ペン\nペン(P)(D)"
+	ID_PIANOROLL_LINE           "線\n線(L)"
+	ID_PIANOROLL_ERASER         "消しゴム\n消しゴム(E)"
+	ID_PIANOROLL_SELECT         "選択\n選択(S)"
+	ID_PIANOROLL_SPEAKER        "試聴\n試聴(B)"
+	ID_PIANOROLL_ONLYCURTRACK   "現在のトラックのみ表示\n現在のトラックのみ表示(F9)"
+	ID_PIANOROLL_SHOWALLTRACK   "全トラック表示\n全トラック表示(F10)"
+	ID_PIANOROLL_ONLYCURGRAPH   "現在のグラフのみ表示\n現在のグラフのみ表示(F11)"
+	ID_PIANOROLL_SHOWALLGRAPH   "全グラフ表示\n全グラフ表示(F12)"
+	ID_PIANOROLL_AUTOPAGEUPDATE "自動ページ更新\n自動ページ更新"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_EVENTLIST_INSERTEVENT    "イベントを1行挿入\nイベントを1行挿入(Ins)"
+	ID_EVENTLIST_DUPLICATEEVENT "イベントを1行複写\nイベントを1行複写(Ctrl+Ins)"
+	ID_EVENTLIST_DELETEEVENT    "イベントを1行削除\nイベントを1行削除(Del)"
+	ID_EVENTLIST_DUMMY1         "ダミー1\nダミー1"
+	ID_EVENTLIST_DUMMY2         "ダミー2\nダミー2"
+	ID_EVENTLIST_DUMMY3         "ダミー3\nダミー3"
+	ID_EVENTLIST_ONLYCURTRACK   "現在のトラックのみ表示\n現在のトラックのみ表示(F9)"
+	ID_EVENTLIST_SHOWALLTRACK   "全トラック表示\n全トラック表示(F10)"
+	ID_EVENTLIST_ONLYCURGRAPH   "現在のイベントの種類のみ表示\n現在のイベントの種類のみ表示(F11)"
+	ID_EVENTLIST_SHOWALLGRAPH   "全てのイベントの種類を表示\n全てのイベントの種類を表示(F12)"
+	ID_EVENTLIST_AUTOPAGEUPDATE "自動ページ更新\n自動ページ更新"
+	ID_EVENTLIST_SAVEAS         "イベントリストをCSV又はテキストで保存\nイベントリストをCSV又はテキストで保存"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_MUSICALSCORE_PEN            "ペン\nペン(P)(D)"
+	ID_MUSICALSCORE_ERASER         "消しゴム\n消しゴム(E)"
+	ID_MUSICALSCORE_SELECT         "選択\n選択(S)"
+	ID_MUSICALSCORE_SPEAKER        "試聴\n試聴(B)"
+	ID_MUSICALSCORE_WHOLENOTE      "全音符\n全音符(1)"
+	ID_MUSICALSCORE_HALFNOTE       "2分音符\n2分音符(2)"
+	ID_MUSICALSCORE_QUARTERNOTE    "4分音符\n4分音符(4)"
+	ID_MUSICALSCORE_QUAVERNOTE     "8分音符\n8分音符(8)"
+	ID_MUSICALSCORE_SEMIQUAVERNOTE "16分音符\n16分音符(6)"
+	ID_MUSICALSCORE_DEMISEMIQUAVERNOTE "32分音符\n32分音符(9)"
+	ID_MUSICALSCORE_DOTTED         "付点\n付点(.)"
+	ID_MUSICALSCORE_TRIPLET        "3連\n3連(t)"
+	ID_MUSICALSCORE_ONLYCURTRACK   "現在のトラックのみ表示\n現在のトラックのみ表示(F9)"
+	ID_MUSICALSCORE_SHOWALLTRACK   "全トラック表示\n全トラック表示(F10)"
+	ID_MUSICALSCORE_AUTOPAGEUPDATE "自動ページ更新\n自動ページ更新"
+}
+
+STRINGTABLE DISCARDABLE {
+	AFX_IDS_SCSIZE              "ウィンドウのサイズを変更"
+	AFX_IDS_SCMOVE              "ウィンドウの位置を変更"
+	AFX_IDS_SCMINIMIZE          "ウィンドウをｱｲｺﾝ化する"
+	AFX_IDS_SCMAXIMIZE          "ウィンドウを最大表示にする"
+	AFX_IDS_SCNEXTWINDOW        "次のウィンドウに切り替える"
+	AFX_IDS_SCPREVWINDOW        "前のウィンドウに切り替える"
+	AFX_IDS_SCCLOSE             "作業中のウィンドウを閉じ、変更したファイルの保存を指示"
+	AFX_IDS_SCRESTORE           "ウィンドウを通常のｻｲｽﾞに戻す"
+	AFX_IDS_SCTASKLIST          "アプリケーションの切り替え"
+	AFX_IDS_MDICHILD            "指定のウィンドウを表示"
+	AFX_IDS_PREVIEW_CLOSE       "印刷プレビューモードを閉じる\nプレビューのキャンセル"
+}
+
+STRINGTABLE DISCARDABLE {
+	IDS_CONTROL_SPEEDSLOW       "スピード=低速[%d%%]"
+	IDS_CONTROL_SPEEDNORMAL     "スピード=標準[%d%%]"
+	IDS_CONTROL_SPEEDFAST       "スピード=高速[%d%%]"
+}
+
+
+
+//-----------------------------------------------------------------------------
+// カーソル
+//-----------------------------------------------------------------------------
+
+IDC_SIZEALLCOPY        CURSOR    DISCARDABLE     "..\\res\\SizeAllCopy.cur"
+IDC_RESIZEWE           CURSOR    DISCARDABLE     "..\\res\\ResizeWE.cur"
+IDC_RESIZENS           CURSOR    DISCARDABLE     "..\\res\\ResizeNS.cur"
+IDC_RESIZEALL          CURSOR    DISCARDABLE     "..\\res\\ResizeAll.cur"
+IDC_DRAW               CURSOR    DISCARDABLE     "..\\res\\Draw.cur"
+IDC_LINE               CURSOR    DISCARDABLE     "..\\res\\Line.cur"
+IDC_ERASER             CURSOR    DISCARDABLE     "..\\res\\Eraser.cur"
+IDC_SELECT             CURSOR    DISCARDABLE     "..\\res\\Select.cur"
+IDC_SELECTADD          CURSOR    DISCARDABLE     "..\\res\\SelectAdd.cur"
+IDC_SELECT2            CURSOR    DISCARDABLE     "..\\res\\Select2.cur"
+IDC_SELECTADD2         CURSOR    DISCARDABLE     "..\\res\\SelectAdd2.cur"
+IDC_SPEAKER            CURSOR    DISCARDABLE     "..\\res\\Speaker.cur"
+
+//-----------------------------------------------------------------------------
+// 文字列テーブル(MIDI固有名詞)
+//-----------------------------------------------------------------------------
+
+// イベントの種類(128種類)
+STRINGTABLE DISCARDABLE {
+	IDS_EVENTKIND_00           "ｼｰｹﾝｽ番号"
+	IDS_EVENTKIND_01           "ﾃｷｽﾄ"
+	IDS_EVENTKIND_02           "著作権"
+	IDS_EVENTKIND_03           "ﾄﾗｯｸ名"
+	IDS_EVENTKIND_04           "ｲﾝｽﾄｩﾙﾒﾝﾄ名"
+	IDS_EVENTKIND_05           "歌詞"
+	IDS_EVENTKIND_06           "ﾏｰｶｰ"
+	IDS_EVENTKIND_07           "ｷｭｰﾎﾟｲﾝﾄ"
+	IDS_EVENTKIND_08           "ﾌﾟﾛｸﾞﾗﾑ名"
+	IDS_EVENTKIND_09           "ﾃﾞﾊﾞｲｽ名"
+	IDS_EVENTKIND_0A           ""
+	IDS_EVENTKIND_0B           ""
+	IDS_EVENTKIND_0C           ""
+	IDS_EVENTKIND_0D           ""
+	IDS_EVENTKIND_0E           ""
+	IDS_EVENTKIND_0F           ""
+
+	IDS_EVENTKIND_10           ""
+	IDS_EVENTKIND_11           ""
+	IDS_EVENTKIND_12           ""
+	IDS_EVENTKIND_13           ""
+	IDS_EVENTKIND_14           ""
+	IDS_EVENTKIND_15           ""
+	IDS_EVENTKIND_16           ""
+	IDS_EVENTKIND_17           ""
+	IDS_EVENTKIND_18           ""
+	IDS_EVENTKIND_19           ""
+	IDS_EVENTKIND_1A           ""
+	IDS_EVENTKIND_1B           ""
+	IDS_EVENTKIND_1C           ""
+	IDS_EVENTKIND_1D           ""
+	IDS_EVENTKIND_1E           ""
+	IDS_EVENTKIND_1F           ""
+
+	IDS_EVENTKIND_20           "ﾁｬﾝﾈﾙﾌﾟﾘﾌｨｯｸｽ"
+	IDS_EVENTKIND_21           "ポートﾌﾟﾘﾌｨｯｸｽ"
+	IDS_EVENTKIND_22           ""
+	IDS_EVENTKIND_23           ""
+	IDS_EVENTKIND_24           ""
+	IDS_EVENTKIND_25           ""
+	IDS_EVENTKIND_26           ""
+	IDS_EVENTKIND_27           ""
+	IDS_EVENTKIND_28           ""
+	IDS_EVENTKIND_29           ""
+	IDS_EVENTKIND_2A           ""
+	IDS_EVENTKIND_2B           ""
+	IDS_EVENTKIND_2C           ""
+	IDS_EVENTKIND_2D           ""
+	IDS_EVENTKIND_2E           ""
+	IDS_EVENTKIND_2F           "ｴﾝﾄﾞｵﾌﾞﾄﾗｯｸ"
+
+	IDS_EVENTKIND_30           ""
+	IDS_EVENTKIND_31           ""
+	IDS_EVENTKIND_32           ""
+	IDS_EVENTKIND_33           ""
+	IDS_EVENTKIND_34           ""
+	IDS_EVENTKIND_35           ""
+	IDS_EVENTKIND_36           ""
+	IDS_EVENTKIND_37           ""
+	IDS_EVENTKIND_38           ""
+	IDS_EVENTKIND_39           ""
+	IDS_EVENTKIND_3A           ""
+	IDS_EVENTKIND_3B           ""
+	IDS_EVENTKIND_3C           ""
+	IDS_EVENTKIND_3D           ""
+	IDS_EVENTKIND_3E           ""
+	IDS_EVENTKIND_3F           ""
+
+	IDS_EVENTKIND_40           ""
+	IDS_EVENTKIND_41           ""
+	IDS_EVENTKIND_42           ""
+	IDS_EVENTKIND_43           ""
+	IDS_EVENTKIND_44           ""
+	IDS_EVENTKIND_45           ""
+	IDS_EVENTKIND_46           ""
+	IDS_EVENTKIND_47           ""
+	IDS_EVENTKIND_48           ""
+	IDS_EVENTKIND_49           ""
+	IDS_EVENTKIND_4A           ""
+	IDS_EVENTKIND_4B           ""
+	IDS_EVENTKIND_4C           ""
+	IDS_EVENTKIND_4D           ""
+	IDS_EVENTKIND_4E           ""
+	IDS_EVENTKIND_4F           ""
+
+	IDS_EVENTKIND_50           ""
+	IDS_EVENTKIND_51           "ﾃﾝﾎﾟ"
+	IDS_EVENTKIND_52           ""
+	IDS_EVENTKIND_53           ""
+	IDS_EVENTKIND_54           "SMPTEｵﾌｾｯﾄ"
+	IDS_EVENTKIND_55           ""
+	IDS_EVENTKIND_56           ""
+	IDS_EVENTKIND_57           ""
+	IDS_EVENTKIND_58           "拍子記号"
+	IDS_EVENTKIND_59           "調性記号"
+	IDS_EVENTKIND_5A           ""
+	IDS_EVENTKIND_5B           ""
+	IDS_EVENTKIND_5C           ""
+	IDS_EVENTKIND_5D           ""
+	IDS_EVENTKIND_5E           ""
+	IDS_EVENTKIND_5F           ""
+
+	IDS_EVENTKIND_60           ""
+	IDS_EVENTKIND_61           ""
+	IDS_EVENTKIND_62           ""
+	IDS_EVENTKIND_63           ""
+	IDS_EVENTKIND_64           ""
+	IDS_EVENTKIND_65           ""
+	IDS_EVENTKIND_66           ""
+	IDS_EVENTKIND_67           ""
+	IDS_EVENTKIND_68           ""
+	IDS_EVENTKIND_69           ""
+	IDS_EVENTKIND_6A           ""
+	IDS_EVENTKIND_6B           ""
+	IDS_EVENTKIND_6C           ""
+	IDS_EVENTKIND_6D           ""
+	IDS_EVENTKIND_6E           ""
+	IDS_EVENTKIND_6F           ""
+
+	IDS_EVENTKIND_70           ""
+	IDS_EVENTKIND_71           ""
+	IDS_EVENTKIND_72           ""
+	IDS_EVENTKIND_73           ""
+	IDS_EVENTKIND_74           ""
+	IDS_EVENTKIND_75           ""
+	IDS_EVENTKIND_76           ""
+	IDS_EVENTKIND_77           ""
+	IDS_EVENTKIND_78           ""
+	IDS_EVENTKIND_79           ""
+	IDS_EVENTKIND_7A           ""
+	IDS_EVENTKIND_7B           ""
+	IDS_EVENTKIND_7C           ""
+	IDS_EVENTKIND_7D           ""
+	IDS_EVENTKIND_7E           ""
+	IDS_EVENTKIND_7F           "ｼｰｹﾝｻ固有のｲﾍﾞﾝﾄ"
+
+	IDS_EVENTKIND_80           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_81           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_82           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_83           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_84           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_85           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_86           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_87           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_88           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_89           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_8A           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_8B           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_8C           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_8D           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_8E           "ﾉｰﾄｵﾌ"
+	IDS_EVENTKIND_8F           "ﾉｰﾄｵﾌ"
+
+
+	IDS_EVENTKIND_90           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_91           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_92           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_93           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_94           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_95           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_96           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_97           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_98           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_99           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_9A           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_9B           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_9C           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_9D           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_9E           "ﾉｰﾄｵﾝ"
+	IDS_EVENTKIND_9F           "ﾉｰﾄｵﾝ"
+
+	IDS_EVENTKIND_A0           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_A1           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_A2           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_A3           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_A4           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_A5           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_A6           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_A7           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_A8           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_A9           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_AA           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_AB           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_AC           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_AD           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_AE           "ｷｰｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_AF           "ｷｰｱﾌﾀｰﾀｯﾁ"
+
+	IDS_EVENTKIND_B0           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_B1           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_B2           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_B3           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_B4           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_B5           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_B6           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_B7           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_B8           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_B9           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_BA           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_BB           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_BC           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_BD           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_BE           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_BF           "ｺﾝﾄﾛｰﾙﾁｪﾝｼﾞ"
+
+	IDS_EVENTKIND_C0           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_C1           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_C2           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_C3           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_C4           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_C5           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_C6           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_C7           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_C8           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_C9           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_CA           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_CB           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_CC           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_CD           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_CE           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+	IDS_EVENTKIND_CF           "ﾌﾟﾛｸﾞﾗﾑﾁｪﾝｼﾞ"
+
+	IDS_EVENTKIND_D0           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_D1           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_D2           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_D3           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_D4           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_D5           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_D6           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_D7           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_D8           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_D9           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_DA           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_DB           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_DC           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_DD           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_DE           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+	IDS_EVENTKIND_DF           "ﾁｬﾝﾈﾙｱﾌﾀｰﾀｯﾁ"
+
+	IDS_EVENTKIND_E0           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_E1           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_E2           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_E3           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_E4           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_E5           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_E6           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_E7           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_E8           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_E9           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_EA           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_EB           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_EC           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_ED           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_EE           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+	IDS_EVENTKIND_EF           "ﾋﾟｯﾁﾍﾞﾝﾄﾞ"
+
+	IDS_EVENTKIND_F0           "ｼｽﾃﾑｴｸｽｸﾙｰｼｳﾞ(通常)"
+	IDS_EVENTKIND_F1           ""
+	IDS_EVENTKIND_F2           ""
+	IDS_EVENTKIND_F3           ""
+	IDS_EVENTKIND_F4           ""
+	IDS_EVENTKIND_F5           ""
+	IDS_EVENTKIND_F6           ""
+	IDS_EVENTKIND_F7           "ｼｽﾃﾑｴｸｽｸﾙｰｼｳﾞ(任意)"
+	IDS_EVENTKIND_F8           ""
+	IDS_EVENTKIND_F9           ""
+	IDS_EVENTKIND_FA           ""
+	IDS_EVENTKIND_FB           ""
+	IDS_EVENTKIND_FC           ""
+	IDS_EVENTKIND_FD           ""
+	IDS_EVENTKIND_FE           ""
+	IDS_EVENTKIND_FF           ""
+}
+
+
+
+// デフォルトのノート・キー名(12鍵×15調性)
+STRINGTABLE DISCARDABLE {
+	// 0 - C / Am
+	IDS_NOTEKEY_0S00           "ﾄﾞ"
+	IDS_NOTEKEY_0S01           "ﾄﾞ#"
+	IDS_NOTEKEY_0S02           "ﾚ"
+	IDS_NOTEKEY_0S03           "ﾐb"
+	IDS_NOTEKEY_0S04           "ﾐ"
+	IDS_NOTEKEY_0S05           "ﾌｧ"
+	IDS_NOTEKEY_0S06           "ﾌｧ#"
+	IDS_NOTEKEY_0S07           "ｿ"
+	IDS_NOTEKEY_0S08           "ｿ#"
+	IDS_NOTEKEY_0S09           "ﾗ"
+	IDS_NOTEKEY_0S10           "ｼb"
+	IDS_NOTEKEY_0S11           "ｼ"
+	IDS_NOTEKEY_0S12           ""
+	IDS_NOTEKEY_0S13           ""
+	IDS_NOTEKEY_0S14           ""
+	IDS_NOTEKEY_0S15           ""
+	// 1# - G / Em
+	IDS_NOTEKEY_1S00           "ﾄﾞ"
+	IDS_NOTEKEY_1S01           "ﾄﾞ#"
+	IDS_NOTEKEY_1S02           "ﾚ"
+	IDS_NOTEKEY_1S03           "ﾚ#"
+	IDS_NOTEKEY_1S04           "ﾐ"
+	IDS_NOTEKEY_1S05           "ﾌｧ"
+	IDS_NOTEKEY_1S06           "ﾌｧ#"
+	IDS_NOTEKEY_1S07           "ｿ"
+	IDS_NOTEKEY_1S08           "ｿ#"
+	IDS_NOTEKEY_1S09           "ﾗ"
+	IDS_NOTEKEY_1S10           "ｼb"
+	IDS_NOTEKEY_1S11           "ｼ"
+	IDS_NOTEKEY_1S12           ""
+	IDS_NOTEKEY_1S13           ""
+	IDS_NOTEKEY_1S14           ""
+	IDS_NOTEKEY_1S15           ""
+	// 2# - D / Bm
+	IDS_NOTEKEY_2S00           "ﾄﾞ"
+	IDS_NOTEKEY_2S01           "ﾄﾞ#"
+	IDS_NOTEKEY_2S02           "ﾚ"
+	IDS_NOTEKEY_2S03           "ﾚ#"
+	IDS_NOTEKEY_2S04           "ﾐ"
+	IDS_NOTEKEY_2S05           "ﾌｧ"
+	IDS_NOTEKEY_2S06           "ﾌｧ#"
+	IDS_NOTEKEY_2S07           "ｿ"
+	IDS_NOTEKEY_2S08           "ｿ#"
+	IDS_NOTEKEY_2S09           "ﾗ"
+	IDS_NOTEKEY_2S10           "ﾗ#"
+	IDS_NOTEKEY_2S11           "ｼ"
+	IDS_NOTEKEY_2S12           ""
+	IDS_NOTEKEY_2S13           ""
+	IDS_NOTEKEY_2S14           ""
+	IDS_NOTEKEY_2S15           ""
+	// 3# - A / F#m
+	IDS_NOTEKEY_3S00           "ﾄﾞ"
+	IDS_NOTEKEY_3S01           "ﾄﾞ#"
+	IDS_NOTEKEY_3S02           "ﾚ"
+	IDS_NOTEKEY_3S03           "ﾚ#"
+	IDS_NOTEKEY_3S04           "ﾐ"
+	IDS_NOTEKEY_3S05           "ﾐ#"
+	IDS_NOTEKEY_3S06           "ﾌｧ#"
+	IDS_NOTEKEY_3S07           "ｿ"
+	IDS_NOTEKEY_3S08           "ｿ#"
+	IDS_NOTEKEY_3S09           "ﾗ"
+	IDS_NOTEKEY_3S10           "ﾗ#"
+	IDS_NOTEKEY_3S11           "ｼ"
+	IDS_NOTEKEY_3S12           ""
+	IDS_NOTEKEY_3S13           ""
+	IDS_NOTEKEY_3S14           ""
+	IDS_NOTEKEY_3S15           ""
+	// 4# - E / C#m
+	IDS_NOTEKEY_4S00           "ﾄﾞ"
+	IDS_NOTEKEY_4S01           "ﾄﾞ#"
+	IDS_NOTEKEY_4S02           "ﾚ"
+	IDS_NOTEKEY_4S03           "ﾚ#"
+	IDS_NOTEKEY_4S04           "ﾐ"
+	IDS_NOTEKEY_4S05           "ﾐ#"
+	IDS_NOTEKEY_4S06           "ﾌｧ#"
+	IDS_NOTEKEY_4S07           "ｿ"
+	IDS_NOTEKEY_4S08           "ｿ#"
+	IDS_NOTEKEY_4S09           "ﾗ"
+	IDS_NOTEKEY_4S10           "ﾗ#"
+	IDS_NOTEKEY_4S11           "ｼ"
+	IDS_NOTEKEY_4S12           ""
+	IDS_NOTEKEY_4S13           ""
+	IDS_NOTEKEY_4S14           ""
+	IDS_NOTEKEY_4S15           ""
+	// 5# - B / G#m
+	IDS_NOTEKEY_5S00           "ｼ#"
+	IDS_NOTEKEY_5S01           "ﾄﾞ#"
+	IDS_NOTEKEY_5S02           "ﾚ"
+	IDS_NOTEKEY_5S03           "ﾚ#"
+	IDS_NOTEKEY_5S04           "ﾐ"
+	IDS_NOTEKEY_5S05           "ﾐ#"
+	IDS_NOTEKEY_5S06           "ﾌｧ#"
+	IDS_NOTEKEY_5S07           "ﾌｧ##"
+	IDS_NOTEKEY_5S08           "ｿ#"
+	IDS_NOTEKEY_5S09           "ﾗ"
+	IDS_NOTEKEY_5S10           "ﾗ#"
+	IDS_NOTEKEY_5S11           "ｼ"
+	IDS_NOTEKEY_5S12           ""
+	IDS_NOTEKEY_5S13           ""
+	IDS_NOTEKEY_5S14           ""
+	IDS_NOTEKEY_5S15           ""
+	// 6# - F# / D#m
+	IDS_NOTEKEY_6S00           "ｼ#"
+	IDS_NOTEKEY_6S01           "ﾄﾞ#"
+	IDS_NOTEKEY_6S02           "ﾄﾞ##"
+	IDS_NOTEKEY_6S03           "ﾚ#"
+	IDS_NOTEKEY_6S04           "ﾐ"
+	IDS_NOTEKEY_6S05           "ﾐ#"
+	IDS_NOTEKEY_6S06           "ﾌｧ#"
+	IDS_NOTEKEY_6S07           "ﾌｧ##"
+	IDS_NOTEKEY_6S08           "ｿ#"
+	IDS_NOTEKEY_6S09           "ﾗ"
+	IDS_NOTEKEY_6S10           "ﾗ#"
+	IDS_NOTEKEY_6S11           "ｼ"
+	IDS_NOTEKEY_6S12           ""
+	IDS_NOTEKEY_6S13           ""
+	IDS_NOTEKEY_6S14           ""
+	IDS_NOTEKEY_6S15           ""
+	// 7# - C# / A#m
+	IDS_NOTEKEY_7S00           "ｼ#"
+	IDS_NOTEKEY_7S01           "ﾄﾞ#"
+	IDS_NOTEKEY_7S02           "ﾄﾞ##"
+	IDS_NOTEKEY_7S03           "ﾚ#"
+	IDS_NOTEKEY_7S04           "ﾐ"
+	IDS_NOTEKEY_7S05           "ﾐ#"
+	IDS_NOTEKEY_7S06           "ﾌｧ#"
+	IDS_NOTEKEY_7S07           "ﾌｧ##"
+	IDS_NOTEKEY_7S08           "ｿ#"
+	IDS_NOTEKEY_7S09           "ｿ##"
+	IDS_NOTEKEY_7S10           "ﾗ#"
+	IDS_NOTEKEY_7S11           "ｼ"
+	IDS_NOTEKEY_7S12           ""
+	IDS_NOTEKEY_7S13           ""
+	IDS_NOTEKEY_7S14           ""
+	IDS_NOTEKEY_7S15           ""
+	// 8b - ERROR
+	IDS_NOTEKEY_8F00           ""
+	IDS_NOTEKEY_8F01           ""
+	IDS_NOTEKEY_8F02           ""
+	IDS_NOTEKEY_8F03           ""
+	IDS_NOTEKEY_8F04           ""
+	IDS_NOTEKEY_8F05           ""
+	IDS_NOTEKEY_8F06           ""
+	IDS_NOTEKEY_8F07           ""
+	IDS_NOTEKEY_8F08           ""
+	IDS_NOTEKEY_8F09           ""
+	IDS_NOTEKEY_8F10           ""
+	IDS_NOTEKEY_8F11           ""
+	IDS_NOTEKEY_8F12           ""
+	IDS_NOTEKEY_8F13           ""
+	IDS_NOTEKEY_8F14           ""
+	IDS_NOTEKEY_8F15           ""
+	// 7b - Cb / Abm
+	IDS_NOTEKEY_7F00           "ﾄﾞ"
+	IDS_NOTEKEY_7F01           "ﾚb"
+	IDS_NOTEKEY_7F02           "ﾐbb"
+	IDS_NOTEKEY_7F03           "ﾐb"
+	IDS_NOTEKEY_7F04           "ﾌｧb"
+	IDS_NOTEKEY_7F05           "ﾌｧ"
+	IDS_NOTEKEY_7F06           "ｿb"
+	IDS_NOTEKEY_7F07           "ｿ"
+	IDS_NOTEKEY_7F08           "ﾗb"
+	IDS_NOTEKEY_7F09           "ｼbb"
+	IDS_NOTEKEY_7F10           "ｼb"
+	IDS_NOTEKEY_7F11           "ﾄﾞb"
+	IDS_NOTEKEY_7F12           ""
+	IDS_NOTEKEY_7F13           ""
+	IDS_NOTEKEY_7F14           ""
+	IDS_NOTEKEY_7F15           ""
+	// 6b - Gb / Ebm
+	IDS_NOTEKEY_6F00           "ﾄﾞ"
+	IDS_NOTEKEY_6F01           "ﾚb"
+	IDS_NOTEKEY_6F02           "ﾚ"
+	IDS_NOTEKEY_6F03           "ﾐb"
+	IDS_NOTEKEY_6F04           "ﾌｧb"
+	IDS_NOTEKEY_6F05           "ﾌｧ"
+	IDS_NOTEKEY_6F06           "ｿb"
+	IDS_NOTEKEY_6F07           "ｿ"
+	IDS_NOTEKEY_6F08           "ﾗb"
+	IDS_NOTEKEY_6F09           "ｼbb"
+	IDS_NOTEKEY_6F10           "ｼb"
+	IDS_NOTEKEY_6F11           "ﾄﾞb"
+	IDS_NOTEKEY_6F12           ""
+	IDS_NOTEKEY_6F13           ""
+	IDS_NOTEKEY_6F14           ""
+	IDS_NOTEKEY_6F15           ""
+	// 5b - Db / Bbm
+	IDS_NOTEKEY_5F00           "ﾄﾞ"
+	IDS_NOTEKEY_5F01           "ﾚb"
+	IDS_NOTEKEY_5F02           "ﾚ"
+	IDS_NOTEKEY_5F03           "ﾐb"
+	IDS_NOTEKEY_5F04           "ﾌｧb"
+	IDS_NOTEKEY_5F05           "ﾌｧ"
+	IDS_NOTEKEY_5F06           "ｿb"
+	IDS_NOTEKEY_5F07           "ｿ"
+	IDS_NOTEKEY_5F08           "ﾗb"
+	IDS_NOTEKEY_5F09           "ﾗ"
+	IDS_NOTEKEY_5F10           "ｼb"
+	IDS_NOTEKEY_5F11           "ﾄﾞb"
+	IDS_NOTEKEY_5F12           ""
+	IDS_NOTEKEY_5F13           ""
+	IDS_NOTEKEY_5F14           ""
+	IDS_NOTEKEY_5F15           ""
+	// 4b - Ab / Fm
+	IDS_NOTEKEY_4F00           "ﾄﾞ"
+	IDS_NOTEKEY_4F01           "ﾚb"
+	IDS_NOTEKEY_4F02           "ﾚ"
+	IDS_NOTEKEY_4F03           "ﾐb"
+	IDS_NOTEKEY_4F04           "ﾐ"
+	IDS_NOTEKEY_4F05           "ﾌｧ"
+	IDS_NOTEKEY_4F06           "ｿb"
+	IDS_NOTEKEY_4F07           "ｿ"
+	IDS_NOTEKEY_4F08           "ﾗb"
+	IDS_NOTEKEY_4F09           "ﾗ"
+	IDS_NOTEKEY_4F10           "ｼb"
+	IDS_NOTEKEY_4F11           "ﾄﾞb"
+	IDS_NOTEKEY_4F12           ""
+	IDS_NOTEKEY_4F13           ""
+	IDS_NOTEKEY_4F14           ""
+	IDS_NOTEKEY_4F15           ""
+	// 3b - Eb / Cm
+	IDS_NOTEKEY_3F00           "ﾄﾞ"
+	IDS_NOTEKEY_3F01           "ﾚb"
+	IDS_NOTEKEY_3F02           "ﾚ"
+	IDS_NOTEKEY_3F03           "ﾐb"
+	IDS_NOTEKEY_3F04           "ﾐ"
+	IDS_NOTEKEY_3F05           "ﾌｧ"
+	IDS_NOTEKEY_3F06           "ｿb"
+	IDS_NOTEKEY_3F07           "ｿ"
+	IDS_NOTEKEY_3F08           "ﾗb"
+	IDS_NOTEKEY_3F09           "ﾗ"
+	IDS_NOTEKEY_3F10           "ｼb"
+	IDS_NOTEKEY_3F11           "ｼ"
+	IDS_NOTEKEY_3F12           ""
+	IDS_NOTEKEY_3F13           ""
+	IDS_NOTEKEY_3F14           ""
+	IDS_NOTEKEY_3F15           ""
+	// 2b - Bb / Gm
+	IDS_NOTEKEY_2F00           "ﾄﾞ"
+	IDS_NOTEKEY_2F01           "ﾚb"
+	IDS_NOTEKEY_2F02           "ﾚ"
+	IDS_NOTEKEY_2F03           "ﾐb"
+	IDS_NOTEKEY_2F04           "ﾐ"
+	IDS_NOTEKEY_2F05           "ﾌｧ"
+	IDS_NOTEKEY_2F06           "ﾌｧ#"
+	IDS_NOTEKEY_2F07           "ｿ"
+	IDS_NOTEKEY_2F08           "ﾗb"
+	IDS_NOTEKEY_2F09           "ﾗ"
+	IDS_NOTEKEY_2F10           "ｼb"
+	IDS_NOTEKEY_2F11           "ｼ"
+	IDS_NOTEKEY_2F12           ""
+	IDS_NOTEKEY_2F13           ""
+	IDS_NOTEKEY_2F14           ""
+	IDS_NOTEKEY_2F15           ""
+	// 1b - F / Dm
+	IDS_NOTEKEY_1F00           "ﾄﾞ"
+	IDS_NOTEKEY_1F01           "ﾄﾞ#"
+	IDS_NOTEKEY_1F02           "ﾚ"
+	IDS_NOTEKEY_1F03           "ﾐb"
+	IDS_NOTEKEY_1F04           "ﾐ"
+	IDS_NOTEKEY_1F05           "ﾌｧ"
+	IDS_NOTEKEY_1F06           "ﾌｧ#"
+	IDS_NOTEKEY_1F07           "ｿ"
+	IDS_NOTEKEY_1F08           "ﾗb"
+	IDS_NOTEKEY_1F09           "ﾗ"
+	IDS_NOTEKEY_1F10           "ｼb"
+	IDS_NOTEKEY_1F11           "ｼ"
+	IDS_NOTEKEY_1F12           ""
+	IDS_NOTEKEY_1F13           ""
+	IDS_NOTEKEY_1F14           ""
+	IDS_NOTEKEY_1F15           ""
+}                              
+
+// 調性記号とその名称
+STRINGTABLE DISCARDABLE {
+	// 長調(major)
+	IDS_KEYSIGNATURE_0MA       "ハ長調"
+	IDS_KEYSIGNATURE_1SMA      "ト長調"
+	IDS_KEYSIGNATURE_2SMA      "ニ長調"
+	IDS_KEYSIGNATURE_3SMA      "イ長調"
+	IDS_KEYSIGNATURE_4SMA      "ホ長調"
+	IDS_KEYSIGNATURE_5SMA      "ロ長調"
+	IDS_KEYSIGNATURE_6SMA      "嬰ヘ長調"
+	IDS_KEYSIGNATURE_7SMA      "嬰ハ長調"
+	IDS_KEYSIGNATURE_8MA       "無調"
+	IDS_KEYSIGNATURE_7FMA      "変ハ長調"
+	IDS_KEYSIGNATURE_6FMA      "変ト長調"
+	IDS_KEYSIGNATURE_5FMA      "変ニ長調"
+	IDS_KEYSIGNATURE_4FMA      "変イ長調"
+	IDS_KEYSIGNATURE_3FMA      "変ホ長調"
+	IDS_KEYSIGNATURE_2FMA      "変ロ長調"
+	IDS_KEYSIGNATURE_1FMA      "ヘ長調"
+	// 短調(minor)
+	IDS_KEYSIGNATURE_0MI       "イ短調"
+	IDS_KEYSIGNATURE_1SMI      "ホ短調"
+	IDS_KEYSIGNATURE_2SMI      "ロ短調"
+	IDS_KEYSIGNATURE_3SMI      "嬰ヘ短調"
+	IDS_KEYSIGNATURE_4SMI      "嬰ハ短調"
+	IDS_KEYSIGNATURE_5SMI      "嬰ト短調"
+	IDS_KEYSIGNATURE_6SMI      "嬰ニ短調"
+	IDS_KEYSIGNATURE_7SMI      "嬰イ短調"
+	IDS_KEYSIGNATURE_8MI       "無調"
+	IDS_KEYSIGNATURE_7FMI      "変イ短調"
+	IDS_KEYSIGNATURE_6FMI      "変ホ短調"
+	IDS_KEYSIGNATURE_5FMI      "変ロ短調"
+	IDS_KEYSIGNATURE_4FMI      "ヘ短調"
+	IDS_KEYSIGNATURE_3FMI      "ハ短調"
+	IDS_KEYSIGNATURE_2FMI      "ト短調"
+	IDS_KEYSIGNATURE_1FMI      "ニ短調"
+}
+
+
+STRINGTABLE DISCARDABLE {
+	IDS_TRACKLIST              "トラックリスト"
+	IDS_PIANOROLL              "ピアノロール"
+	IDS_EVENTLIST              "イベントリスト"
+	IDS_MUSICALSCORE           "譜面"
+}
+
+STRINGTABLE DISCARDABLE {
+	IDS_DEFAULTFONTNAME        "ＭＳ　Ｐゴシック"
+	IDS_TIMEMEASUREFONTNAME    "System"
+}
+
+
+//-----------------------------------------------------------------------------
+// 文字列テーブル
+//-----------------------------------------------------------------------------
+
+STRINGTABLE DISCARDABLE {
+	IDS_READMEFILENAME         "readme.txt"
+	IDS_READMEDIRNAME          ""
+	IDS_LICENSEFILENAME        "license.txt"
+	IDS_LICENSEDIRNAME         ""
+	IDS_MANUALFILENAME         "docs\\Sekaiju.pdf"
+	IDS_MANUALDIRNAME          "docs\\"
+	IDS_INSTRUMENTFILENAME     "instrument\\*.ins"
+	IDS_INSTRUMENTDIRNAME      "instrument\\"
+	IDS_AUTOSAVEFILEFORMAT     "autosave\\%04d%02d%02d_%02d%02d%02d_%08X.skj"
+	IDS_AUTOSAVEFILENAME       "autosave\\*.skj"
+	IDS_AUTOSAVEDIRNAME        "autosave\\"
+	IDS_HOMEPAGEADDRESS        "http://openmidiproject.sourceforge.jp/"
+}
+
+// アプリケーションクラス用
+STRINGTABLE DISCARDABLE {
+	IDS_NONE
+		"(なし)"
+	IDS_MIDI_MAPPER
+		"MIDI マッパー"
+	IDS_RECEIVE_MIDI_TIMING_CLOCK
+		"MIDIタイミングクロック受信"
+	IDS_RECEIVE_SMPTE_MTC
+		"SMPTE/MTC受信"
+	IDS_SEND_MIDI_TIMING_CLOCK
+		"MIDIタイミングクロック送信"
+	IDS_SEND_SMPTE24_MTC
+		"SMPTE24/MTC送信"
+	IDS_SEND_SMPTE25_MTC
+		"SMPTE25/MTC送信"
+	IDS_SEND_SMPTE29P97_MTC
+		"SMPTE29.97/MTC送信"
+	IDS_SEND_SMPTE30_MTC
+		"SMPTE30/MTC送信"
+	IDS_MIDIDEVICE_AND_INSTRUMENT
+		"MIDIデバイスとインストゥルメント"
+	IDS_MIDISYNCMODE
+		"MIDI同期モード"
+	IDS_OPTIONS
+		"オプション"
+	IDS_TICKS_PER_QUARTER_NOTE
+		"[ティック/四分音符]"
+	IDS_SUBFRAMES_PER_FRAME
+		"[サブフレーム/フレーム]"
+
+}
+
+// アプリケーションクラス用メッセージ
+STRINGTABLE DISCARDABLE {
+	IDS_INSUFFICIENT_MEMORY_FOR_EXEFILENAME       
+		"実行ファイル名用のメモリが不足しています。"
+	IDS_SHAREMEMORY_FOR_SEND_OPEN_ERROR          
+		"共有メモリ(送信側)オープンエラー。"
+	IDS_SHAREMEMORY_FOR_SEND_MAPPING_ERROR       
+		"共有メモリ(送信側)マッピングエラー。"
+	IDS_SHAREMEMORY_FOR_RECV_OPEN_ERROR          
+		"共有メモリ(受信側)オープンエラー。"
+	IDS_SHAREMEMORY_FOR_RECV_MAPPING_ERROR       
+		"共有メモリ(受信側)マッピングエラー。"
+	IDS_RECPLAYTHREAD_CREATE_ERROR                
+		"録音再生スレッドを作成することができません。"
+	IDS_S_N_MIDIINSTDEF_D_FIND_FAILED
+		"%s\nMIDIインストゥルメント定義[%d]が見つかりません。"
+	IDS_S_N_MIDIINDEVICE_D_OPEN_FAILED
+		"%s\nMIDI入力デバイス[%d]が開けません。"
+	IDS_S_N_MIDIOUTDEVICE_D_OPEN_FAILED
+		"%s\nMIDI出力デバイス[%d]が開けません。"
+	IDS_INSUFFICIENT_MEMORY_OR_INSUFFICIENT_RESOURCE
+		"メモリ不足又はリソース不足です。"
+	IDS_S_N_FILE_OPEN_FAILED
+		"%s\nファイルが開けません。"
+	IDS_ARE_YOU_SURE_TO_DELETE_ALL_AUTOSAVEFILE_NOW_REALLY
+		"本当にすべての自動保存ファイルを削除してもよろしいですか。"
+	IDS_LANGUAGE_WILL_BE_CHANGED_AT_THE_NEXT_STARTUP
+"言語の変更は次回起動時に反映されます。世界樹を再起動しください。\012\
+Language will be changed at the next startup. Please restart Sekaiju."
+}
+
+// ドキュメントクラス用メッセージ
+STRINGTABLE DISCARDABLE {
+	IDS_MIDIDATA_CREATE_FAILED
+		"MIDIデータの生成に失敗しました。"
+	IDS_MIDICLOCK_CREATE_FAILED
+		"MIDIクロックの生成に失敗しました。"
+	IDS_S_N_FILE_LOAD_FAILED
+		"%s\nファイルの読み込みに失敗しました。"
+	IDS_THIS_MIDIDATA_IS_FORMAT0_N_CONVERT_TO_FORMAT1
+		"このMIDIデータはフォーマット0です。\nフォーマット1に変換しますか。"
+	IDS_S_N_INVALID_EXT_N_FILE_LOAD_FAILED
+		"%s\n拡張子が正しくありません。\nファイルの読み込みに失敗しました。"
+	IDS_S_N_MIDIDATA_SAVE_FAILED
+		"%s\nMIDIデータの保存中にエラーが発生しました。"
+	IDS_S_N_INVALID_EXT_N_FILE_SAVE_FAILED
+		"%s\nファイル拡張子が正しくありません。\n保存に失敗しました。"
+	IDS_D_MIDIEVENTS_CHANNEL_IS_CONFLICTED_N_CONVERT_TO_MIDITRACKS_CHANNEL
+"%d個のMIDIイベントのチャンネルが、トラックリストで指定した出力チャンネルと異なっています。\012\
+これらのMIDIイベントのチャンネルを、トラックリストで指定した出力チャンネルに修正しますか？"
+	IDS_D_MIDIEVENTS_DURATION_IS_LESS_THAN_0_N_DELETE_THESE_MIDIEVENTS
+"%d個のノートイベントの音長さが、0ティック以下になっています。\012\
+これらのノートイベントを削除しますか？" 
+	IDS_D_ENDOFTRACKEVENT_IS_NOT_LAST_PLACE_N_DELETE_THESE_ENDOFTRACKEVENTS
+"%d個のエンドオブトラックイベントが、トラックの最後ではない場所にあります。\012\
+これらのエンドオブトラックイベントを削除しますか？" 
+	IDS_D_MIDITRACK_DOESNT_HAVE_ENDOFTRACKEVENT_N_INSERT_ENDOFTRACKEVENTS
+"%d個のトラックで、エンドオブトラックイベントがトラックの最後にありません。\012\
+これらのトラックにエンドオブトラックイベントを挿入しますか？"
+	IDS_TIMEMODE_OF_CLIPBOARD_IS_ABNORMAL
+		"クリップボードのタイムモードが異常です。"
+	IDS_INSUFFICIENT_MEMORY
+		"メモリ不足です。"
+	IDS_05D_02D_03D_MEASURE_BEAT_TICK
+		"%05d:%02d:%03d [小節:拍:ﾃｨｯｸ]"
+	IDS_08D_03D_FRAME_TICK
+		"%08d:%03d [ﾌﾚｰﾑ番号:ﾃｨｯｸ]"
+	IDS_02D_02D_02D_03D_HOUR_MINUTE_SECOND_MILLISEC
+		"%02d:%02d:%02d:%03d [時間:分:秒:ミリ秒]"
+	IDS_UNABLE_TO_UNDO_ANYMORE
+		"これ以上元に戻せません。"
+	IDS_UNABLE_TO_UNDO_T_CTRL_Z
+		"元に戻せません(&U)\tCtrl+Z"
+	IDS_UNDO_02D_02D_02D_S_T_CTRL_Z
+		"元に戻す(&U)[%02d:%02d:%02d %s]\tCtrl+Z"
+	IDS_UNABLE_TO_REDO_ANYMORE
+		"これ以上やり直しできません。"
+	IDS_UNABLE_TO_REDO_T_CTRL_Y
+		"やり直しできません(&R)\tCtrl+Y"
+	IDS_REDO_02D_02D_02D_S_T_CTRL_Y
+		"やり直し(&R)[%02d:%02d:%02d %s]\tCtrl+Y"
+	IDS_INITIALIZE_HISTORY
+"作業履歴を初期化すると「元に戻す」「やり直し」ができなくなります。\012\
+本当に作業履歴を初期化してよろしいですか？"
+	IDS_UNABLE_TO_WRITE_TO_CLIPBOARD
+		"クリップボードへの転送に失敗しました。"
+	IDS_UNABLE_TO_READ_FROM_CLIPBOARD
+		"クリップボードからの読み込みに失敗しました。"
+	IDS_NO_AVAILABLE_MIDIDATA_IN_THE_CLIPBOARD
+		"クリップボードの形式は有効なMIDIデータではありません。"
+	IDS_PASTE_FAILED
+		"貼り付けは失敗しました。"
+	IDS_D_MIDIEVENTS_WERE_INSERTED
+		"%d個のイベントが挿入されました。"
+	IDS_D_MIDIEVENTS_TRACKINDEX_ISNT_CHANGED
+		"%d個のイベントがトラックの変更に失敗しました。"
+	IDS_UNABLE_TO_BEATSCAN_WITH_FORMAT0_MIDIDATA
+		"フォーマット0のMIDIデータでは、ビートスキャンはできません。"
+	IDS_UNABLE_TO_BEATSCAN_WITH_SMPTEBASE_MIDIDATA
+		"SMPTEベースのMIDIデータでは、ビートスキャンはできません。"
+	IDS_SELECTED_NOTEEVENT_IS_TOO_FEW_IN_THE_SPECIFIED_TRACK
+		"指定トラック内で選択されているビート数が少なすぎます。"
+	IDS_D_NOTEVENT_IS_DETECTED_IN_THE_SPECIFIED_TRACK_CONTINUE
+"指定トラック内で%d個の選択されているビートが検出されました。\012\
+ビートスキャン開始位置 = %05d:%02d:%03d\012\
+ビートスキャン終了位置 = %05d:%02d:%03d\012\
+処理を続けますか？"
+	IDS_ABNORMAL_FORMAT_MIDIDATA_IN_THE_CLIPBOARD
+		"クリップボードのSMFフォーマット(0/1/2)が異常です。"
+	IDS_D_MIDICHANNELEVENTS_ARE_IN_THE_FIRST_TRACK_ARE_YOU_SURE_TO_REPAIR_THEM
+"%d個のMIDIチャンネルイベントが最初のトラックに混入しています。\012\
+これらのMIDIチャンネルイベントを別のトラックに移動しますか？\012\
+(いいえを選択するとこのMIDIデータを編集・保存できない状態で開きます。)"
+	IDS_D_TEMPOEVENTS_ARE_IN_THE_SECOND_TRACK_ARE_YOU_SURE_TO_REPAIR_THEM
+"%d個のテンポ・SMPTEオフセット・拍子記号・調性記号イベントが\012\
+2番目以降のトラックに混入しています。\012\
+これらのイベントを最初のトラックに移動しますか？\012\
+(いいえを選択するとこのMIDIデータを編集・保存できない状態で開きます。)"
+	IDS_THIS_MIDIDATA_CANT_BE_EDITED_OR_SAVED_BECAUSE_IT_IS_ABNORMAL
+		"このMIDIデータには異常があるため、編集・保存することはできません。"
+	IDS_UNABLE_TO_SAVE_SMPTE_BASE_SAVE_AS_MIDICSV
+		"SMPTEベースのMIDIデータをMIDICSV形式で保存することはできません。"
+}
+
+
+
+
+// トラックリストの列名文字列
+STRINGTABLE DISCARDABLE {
+	IDS_NAME "名前"
+	IDS_COLOR "色"
+	IDS_INPUTON "入力ON"
+	IDS_INPUTPORT "入力ﾎﾟｰﾄ"
+	IDS_INPUTCHANNEL "入力ﾁｬﾝﾈﾙ"
+	IDS_OUTPUTON "出力ON"
+	IDS_OUTPUTPORT "出力ﾎﾟｰﾄ"
+	IDS_OUTPUTCHANNEL "出力ﾁｬﾝﾈﾙ"
+	IDS_VIEWMODE "表示ﾓｰﾄﾞ"
+	IDS_CC_0 "CC#0"
+	IDS_CC_32 "CC#32"
+	IDS_PROGRAM_NUMBER "ﾌﾟﾛｸﾞﾗﾑﾅﾝﾊﾞｰ"
+	IDS_VOLUME "ﾎﾞﾘｭｰﾑ"
+	IDS_PAN "ﾊﾟﾝ"
+	IDS_REVERB "ﾘﾊﾞｰﾌﾞ"
+	IDS_CHORUS "ｺｰﾗｽ"
+	IDS_DELAY "ﾃﾞｨﾚｲ"
+	IDS_TIMEPLUS "ﾀｲﾑ+"
+	IDS_KEYPLUS "ｷｰ+"
+	IDS_VELPLUS "ﾍﾞﾛ+"
+	IDS_NUMEVENT "ｲﾍﾞﾝﾄ数"
+}
+
+// トラックリストウィンドウ用固定文字列
+STRINGTABLE DISCARDABLE {
+	IDS_SHOW "show"
+	IDS_HIDE "hide"
+	IDS_ENABLE "enable"
+	IDS_LOCK "lock"
+	IDS_ON "on"
+	IDS_OFF "off"
+	IDS_DRUM "ﾄﾞﾗﾑ"
+	IDS_NORM "通常"
+	IDS_N_A "n/a"
+}
+
+// トラックリストウィンドウ用メッセージボックス文字列
+STRINGTABLE DISCARDABLE {
+	IDS_UNABLE_TO_ADD_TRACK_IN_FORMAT0_MIDIDATA
+		"フォーマット0のMIDIデータにはトラックを追加できません。"
+	IDS_UNABLE_TO_ADD_TRACK_BEFORE_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータの最初のトラックの前にはトラックを追加できません。"
+	IDS_UNABLE_TO_ADD_TRACK_ANY_MORE
+		"これ以上トラックを追加できません。"
+	IDS_UNABLE_TO_DUPLICATE_TRACK_IN_FORMAT0_MIDIDATA
+		"フォーマット0のMIDIデータにはトラックを複写できません。"
+	IDS_UNABLE_TO_DUPLICATE_THE_FIRST_TRACK_IN_FORMAT1_MIDIATA
+		"フォーマット1のMIDIデータの最初のトラックは複写できません。"
+	IDS_THE_SOURCE_TRACK_IS_EMPTY
+		"複写元のトラックがありません。"
+	IDS_UNABLE_TO_DELETE_THE_FIRST_TRACK
+		"最初のトラックは削除できません。"
+	IDS_THE_SPECIFIED_TRACK_IS_EMPTY
+		"ここには削除するトラックがありません。"
+	IDS_NO_TRACK_IS_SELECTED_TO_BE_MOVED
+		"移動するトラックが選ばれていません。"
+	IDS_UNABLE_TO_MOVE_TRACK_IN_FORMAT0_MIDIDATA
+		"フォーマット0のMIDIデータではトラックを移動できません。"
+	IDS_UNABLE_TO_MOVE_UP_THE_FIRST_AND_THE_SECOND_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは最初のトラックと2番目のトラックは上へ移動できません。"
+	IDS_UNABLE_TO_MOVE_UP_THE_FIRST_TRACK_IN_FORMAT2_MIDIDATA
+		"フォーマット2のMIDIデータでは最初のトラックは上へ移動できません。"
+	IDS_TRACK_MOVE_FAILED
+		"トラックの移動に失敗しました。"
+	IDS_UNABLE_TO_MOVE_DOWN_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは最初のトラックは下へ移動できません。"
+	IDS_UNABLE_TO_MOVE_DOWN_THIS_TRACK_ANY_MORE
+		"このトラックはこれ以上下へ移動できません。"
+	IDS_CURRENT_VIEW_IS_NOT_EXIST
+		"現在のビューがありません。"
+	IDS_INPUT_HALF_WIDTH_NUMBER_FROM_1_TO_16
+		"1以上16以下の半角整数を入れてください。"
+	IDS_INPUT_HALF_WIDTH_NUMBER_FROM_0_TO_16
+		"0以上16以下の半角整数を入れてください。"
+	IDS_UNABLE_TO_INSERT_CONTROLCHANGE_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは、最初のトラックにはコントロールチェンジを入れられません。"
+	IDS_UNABLE_TO_INSERT_PROGRAMCHANGE_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは、最初のトラックにはプログラムチェンジを入れられません。"
+	IDS_INPUT_HALF_WIDTH_NUMBER_FROM_0_TO_127
+		"0以上127以下の半角整数を入れてください。"
+	IDS_INPUT_HALF_WIDTH_NUMBER_FROM_M127_TO_127
+		"-127以上127以下の半角整数を入れてください。"
+	IDS_UNABLE_TO_EDIT_THIS_TRACK_IN_FORMAT0_MIDIDATA
+		"フォーマット0のMIDIデータでは、最初のトラック以外操作できません。"
+	IDS_UNABLE_TO_SET_TIMEPLUS_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは、最初のトラックではタイム+は使えません。"
+	IDS_UNABLE_TO_SET_KEYPLUS_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは、最初のトラックではキー+は使えません。"
+	IDS_UNABLE_TO_SET_VELPLUS_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは、最初のトラックではベロシティ+は使えません。"
+
+}
+
+// イベントリストウィンドウ用列名文字列
+STRINGTABLE DISCARDABLE {
+	IDS_TRACK "ﾄﾗｯｸ"
+	IDS_HOUR_MINUTE_SECOND_MILLISEC "時:分:秒:ﾐﾘ秒"
+	IDS_MEASURE_BEAT_TICK "小節:拍:ﾃｨｯｸ"
+	IDS_EVENT_KIND "ｲﾍﾞﾝﾄの種類"
+	IDS_CHANNEL "ﾁｬﾝﾈﾙ"
+	IDS_VALUE1 "値1"
+	IDS_VALUE2 "値2"
+	IDS_VALUE3 "値3"
+	IDS_FRAME_SUBFRAME "ﾌﾚｰﾑ:ｻﾌﾞﾌﾚｰﾑ"
+}
+
+// イベントリストウィンドウ用固定文字列
+STRINGTABLE DISCARDABLE {
+	IDS_INCLUDING_VELOCITY0_NOTEON "(ﾍﾞﾛｼﾃｨ0のﾉｰﾄｵﾝ含む)"
+	IDS_UNKNOWN_EVENT_KIND "不明な種類のｲﾍﾞﾝﾄ"
+	IDS_1P2LF_BPM_EQ_D_MICROSEC_PER_QUARTER_NOTE "%1.2lf[BPM] (=%d[μ秒/4分音符])"
+	IDS_S_FPS_D_HOUR_D_MINUTE_D_SEC_D_FRAME_D_SUBFRAME 
+		"%s[FPS] : %d[時] : %d[分] : %d[秒] : %d[フレーム] : %d[サブフレーム]"
+	IDS_24 "24"
+	IDS_25 "25"
+	IDS_29P97 "29.97"
+	IDS_30 "30"
+	IDS_ERROR "エラー"
+	IDS_D_PER_D_D_CLOCK_PER_BEAT_D_32DIVNOTE_PER_BEAT
+		"%d/%d : %d[クロック/4分音符] : %d[32分音符/4分音符]"
+	IDS_SHARP "#"
+	IDS_FLAT "b"
+	IDS_MAJOR "major"
+	IDS_MINOR "minor"
+	IDS_D_S_S_EQ_S "%d%s : %s (=%s)"
+
+}
+
+// イベントリストウィンドウ用メッセージボックス文字列
+STRINGTABLE DISCARDABLE {
+	IDS_A_SEPARATOR_BETWEEN_MEASURE_AND_BEAT_IS_NOT_FOUND
+		"小節と拍を区切る半角の:が見つかりません。"
+	IDS_MEASURE_MUST_BE_HALF_WIDTH_NUMBER
+		"小節番号は半角の数字を入力してください。"
+	IDS_MEASURE_VALUE_IS_OUT_OF_RANGE
+		"小節番号が正しくありません。"
+	IDS_A_SEPARATOR_BETWEEN_BEAT_AND_TICK_IS_NOT_FOUND
+		"拍とティックを区切る半角の:が見つかりません。"
+	IDS_BEAT_MUST_BE_HALF_WIDTH_NUMBER
+		"拍番号は半角の数字を入力してください。"
+	IDS_BEAT_VALUE_IS_OUT_OF_RANGE
+		"拍番号が正しくありません。"
+	IDS_TICK_MUST_BE_HALF_WIDTH_NUMBER
+		"ティック番号は半角の数字を入力してください。"
+	IDS_TICK_VALUE_IS_OUT_OF_RANGE
+		"ティック番号が正しくありません。"
+	IDS_UNABLE_TO_INSERT_THE_EVENT_TO_THIS_TRACK
+		"挿入トラックが正しくありません。"
+	IDS_UNABLE_TO_INSERT_ENDOFTRACK_TO_THIS_TRACK_ANY_MORE
+		"1つのトラックに2つ以上のエンドオブトラックを挿入することはできません。"
+	IDS_UNABLE_TO_INSERT_THIS_EVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+"フォーマット1のMIDIデータの最初のトラックには、\012\
+ノートオフ・ノートオン・キーアフタータッチ・\012\
+コントロールチェンジ・プログラムチェンジ・\012\
+チャンネルアフタータッチ・ピッチベンド\012\
+を挿入することはできません。"
+	IDS_UNABLE_TO_INSERT_THIS_EVENT_TO_THE_SECOND_TRACK_IN_FORMAT1_MIDIDATA
+"フォーマット1のMIDIデータの2番目以降のトラックには、\012\
+テンポ・SMPTEオフセット・拍子記号・調性記号\012\
+を挿入することはできません。"
+	IDS_INSERT_EVENT_FAILED
+		"イベントの挿入に失敗しました。"
+	IDS_CURRENT_MIDIEVENT_IS_EMPTY
+		"MIDIイベントが選択されていません。"
+	IDS_MIDIEVENT_DUPLICATE_FAILED
+		"イベントの複写に失敗しました。"
+	IDS_UNABLE_TO_DELETE_THE_LAST_ENDOFTRACK_IN_A_TRACK
+		"トラック最後のエンドオブトラックイベントは削除できません。"
+	IDS_TRACK_MUST_BE_HALF_WIDTH_NUMBER
+		"トラック番号は半角の数字を入力してください。"
+	IDS_TRACK_VALUE_IS_OUT_OF_RANGE
+		"トラック番号が正しくありません。"
+	IDS_UNABLE_TO_MOVE_THE_LAST_ENDOFTRACK_TO_THE_OTHER_TRACK
+		"最後のエンドオブトラックは他のトラックに移動することはできません。"
+	IDS_MODIFY_EVENT_TRACK_FAILED
+		"イベントのトラック変更に失敗しました。"
+	IDS_A_SEPARATOR_BETWEEN_FRAME_AND_TICK_IS_NOT_FOUND
+		"フレーム番号とティックを区切る半角の:が見つかりません。"
+	IDS_FRAME_MUST_BE_HALF_WIDTH_NUMBER
+		"フレーム番号は半角の数字を入力してください。"
+	IDS_FRAME_VALUE_IS_OUT_OF_RANGE
+		"フレーム番号は0以上99999999以下の整数を入力してください。"
+	IDS_SUBFRAME_MUST_BE_HALF_WIDTH_NUMBER
+		"サブフレーム番号は半角の数字を入力してください。"
+	IDS_SUBFRAME_VALUE_IS_OUT_OF_RANGE
+		"サブフレーム番号は0以上960以下の半角整数を入力してください。"
+	IDS_UNABLE_TO_MODIFY_THE_LAST_ENDOFTRADK
+		"トラック最後のエンドオブトラックは変更できません。"
+	IDS_FAILED_TO_MODIFY_EVENT_KIND
+		"イベントの種類の変更に失敗しました。"
+	IDS_ARE_YOU_SURE_TO_MOVE_THIS_EVENT_TO_THE_FIRST_TRACK
+"テンポ・SMPTEオフセット・拍子記号・調性記号イベントは、\012\
+最初のトラックに置かなければなりません。\012\
+このイベントを自動的に最初のトラックに移動しますか？"
+	IDS_UNEXPECTED_EVENT_KIND
+		"一致するイベントの種類が見つかりません。"
+	IDS_UNABLE_TO_SPECIFIY_EVENT_CHANNEL_OF_THIS_EVENT
+		"このイベントの種類はチャンネルを設定できません。"
+	IDS_CHANNEL_MUST_BE_HALF_WIDTH_NUMBER_FROM_1_TO_16
+		"チャンネル番号は1以上16以下の半角整数を入力してください。"
+	IDS_SEQUENCENUMBER_MUST_BE_HALF_WIDTH_NUMBER_FROM_0_TO_65535
+		"シーケンス番号は0以上65535以下の半角整数を入力してください。"
+	IDS_CHANNELPREFIX_MUST_BE_HALF_WIDTH_NUMBER_FROM_1_TO_16
+		"チャンネルプリフィックスは1以上16以下の半角の数字を入力してください。"
+	IDS_PORTPREFIX_MUST_BE_HALF_WIDTH_NUMBER_FROM_0_TO_255
+		"ポート番号は半角の数字を入力してください。"
+	IDS_ENDOFTRACK_HAS_NO_VALUE
+		"エンドオブトラックには設定可能なデータはありません。"
+	IDS_A_SEPARATOR_IS_NOT_FOUND
+		"セパレータ:が見つかりません。"
+	IDS_FPS_MUST_BE_24_OR_25_OR_29P97_OR_30
+		"[FPS]は24又は25又は29.97又は30でなければなりません。"
+	IDS_HOUR_MUST_BE_HALF_WIDTH_NUMBER
+		"[時]は半角の数字を入力してください。"
+	IDS_MINUTE_MUST_BE_HALF_WIDTH_NUMBER
+		"[分]は半角の数字を入力してください。"
+	IDS_SECOND_MUST_BE_HALF_WIDTH_NUMBER
+		"[秒]は半角の数字を入力してください。"
+//	IDS_FRAME_MUST_BE_HALF_WIDTH_NUMBER
+//		"[フレーム]は半角の数字を入力してください。"		
+	IDS_NUMERATOR_MUST_BE_HALF_WIDTH_NUMBER
+		"分子は半角の数字を入力してください。"
+	IDS_DENOMINATOR_MUST_BE_HALF_WIDTH_NUMBER
+		"分母は半角の数字を入力してください。"
+	IDS_A_SEPARATOR_BETWEEN_NUMERATOR_AND_DENOMINATOR_IS_NOT_FOUND
+		"分子と分母を隔てる/が見つかりません。"
+	IDS_DENOMINATOR_MUST_BE_1_OR_2_OR_4_OR_8_OR_16_OR_32
+		"分母は1,2,4,8,16,32のいずれかを入力してください。"
+	IDS_CLOCKSPERBEAT_MUST_BE_HALF_WIDTH_NUMBER
+		"1拍あたりのクロック数は半角の数字を入力してください。"
+	IDS_32DIVNOTEPERBEAT_MUST_BE_HALF_WIDTH_NUMBER
+		"1拍あたりの32分音符の数は半角の数字を入力してください。"
+	IDS_KEYSIGNATURE_MUST_BE_7B_6B_5B_4B_3B_2B_1B_0_1S_2S_3S_4S_5S_6S_7S
+		"#又はbの数は、7b,6b,5b,4b,3b,2b,1b,0,1#,2#,3#,4#,5#,6#,7#のいずれかでなければなりません。"
+	IDS_KEYSCALE_MUST_BE_MAJOR_OR_MINOR
+		"長調/短調の区別は、majorかminorでなければなりません。"
+	IDS_SYSEX_DATA_MUST_BEGIN_WITH_F0
+		"システムエクスクルーシブデータはF0で始まらなければなりません。"
+	IDS_SYSEX_DATA_BETWEE_F0_AND_F7_MUST_BE_FROM_00_TO_7F
+		"F0とF7の間にあるデータは00以上7F以下でなければなりません。"
+	IDS_SYSEX_DATA_MUST_END_WITH_F7
+		"システムエクスクルーシブデータはF7で終わらなければなりません。"
+	IDS_UNABLE_TO_MODIFY_UNDEFINED_EVENT
+		"未定義の種類のイベントは変更できません。"
+}
+
+
+// ピアノロール用/譜面用固定文字列
+STRINGTABLE DISCARDABLE {
+	IDS_TEMPO "テンポ"
+	IDS_VELOCITY "ベロシティ"
+	IDS_CHANNELAFTERTOUCH "チャンネルアフタータッチ"
+	IDS_PITCHBEND "ピッチベンド"
+	IDS_CC_D_S "CC#%d-%s"
+	IDS_D_4DIVNOTE "%d-4分音符"
+	IDS_D_8DIVNOTE "%d-8分音符"
+	IDS_D_12DIVNOTE "%d-3連8分音符"
+	IDS_D_16DIVNOTE "%d-16分音符"
+	IDS_D_24DIVNOTE "%d-3連16分音符"
+	IDS_D_32DIVNOTE "%d-32分音符"
+	IDS_D_48DIVNOTE "%d-3連32分音符"
+	IDS_D_FREE "%d-自由"
+	IDS_D_1FRAME "%d-1フレーム"
+	IDS_D_2DIVFRAME "%d-1/2フレーム"
+	IDS_D_3DIVFRAME "%d-1/3フレーム"
+	IDS_D_4DIVFRAME "%d-1/4フレーム"
+	IDS_D_6DIVFRAME "%d-1/6フレーム"
+	IDS_D_8DIVFRAME "%d-1/8フレーム"
+	IDS_D_12DIVFRAME "%d-1/12フレーム"
+
+}
+
+// ピアノロール用/譜面用メッセージ文字列
+STRINGTABLE DISCARDABLE {
+	IDS_UNABLE_TO_INSERT_NOTEEVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは、最初のトラックにはノートイベントを挿入できません。"
+	IDS_UNABLE_TO_INSERT_NOTEEVENT_ANY_MORE_BEACUSE_OF_INSUFFICIENT_MEMORY
+		"メモリ又はリソース不足です。これ以上ノートイベントを挿入できません。"
+	IDS_UNABLE_TO_DELETE_NOTEEVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは、最初のトラックではノートイベントを削除できません。"
+	IDS_UNABLE_TO_INSERT_GRAPHEVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは最初のトラックにはグラフを挿入できません。"
+	IDS_UNABLE_TO_DELETE_GRAPHEVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"フォーマット1のMIDIデータでは最初のトラックではグラフを削除できません。"
+}
+
+// ファイルダイアログ用文字列
+STRINGTABLE DISCARDABLE {
+	IDS_ALL_MIDI_SEQUENCE_AD_SKJ_AD_CHY_AD_MID_AD_VSQ
+		"すべてのMIDIシーケンス (*.skj;*.chy;*.mid;*.csv;*.vsq)"
+	IDS_AD_SKJ_AD_CHY_AD_MID_AD_VSQ
+		"*.skj;*.chy;*.mid;*.csv;*.vsq"
+	IDS_SEKAIJU_SEQUENCE_FILES_AD_SKJ
+		"世界樹シーケンスファイル (*.skj)"
+	IDS_AD_SKJ
+		"*.skj"
+	IDS_D_SKJ
+		".skj"
+	IDS_CHERRY_SEQUENCE_FILES_AD_CHY
+		"Cherryシーケンスファイル (*.chy)"
+	IDS_AD_CHY
+		"*.chy"
+	IDS_D_CHY
+		".chy"
+	IDS_STANDARD_MIDI_FILES_AD_MID
+		"スタンダードMIDIファイル (*.mid)"
+	IDS_AD_MID
+		"*.mid"
+	IDS_D_MID
+		".mid"
+	IDS_MIDI_CSV_FILES_AD_CSV
+		"MIDICSVファイル (*.csv)"
+	IDS_AD_CSV
+		"*.csv"
+	IDS_D_CSV
+		".csv"
+	IDS_VOCALOID2_FILES_AD_VSQ
+		"vocaloid2ファイル (*.vsq)"
+	IDS_AD_VSQ
+		"*.vsq"
+	IDS_D_VSQ
+		".vsq"
+	IDS_ALL_FILES_AD_A
+		"すべてのファイル (*.*)"
+	IDS_AD_A
+		"*.*"
+	IDS_COMMA_SEPARATED_TEXT_FILES_AD_CSV
+		"カンマ区切りテキストファイル (*.csv)"
+	//IDS_AD_CSV
+	//	"*.csv"
+	//IDS_D_CSV
+	//	".csv"
+	IDS_TAB_SEPARATED_TEXT_FILES_AD_TXT
+		"タブ区切りテキストファイル (*.txt)"
+	IDS_AD_TXT
+		"*.txt"
+	IDS_D_TXT
+		".txt"
+}
+
+
+// 履歴名称用文字列
+STRINGTABLE DISCARDABLE {
+	IDS_MODIFY_MIDICHANNEL
+		"MIDIチャンネルの修正"
+	IDS_DELETE_NOTEEVENT
+		"ノートイベントの削除"
+	IDS_DELETE_ENDOFTRACKEVENT
+		"エンドオブトラックイベントの削除"
+	IDS_ADD_ENDOFTRACKEVENT
+		"エンドオブトラックイベントの追加"
+	IDS_FILE_MODIFY_PROPERTY
+		"ファイル-プロパティの変更"
+	IDS_EDIT_CUT
+		"編集-切り取り"
+	IDS_EDIT_COPY
+		"編集-コピー"
+	IDS_EDIT_PASTE
+		"編集-貼り付け"
+	IDS_EDIT_DELETE
+		"編集-削除"
+	IDS_EDIT_SELECT_ALL
+		"編集-すべて選択"
+	IDS_EDIT_DESELECT_ALL
+		"編集-すべて選択解除"
+	IDS_EDIT_SELECT_BEFORE
+		"編集-現在位置より前のイベントを追加選択"
+	IDS_EDIT_DESELECT_BEFORE
+		"編集-現在位置より前のイベントを選択解除"
+	IDS_EDIT_SELECT_AFTER
+		"編集-現在位置より後のイベントを追加選択"
+	IDS_EDIT_DESELECT_AFTER
+		"編集-現在位置より後のイベントを選択解除"
+	IDS_EDIT_MODIFY_TRACKINDEX
+		"編集-トラックの変更"
+	IDS_EDIT_MODIFY_TIME
+		"編集-タイムの変更"
+	IDS_EDIT_MODIFY_CHANNEL
+		"編集-チャンネルの変更"
+	IDS_EDIT_MODIFY_KEY
+		"編集-音程の変更"
+	IDS_EDIT_MODIFY_VELOCITY
+		"編集-ベロシティの変更"
+	IDS_EDIT_MODIFY_DURATION
+		"編集-音長さの変更"
+	IDS_EDIT_MODIFY_VALUE
+		"編集-値の変更"
+	IDS_EDIT_BREAKUP_AND_TRILL
+		"編集-音符の細分化とトリル化"
+	IDS_EDIT_QUANTIZE
+		"編集-クォンタイズ"
+	IDS_EDIT_BEATSCAN
+		"編集-ビートスキャンとテンポ自動挿入"
+	IDS_EDIT_INSERTMEASURE
+		"編集-小節を挿入"
+	IDS_EDIT_REMOVEMEASURE
+		"編集-小節を除去"
+	IDS_ONLY_THIS_TRACK_INPUT_ON
+		"このトラックのみ入力ON"
+	IDS_ONLY_THIS_TRACK_INPUT_OFF
+		"このトラックのみ入力OFF"
+	IDS_ALL_TRACK_INPUT_ON
+		"全トラック入力ON"
+	IDS_ONLY_THIS_TRACK_OUTPUT_ON
+		"このトラックのみ出力ON"
+	IDS_ONLY_THIS_TRACK_OUTPUT_OFF
+		"このトラックのみ出力OFF"
+	IDS_ALL_TRACK_OUTPUT_ON
+		"全トラック出力ON"
+	
+}
+
+STRINGTABLE DISCARDABLE {
+	IDS_INSERT_TRACK
+		"トラックの挿入"
+	IDS_DUPLICATE_TRACK
+		"トラックの複写"
+	IDS_MOVE_TRACK
+		"トラックの移動"
+	IDS_DELETE_TRACK
+		"トラックの削除"
+	IDS_INSERT_EVENT
+		"イベントの挿入"
+	IDS_DUPLICATE_EVENT
+		"イベントの複写"
+	IDS_MOVE_EVENT
+		"イベントの移動"
+	IDS_DELETE_EVENT
+		"イベントの削除"
+	IDS_MODIFY_COLOR
+		"色の変更"
+	IDS_MODIFY_TRACKNAME
+		"トラック名の設定"
+	IDS_MODIFY_INPUTPORT
+		"入力ポートの変更"
+	IDS_MODIFY_INPUTCHANNEL
+		"入力チャンネルの変更"
+	IDS_MODIFY_OUTPUTPORT
+		"出力ポートの変更"
+	IDS_MODIFY_OUTPUTCHANNEL
+		"出力チャンネルの変更"
+	IDS_SET_VALUE
+		"値の設定"
+	IDS_MODIFY_CONTROLCHANGE
+		"コントロールチェンジの変更"
+	IDS_MODIFY_PROGRAMCHANGE
+		"プログラムチェンジの変更"
+	IDS_SWITCH_VALUE
+		"値の切り替え"
+	IDS_MODIFY_TIMEPLUS
+		"タイム+の変更"
+	IDS_MODIFY_KEYPLUS
+		"キー+の変更"
+	IDS_MODIFY_VELPLUS
+		"ベロシティ+の変更"
+	IDS_MODIFY_VISIBLE_ON_OFF
+		"VisibleON/OFFの変更"
+	IDS_MODIFY_ENABLE_ON_OFF
+		"EnableON/OFFの変更"
+	IDS_MODIFY_INPUT_ON_OFF
+		"入力ON/OFFの変更"
+	IDS_MODIFY_OUTPUT_ON_OFF
+		"出力ON/OFFの変更"
+	IDS_MODIFY_VIEWMODE
+		"表示モードの変更"
+	IDS_MODIFY_EVENT_TIME
+		"イベントのタイム変更"
+	IDS_MODIFY_EVENT_CHANNEL
+		"イベントのチャンネル変更"
+	IDS_MODIFY_EVENT_VALUE
+		"イベントの値変更"
+	IDS_MODIFY_EVENT_TRACK
+		"イベントのトラック変更"
+	IDS_MODIFY_EVENT_KIND
+		"イベントの種類変更"
+	IDS_MODIFY_SEQUENCENUMBER_VALUE
+		"シーケンス番号の値変更"
+	IDS_MODIFY_TEXTEVENT_VALUE
+		"テキスト系イベントの文字列変更"
+	IDS_MODIFY_CHANNELPREFIX_VALUE
+		"チャンネルプリフィックスの値変更"
+	IDS_MODIFY_PORTPREFIX_VALUE
+		"ポートプリフィックスの値変更"
+	IDS_MODIFY_TEMPO_VALUE
+		"テンポの値変更"
+	IDS_MODIFY_SMPTEOFFSET_VALUE
+		"SMPTEオフセットの値の変更"
+	IDS_MODIFY_TIMESIGNATURE
+		"拍子記号の変更"
+	IDS_MODIFY_KEYSIGNATURE
+		"調性記号の変更"
+	IDS_MODIFY_SEQUENCERSPECIFIC
+		"シーケンサ独自のイベントの変更"
+	IDS_MODIFY_MIDIEVENT_VALUE
+		"MIDIイベントの値の変更"
+	IDS_MODIFY_SYSEX_NORMAL
+		"システムエクスクルーシヴイベント(通常)の変更"
+	IDS_MODIFY_SYSEX_ARBITRARY
+		"システムエクスクルーシヴイベント(任意)の変更"
+	IDS_SELECT_DESELECT
+		"選択/選択解除"
+	IDS_MODIFY_NOTE
+		"音符の変更"
+	IDS_INSERT_NOTE
+		"音符の挿入"
+	IDS_DELETE_NOTE
+		"音符の削除"
+	IDS_DUPLICATE_NOTE
+		"音符の複写"
+	IDS_MOVE_NOTE
+		"音符の移動"
+	IDS_SELECT_DESELECT_NOTE
+		"音符の選択/選択解除"
+	IDS_INSERT_GRAPH
+		"グラフの挿入"
+	IDS_DELETE_GRAPH
+		"グラフの削除"
+	IDS_SELECT_DESELECT_GRAPH
+		"グラフの選択/選択解除"
+	IDS_DUPLICATE_MEASURE
+		"小節の複写"
+	IDS_MOVE_MEASURE
+		"小節の移動"
+	IDS_DELETE_MEASURE
+		"小節の削除"
+}
+

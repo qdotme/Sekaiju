@@ -1,0 +1,3546 @@
+//******************************************************************************
+// Sekaiju - MIDI Sequencer software
+// Resouce script file for ENU
+// (C)2002-2012 kuzu / OpenMIDIProject
+//******************************************************************************
+
+/* This library is free software; you can redistribute it and/or */
+/* modify it under the terms of the GNU Lesser General Public */
+/* License as published by the Free Software Foundation; either */
+/* version 2.1 of the License, or (at your option) any later version. */
+
+/* This library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU */
+/* Lesser General Public License for more details. */
+
+/* You should have received a copy of the GNU Lesser General Public */
+/* License along with this library; if not, write to the Free Software */
+/* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA */
+
+// This file is included from "MIDITesterRes.rc"
+
+// Warning : Don't edit this file in Resouce Editor of VisualC++.
+// Warning : Please edit this file by text editor.
+
+//-----------------------------------------------------------------------------
+// Icons
+//-----------------------------------------------------------------------------
+
+IDR_MAINFRAME           ICON    DISCARDABLE      "..\\res\\MainFrame.ico"
+IDR_SEKAIJUTYPE         ICON    DISCARDABLE      "..\\res\\SekaijuType.ico"
+
+//-----------------------------------------------------------------------------
+// Bitmaps (for Toolbars)
+//-----------------------------------------------------------------------------
+
+IDR_MAINFRAME1           BITMAP  MOVEABLE PURE   "..\\res\\Toolbar1.bmp"
+IDR_MAINFRAME2           BITMAP  MOVEABLE PURE   "..\\res\\Toolbar2.bmp"
+IDR_TRACKLIST1           BITMAP  MOVEABLE PURE   "..\\res\\TrackList1.bmp"
+IDR_PIANOROLL1           BITMAP  MOVEABLE PURE   "..\\res\\PianoRoll1.bmp"
+IDR_EVENTLIST1           BITMAP  MOVEABLE PURE   "..\\res\\EventList1.bmp"
+IDR_MUSICALSCORE1        BITMAP  MOVEABLE PURE   "..\\res\\MusicalScore1.bmp"
+
+//-----------------------------------------------------------------------------
+// Toolbars
+//-----------------------------------------------------------------------------
+
+// Toolbar1
+IDR_MAINFRAME1 TOOLBAR DISCARDABLE  16, 15 {
+	BUTTON      ID_FILE_NEW
+	BUTTON      ID_FILE_OPEN
+	BUTTON      ID_FILE_SAVE
+	SEPARATOR
+	BUTTON      ID_FILE_PRINT
+	BUTTON      ID_FILE_PRINT_PREVIEW
+	SEPARATOR
+	BUTTON      ID_EDIT_CUT
+	BUTTON      ID_EDIT_COPY
+	BUTTON      ID_EDIT_PASTE
+	BUTTON      ID_EDIT_DELETE
+	SEPARATOR
+	BUTTON      ID_EDIT_UNDO
+	BUTTON      ID_EDIT_REDO
+	SEPARATOR
+	BUTTON      ID_VIEW_TRACKLIST
+	BUTTON      ID_VIEW_PIANOROLL
+	BUTTON      ID_VIEW_EVENTLIST
+	BUTTON      ID_VIEW_MUSICALSCORE 
+	SEPARATOR
+	
+	BUTTON      ID_HELP_ABOUT
+}
+
+// Toolbar2
+IDR_MAINFRAME2 TOOLBAR DISCARDABLE 16, 15 {
+	SEPARATOR   // Hour:Minutes:Second:Millisec
+	SEPARATOR
+	SEPARATOR   // Measure:Beat:Tick
+	SEPARATOR
+	BUTTON      ID_CONTROL_TOBEGIN
+	BUTTON      ID_CONTROL_PLAY
+	BUTTON      ID_CONTROL_RECORD
+	BUTTON      ID_CONTROL_TOEND
+	SEPARATOR
+	SEPARATOR   // Position Scrollbar
+	SEPARATOR
+	BUTTON      ID_CONTROL_SPEEDNONE
+	BUTTON      ID_CONTROL_SPEEDSLOW
+	BUTTON      ID_CONTROL_SPEEDNORMAL
+	BUTTON      ID_CONTROL_SPEEDFAST
+	BUTTON      ID_CONTROL_SPEEDSLAVE
+	SEPARATOR
+	BUTTON      ID_CONTROL_AUTOREPEAT
+	SEPARATOR
+	SEPARATOR   // Time signature / Key signature
+	SEPARATOR
+	SEPARATOR   // Tempo
+}
+
+// Toolbar (for track list window)
+IDR_TRACKLIST1 TOOLBAR DISCARDABLE 16, 15 {
+	BUTTON      ID_TRACKLIST_INSERTTRACK
+	BUTTON      ID_TRACKLIST_DUPLICATETRACK
+	BUTTON      ID_TRACKLIST_DELETETRACK
+	BUTTON      ID_TRACKLIST_MOVEUPTRACK
+	BUTTON      ID_TRACKLIST_MOVEDOWNTRACK
+	SEPARATOR
+	BUTTON      ID_TRACKLIST_SELECT
+	BUTTON      ID_TRACKLIST_SPEAKER
+	SEPARATOR
+	BUTTON      ID_TRACKLIST_AUTOPAGEUPDATE
+	SEPARATOR
+	BUTTON      ID_TRACKLIST_SAVEAS
+}
+
+// Toolbar (for piano roll window)
+IDR_PIANOROLL1 TOOLBAR DISCARDABLE 16, 15 {
+	BUTTON      ID_PIANOROLL_PEN
+	BUTTON      ID_PIANOROLL_LINE
+	BUTTON      ID_PIANOROLL_ERASER
+	BUTTON      ID_PIANOROLL_SELECT
+	BUTTON      ID_PIANOROLL_SPEAKER
+	SEPARATOR
+	SEPARATOR   // Track
+	SEPARATOR
+	SEPARATOR   // Channel
+	SEPARATOR
+	SEPARATOR   // Snap
+	SEPARATOR
+	SEPARATOR   // Velocity
+	SEPARATOR
+	SEPARATOR   // Duration
+	SEPARATOR
+	SEPARATOR   // Graph Kind
+	SEPARATOR
+	SEPARATOR   // Graph Snap
+	SEPARATOR
+	BUTTON      ID_PIANOROLL_ONLYCURTRACK
+	BUTTON      ID_PIANOROLL_SHOWALLTRACK
+	SEPARATOR
+	BUTTON      ID_PIANOROLL_ONLYCURGRAPH
+	BUTTON      ID_PIANOROLL_SHOWALLGRAPH
+	SEPARATOR
+	BUTTON      ID_PIANOROLL_AUTOPAGEUPDATE
+
+
+}
+
+// Toolbar (for event list window)
+IDR_EVENTLIST1 TOOLBAR DISCARDABLE 16, 15 {
+	BUTTON      ID_EVENTLIST_INSERTEVENT
+	BUTTON      ID_EVENTLIST_DUPLICATEEVENT
+	BUTTON      ID_EVENTLIST_DELETEEVENT
+	SEPARATOR
+	SEPARATOR   // Event.Track
+	SEPARATOR
+	SEPARATOR   // Event.Time
+	SEPARATOR
+	SEPARATOR   // Event.Kind
+	SEPARATOR
+	SEPARATOR   // Event.Channel
+	SEPARATOR
+	BUTTON      ID_EVENTLIST_ONLYCURTRACK
+	BUTTON      ID_EVENTLIST_SHOWALLTRACK
+	SEPARATOR
+	BUTTON      ID_EVENTLIST_ONLYCURGRAPH
+	BUTTON      ID_EVENTLIST_SHOWALLGRAPH
+	SEPARATOR
+	BUTTON      ID_EVENTLIST_AUTOPAGEUPDATE
+	SEPARATOR
+	BUTTON      ID_EVENTLIST_SAVEAS
+}
+
+
+// Toolbar (for musical score window)
+IDR_MUSICALSCORE1 TOOLBAR DISCARDABLE 16, 15 {
+	BUTTON      ID_MUSICALSCORE_PEN
+	BUTTON      ID_MUSICALSCORE_ERASER
+	BUTTON      ID_MUSICALSCORE_SELECT
+	BUTTON      ID_MUSICALSCORE_SPEAKER
+	SEPARATOR
+	SEPARATOR   // Track
+	SEPARATOR
+	SEPARATOR   // Channel
+	SEPARATOR
+	SEPARATOR   // Snap
+	SEPARATOR
+	SEPARATOR   // Velocity
+	SEPARATOR
+	SEPARATOR   // Duration
+	SEPARATOR
+	BUTTON      ID_MUSICALSCORE_WHOLENOTE
+	BUTTON      ID_MUSICALSCORE_HALFNOTE
+	BUTTON      ID_MUSICALSCORE_QUARTERNOTE
+	BUTTON      ID_MUSICALSCORE_QUAVERNOTE
+	BUTTON      ID_MUSICALSCORE_SEMIQUAVERNOTE
+	BUTTON      ID_MUSICALSCORE_DEMISEMIQUAVERNOTE
+	BUTTON      ID_MUSICALSCORE_DOTTED
+	BUTTON      ID_MUSICALSCORE_TRIPLET
+	SEPARATOR
+	SEPARATOR   // View Resolution
+	SEPARATOR
+	BUTTON      ID_MUSICALSCORE_ONLYCURTRACK
+	BUTTON      ID_MUSICALSCORE_SHOWALLTRACK
+	SEPARATOR
+	BUTTON      ID_MUSICALSCORE_AUTOPAGEUPDATE
+}
+
+
+//-----------------------------------------------------------------------------
+// Menus
+//-----------------------------------------------------------------------------
+
+// Main Menu (when no document)
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE {
+	POPUP "&File" {
+		MENUITEM "&New\tCtrl+N",                            ID_FILE_NEW
+		MENUITEM "&Open...\tCtrl+O",                        ID_FILE_OPEN
+		MENUITEM SEPARATOR
+		MENUITEM "P&rint Setup...",                         ID_FILE_PRINT_SETUP
+		MENUITEM SEPARATOR
+		MENUITEM "MRU files",                               ID_FILE_MRU_FILE1,GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit Application",                       ID_APP_EXIT
+	}
+	POPUP "&View" {
+		MENUITEM "Toolbar&1",                               ID_VIEW_TOOLBAR1
+		MENUITEM "Toolbar&2",                               ID_VIEW_TOOLBAR2
+		MENUITEM "&StatusBar",                              ID_VIEW_STATUS_BAR
+	}
+	POPUP "&Control" {
+		MENUITEM "Speed = Pause [0%]"                       ID_CONTROL_SPEEDNONE
+		MENUITEM "Speed = Slow [?%]"                        ID_CONTROL_SPEEDSLOW
+		MENUITEM "Speed = Normal [?%]"                      ID_CONTROL_SPEEDNORMAL
+		MENUITEM "Speed = Fast [?%]"                        ID_CONTROL_SPEEDFAST
+		MENUITEM "Speed = Slave to other machine"           ID_CONTROL_SPEEDSLAVE
+		MENUITEM SEPARATOR
+		MENUITEM "&Auto Repeat"                             ID_CONTROL_AUTOREPEAT
+	}
+	POPUP "&Setup" {
+		MENUITEM "MIDI &Device and Instrument..."           ID_SETUP_MIDIDEVICE
+		MENUITEM "MIDI &Sync mode..."                       ID_SETUP_MIDISYNCMODE
+		MENUITEM "&Metronome..."                            ID_SETUP_METRONOME
+		MENUITEM "&Auto save..."                            ID_SETUP_AUTOSAVE
+		MENUITEM "&Language..."                             ID_SETUP_LANGUAGE
+		MENUITEM "&Options..."                              ID_SETUP_OPTIONS
+	}
+	POPUP "&Help" {
+		MENUITEM "&readme_en.txt...",                       ID_HELP_README
+		MENUITEM "&License...",                             ID_HELP_LICENSE
+		MENUITEM "&Documentation(PDF)...",                  ID_HELP_MANUAL
+		MENUITEM "&Project Home Page...",                   ID_HELP_PROJECTHOMEPAGE
+		MENUITEM SEPARATOR
+		MENUITEM "&About...",                               ID_HELP_ABOUT
+	}
+}
+
+// Main Menu (when with CSekaijuDoc document)
+IDR_SEKAIJUTYPE MENU PRELOAD DISCARDABLE {
+	POPUP "&File" {
+		MENUITEM "&New\tCtrl+N",                            ID_FILE_NEW
+		MENUITEM "&Open...\tCtrl+O",                        ID_FILE_OPEN
+		MENUITEM "&Close",                                  ID_FILE_CLOSE
+		MENUITEM "&Save\tCtrl+S",                           ID_FILE_SAVE
+		MENUITEM "Save &As...",                             ID_FILE_SAVE_AS
+		MENUITEM SEPARATOR
+		MENUITEM "Proper&ty..."                             ID_FILE_PROPERTY
+		MENUITEM SEPARATOR
+		MENUITEM "&Print...\tCtrl+P",                       ID_FILE_PRINT
+		MENUITEM "Print P&review...",                       ID_FILE_PRINT_PREVIEW
+		MENUITEM "P&rint Setup...",                         ID_FILE_PRINT_SETUP
+		MENUITEM SEPARATOR
+		MENUITEM "MRU Files",                               ID_FILE_MRU_FILE1,GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit application",                       ID_APP_EXIT
+	}
+	POPUP "&Edit" {
+		MENUITEM "&Undo\tCtrl+Z",                           ID_EDIT_UNDO
+		MENUITEM "&Redo\tCtrl+Y",                           ID_EDIT_REDO
+		MENUITEM "Initialize History",                      ID_EDIT_INITHISTORY
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t\tCtrl+X",                            ID_EDIT_CUT
+		MENUITEM "&Copy\tCtrl+C",                           ID_EDIT_COPY
+		MENUITEM "&Paste\tCtrl+V",                          ID_EDIT_PASTE
+		MENUITEM "&Delete\tCtrl+Del",                       ID_EDIT_DELETE
+		MENUITEM SEPARATOR
+		MENUITEM "Select &All\tCtrl+A",                     ID_EDIT_SELECTALL
+		MENUITEM "Select &None\tCtrl+D",                    ID_EDIT_SELECTNONE
+		MENUITEM "Select Events Before Cur Position",       ID_EDIT_SELECTBEFORE
+		MENUITEM "Deselect Events Before Cur Position",     ID_EDIT_DESELECTBEFORE
+		MENUITEM "Select Events After Cur Position",        ID_EDIT_SELECTAFTER
+		MENUITEM "Deselect Events After Cur Position",      ID_EDIT_DESELECTAFTER
+		MENUITEM SEPARATOR
+		MENUITEM "Modify Event's Track...",                 ID_EDIT_TRACK
+		MENUITEM "Modify Event's Time...",                  ID_EDIT_TIME
+		MENUITEM "Modify Event's Channel...",               ID_EDIT_CHANNEL
+		MENUITEM "Modify Event's Key...",                   ID_EDIT_KEY
+		MENUITEM "Modify Event's Velocity...",              ID_EDIT_VELOCITY
+		MENUITEM "Modify Event's Duration...",              ID_EDIT_DURATION
+		MENUITEM "Modify Event's Value...",                 ID_EDIT_VALUE
+		MENUITEM "Quantize...",                             ID_EDIT_QUANTIZE
+		MENUITEM "Break up notes and Make Trill...",           ID_EDIT_BREAKUPANDTRILL
+		MENUITEM "Scan beat and Insert tempo...",           ID_EDIT_BEATSCAN
+		MENUITEM SEPARATOR
+		MENUITEM "Insert Measure..."                        ID_EDIT_INSERTMEASURE
+		MENUITEM "Remove Measure..."                        ID_EDIT_REMOVEMEASURE
+	}
+	POPUP "&View" {
+		MENUITEM "&Redraw\tF5",                             ID_VIEW_REDRAW
+		MENUITEM SEPARATOR
+		MENUITEM "ToolBar&1",                               ID_VIEW_TOOLBAR1
+		MENUITEM "ToolBar&2",                               ID_VIEW_TOOLBAR2
+		MENUITEM "&StatusBar",                              ID_VIEW_STATUS_BAR
+		MENUITEM SEPARATOR
+		MENUITEM "Show new &Track list window",             ID_VIEW_TRACKLIST
+		MENUITEM "Show new &Piano roll window",             ID_VIEW_PIANOROLL
+		MENUITEM "Show new &Event list window",             ID_VIEW_EVENTLIST
+		MENUITEM "Show new &Musical score window",          ID_VIEW_MUSICALSCORE
+	}
+	POPUP "&Control" {
+		MENUITEM "Jump to Begin\tCtrl+Home",                ID_CONTROL_TOBEGIN
+		MENUITEM "&Playback\tSpace"                         ID_CONTROL_PLAY
+		MENUITEM "&Record\tCtrl+R",                         ID_CONTROL_RECORD
+		MENUITEM "Jump to End\tCtrl+End",                   ID_CONTROL_TOEND
+		MENUITEM SEPARATOR
+		MENUITEM "Prev Measure\tCtrl+PgUp,Ctrl+left"        ID_CONTROL_PREVMEASURE
+		MENUITEM "Next Measure\tCtrl+PgDn,Ctrl+right"       ID_CONTROL_NEXTMEASURE
+		MENUITEM SEPARATOR
+		MENUITEM "Speed = Pause[0%]"                        ID_CONTROL_SPEEDNONE
+		MENUITEM "Speed = Slow[?%]"                         ID_CONTROL_SPEEDSLOW
+		MENUITEM "Speed = Normal[?%]"                       ID_CONTROL_SPEEDNORMAL
+		MENUITEM "Speed = Fast[?%]"                         ID_CONTROL_SPEEDFAST
+		MENUITEM "Speed = Slave to other machine"           ID_CONTROL_SPEEDSLAVE
+		MENUITEM SEPARATOR
+		MENUITEM "&Auto Repeat"                             ID_CONTROL_AUTOREPEAT
+	}
+	POPUP "&Setup" {
+		MENUITEM "MIDI &Device and Instrument..."           ID_SETUP_MIDIDEVICE
+		MENUITEM "MIDI &Sync Mode..."                       ID_SETUP_MIDISYNCMODE
+		MENUITEM "&Metronome..."                            ID_SETUP_METRONOME
+		MENUITEM "&Auto Save..."                            ID_SETUP_AUTOSAVE
+		MENUITEM "&Language..."                             ID_SETUP_LANGUAGE
+		MENUITEM "&Options..."                              ID_SETUP_OPTIONS
+	}
+	POPUP "&Window" {
+		MENUITEM "&New",                                    ID_WINDOW_NEW
+		MENUITEM "&Cascade",                                ID_WINDOW_CASCADE
+		MENUITEM "&Horz Tile",                              ID_WINDOW_TILE_HORZ
+		MENUITEM "&Vert Tile",                              ID_WINDOW_TILE_VERT
+		MENUITEM "&Arrange Icon",                           ID_WINDOW_ARRANGE
+	}
+	POPUP "&Help" {
+		MENUITEM "&readme_en.txt...",                       ID_HELP_README
+		MENUITEM "&License...",                             ID_HELP_LICENSE
+		MENUITEM "&Documentation(PDF)...",                  ID_HELP_MANUAL
+		MENUITEM "&Project Home Page...",                   ID_HELP_PROJECTHOMEPAGE
+		MENUITEM SEPARATOR
+		MENUITEM "&About...",                               ID_HELP_ABOUT
+	}
+}
+
+// Popup Menu for Track list Window (1)
+IDR_POPUPMENU01 MENU {
+	POPUP "" {
+		MENUITEM "Show this track's Piano roll window"      ID_POPUP_SHOWPIANOROLL
+		MENUITEM "Show this track's Event list window",     ID_POPUP_SHOWEVENTLIST
+		MENUITEM "Show this track's Musical Score window",  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "Input On only this track",                ID_POPUP_TRACKINPUTON
+		MENUITEM "Input Off only this track",               ID_POPUP_TRACKINPUTOFF
+		MENUITEM "Input On all tracks",                     ID_POPUP_TRACKINPUTALL
+		MENUITEM SEPARATOR
+		MENUITEM "Output On only this track(Solo)",         ID_POPUP_TRACKOUTPUTON
+		MENUITEM "Output Off only this track (Mute)",       ID_POPUP_TRACKOUTPUTOFF
+		MENUITEM "Output On all tracks",                    ID_POPUP_TRACKOUTPUTALL 
+	}
+}
+
+// Popup Menu for Track list Window (2)
+IDR_POPUPMENU02 MENU {
+	POPUP "" {
+		MENUITEM "Show this track's Piano roll window",     ID_POPUP_SHOWPIANOROLL
+		MENUITEM "Show this track's Event list window",     ID_POPUP_SHOWEVENTLIST
+		MENUITEM "Show this track's Musical Score window",  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "Input On only this track .",              ID_POPUP_TRACKINPUTON
+		MENUITEM "Input Off only this track ",              ID_POPUP_TRACKINPUTOFF
+		MENUITEM "Input On all tracks",                     ID_POPUP_TRACKINPUTALL
+		MENUITEM SEPARATOR
+		MENUITEM "Output On only this track(Solo)",         ID_POPUP_TRACKOUTPUTON
+		MENUITEM "Output Off only this track (Mute)",       ID_POPUP_TRACKOUTPUTOFF
+		MENUITEM "Output On all tracks"                     ID_POPUP_TRACKOUTPUTALL 
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t",                                    ID_POPUP_CUT
+		MENUITEM "&Copy",                                   ID_POPUP_COPY
+		MENUITEM "&Paste",                                  ID_POPUP_PASTE
+	}
+}
+
+// Popup Menu for Piano Roll Window
+IDR_POPUPMENU11 MENU {
+	POPUP "" {
+		MENUITEM "Show this track's Piano roll window",     ID_POPUP_SHOWPIANOROLL
+		MENUITEM "Show this track's Event list window",     ID_POPUP_SHOWEVENTLIST
+		MENUITEM "Show this track's Musical Score window",  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "Show only this track",                    ID_POPUP_TRACKVISIBLEON
+		MENUITEM "Hide only this track",                    ID_POPUP_TRACKVISIBLEOFF
+		MENUITEM "Show all tracks",                         ID_POPUP_TRACKVISIBLEALL
+		MENUITEM SEPARATOR
+		MENUITEM "This event's property...",                ID_POPUP_EVENTPROPERTY
+	
+	}
+}
+
+// Popup Menu for Event List Window
+IDR_POPUPMENU21 MENU {
+	POPUP "" {
+		MENUITEM "Show this track's Piano roll window",     ID_POPUP_SHOWPIANOROLL
+		MENUITEM "Show this track's Event list window",     ID_POPUP_SHOWEVENTLIST
+		MENUITEM "Show this track's Musical Score window",  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "Show only this track",                    ID_POPUP_TRACKVISIBLEON
+		MENUITEM "Hide only this track",                    ID_POPUP_TRACKVISIBLEOFF
+		MENUITEM "Show all tracks",                         ID_POPUP_TRACKVISIBLEALL
+		MENUITEM SEPARATOR
+		MENUITEM "Show only this event.kind",               ID_POPUP_EVENTKINDVISIBLEON
+		MENUITEM "Hide only this event.kind",               ID_POPUP_EVENTKINDVISIBLEOFF
+		MENUITEM "Show all tracks",                         ID_POPUP_EVENTKINDVISIBLEALL
+	}
+}
+
+// Popup Menu for Musical Score Window
+IDR_POPUPMENU31 MENU {
+	POPUP "" {
+		MENUITEM "Show this track's Piano roll window",     ID_POPUP_SHOWPIANOROLL
+		MENUITEM "Show this track's Event list window",     ID_POPUP_SHOWEVENTLIST
+		MENUITEM "Show this track's Musical Score window",  ID_POPUP_SHOWMUSICALSCORE
+		MENUITEM SEPARATOR
+		MENUITEM "Show only this track",                    ID_POPUP_TRACKVISIBLEON
+		MENUITEM "Hide only this track",                    ID_POPUP_TRACKVISIBLEOFF
+		MENUITEM "Show all tracks",                         ID_POPUP_TRACKVISIBLEALL
+		MENUITEM SEPARATOR
+		MENUITEM "This event's property...",                ID_POPUP_EVENTPROPERTY
+	}
+}
+
+
+//-----------------------------------------------------------------------------
+// Accelerators
+//-----------------------------------------------------------------------------
+
+// Common Accelerators
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	"N",            ID_FILE_NEW,             VIRTKEY,CONTROL
+	"O",            ID_FILE_OPEN,            VIRTKEY,CONTROL
+	"S",            ID_FILE_SAVE,            VIRTKEY,CONTROL
+	"P",            ID_FILE_PRINT,           VIRTKEY,CONTROL
+	"Z",            ID_EDIT_UNDO,            VIRTKEY,CONTROL
+	"Y",            ID_EDIT_REDO,            VIRTKEY,CONTROL
+	"X",            ID_EDIT_CUT,             VIRTKEY,CONTROL
+	"C",            ID_EDIT_COPY,            VIRTKEY,CONTROL
+	"V",            ID_EDIT_PASTE,           VIRTKEY,CONTROL
+	"A",            ID_EDIT_SELECTALL,       VIRTKEY,CONTROL
+	"D",            ID_EDIT_SELECTNONE,      VIRTKEY,CONTROL
+	VK_DELETE,      ID_EDIT_DELETE,          VIRTKEY,CONTROL
+	VK_F6,          ID_NEXT_PANE,            VIRTKEY 
+	VK_F6,          ID_PREV_PANE,            VIRTKEY,SHIFT
+	VK_SPACE,       ID_CONTROL_PLAY,         VIRTKEY
+	VK_HOME,        ID_CONTROL_TOBEGIN,      VIRTKEY,CONTROL
+	VK_END,         ID_CONTROL_TOEND,        VIRTKEY,CONTROL
+	VK_PRIOR,       ID_CONTROL_PREVMEASURE,  VIRTKEY,CONTROL
+	VK_NEXT,        ID_CONTROL_NEXTMEASURE,  VIRTKEY,CONTROL
+	VK_LEFT,        ID_CONTROL_PREVMEASURE,  VIRTKEY,CONTROL
+	VK_RIGHT,       ID_CONTROL_NEXTMEASURE,  VIRTKEY,CONTROL
+	"R",            ID_CONTROL_RECORD,       VIRTKEY,CONTROL
+END
+
+// Accelerators for Track List Window
+IDR_TRACKLIST ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	//VK_INSERT,      ID_TRACKLIST_INSERTTRACK,    VIRTKEY
+	//VK_INSERT,      ID_TRACKLIST_DUPLICATETRACK, VIRTKEY,CONTROL
+	//VK_DELETE,      ID_TRACKLIST_DELETETRACK,    VIRTKEY
+	"S",            ID_TRACKLIST_SELECT,         VIRTKEY
+	"B",            ID_TRACKLIST_SPEAKER,        VIRTKEY
+END
+
+
+// Accelerators for Piano Roll Window
+IDR_PIANOROLL ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	"P",            ID_PIANOROLL_PEN,            VIRTKEY
+	"D",            ID_PIANOROLL_PEN,            VIRTKEY
+	"L",            ID_PIANOROLL_LINE,           VIRTKEY
+	"E",            ID_PIANOROLL_ERASER,         VIRTKEY
+	"S",            ID_PIANOROLL_SELECT,         VIRTKEY
+	"B",            ID_PIANOROLL_SPEAKER,        VIRTKEY
+	VK_F9,          ID_PIANOROLL_ONLYCURTRACK,   VIRTKEY
+	VK_F10,         ID_PIANOROLL_SHOWALLTRACK,   VIRTKEY
+	VK_F11,         ID_PIANOROLL_ONLYCURGRAPH,   VIRTKEY
+	VK_F12,         ID_PIANOROLL_SHOWALLGRAPH,   VIRTKEY
+
+END
+
+// Accelerators for Event List Window
+IDR_EVENTLIST ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	VK_INSERT,      ID_EVENTLIST_INSERTEVENT,    VIRTKEY
+	VK_INSERT,      ID_EVENTLIST_DUPLICATEEVENT, VIRTKEY,CONTROL
+	VK_DELETE,      ID_EVENTLIST_DELETEEVENT,    VIRTKEY
+	VK_F9,          ID_EVENTLIST_ONLYCURTRACK,   VIRTKEY
+	VK_F10,         ID_EVENTLIST_SHOWALLTRACK,   VIRTKEY
+	VK_F11,         ID_EVENTLIST_ONLYCURGRAPH,   VIRTKEY
+	VK_F12,         ID_EVENTLIST_SHOWALLGRAPH,   VIRTKEY
+END
+
+// Accelerators for Musical Score Window
+IDR_MUSICALSCORE ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	"P",            ID_MUSICALSCORE_PEN,            VIRTKEY
+	"D",            ID_MUSICALSCORE_PEN,            VIRTKEY
+	"L",            ID_MUSICALSCORE_LINE,           VIRTKEY
+	"E",            ID_MUSICALSCORE_ERASER,         VIRTKEY
+	"S",            ID_MUSICALSCORE_SELECT,         VIRTKEY
+	"B",            ID_MUSICALSCORE_SPEAKER,        VIRTKEY
+	"1",            ID_MUSICALSCORE_WHOLENOTE,      VIRTKEY
+	"2",            ID_MUSICALSCORE_HALFNOTE,       VIRTKEY
+	"4",            ID_MUSICALSCORE_QUARTERNOTE,    VIRTKEY
+	"8",            ID_MUSICALSCORE_QUAVERNOTE,    VIRTKEY
+	"6",            ID_MUSICALSCORE_SEMIQUAVERNOTE, VIRTKEY
+	"9",            ID_MUSICALSCORE_DEMISEMIQUAVERNOTE, VIRTKEY
+	0xBE,           ID_MUSICALSCORE_DOTTED,         VIRTKEY
+	"t",            ID_MUSICALSCORE_TRIPLET,        VIRTKEY
+	VK_F9,          ID_MUSICALSCORE_ONLYCURTRACK,   VIRTKEY
+	VK_F10,         ID_MUSICALSCORE_SHOWALLTRACK,   VIRTKEY
+	VK_F11,         ID_MUSICALSCORE_ONLYCURGRAPH,   VIRTKEY
+	VK_F12,         ID_MUSICALSCORE_SHOWALLGRAPH,   VIRTKEY
+
+END
+
+
+//-----------------------------------------------------------------------------
+// Dialogs
+//-----------------------------------------------------------------------------
+
+// About Dialog
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 300, 55
+CAPTION "About (Sekaiju)"
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 9, "MS Sans Serif"
+BEGIN
+	ICON            IDR_MAINFRAME, IDC_STATIC,
+	                8, 16, 20, 20
+	LTEXT           "Sekaiju3.1 - MIDI Sequencer software", IDC_STATIC, 
+	                40, 8, 200, 8,
+	                SS_NOPREFIX
+	LTEXT           "(C) 2002-2012 kuzu / OpenMIDIProject", IDC_STATIC,
+	                40, 24, 200, 8
+	LTEXT           "http://openmidiproject.sourceforge.jp/", IDC_STATIC,
+	                40, 40, 200, 8
+	DEFPUSHBUTTON   "Close", IDCANCEL, 
+	                248, 8, 48, 14, WS_GROUP
+END
+
+// File's Property Dialog
+IDD_FILEPROPERTY DIALOG DISCARDABLE  0, 0, 320, 340
+CAPTION "Property of this MIDIData"
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Title", IDC_STATIC,
+	                8, 8, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_TITLE, 
+	                60, 8, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "Sub Title", IDC_STATIC,
+	                8, 24, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_SUBTITLE, 
+	                60, 24, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "Copyright", IDC_STATIC,
+	                8, 40, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_COPYRIGHT, 
+	                60, 40, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "Comment1", IDC_STATIC,
+	                8, 56, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_COMMENT1, 
+	                60, 56, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "Comment2", IDC_STATIC,
+	                8, 72, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_COMMENT2, 
+	                60, 72, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "Comment3", IDC_STATIC,
+	                8, 88, 52, 12;  
+    EDITTEXT        IDC_FILEPROPERTY_COMMENT3, 
+	                60, 88, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "NumTracks", IDC_STATIC,
+	                8, 104, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_NUMTRACK, 
+	                60, 104, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL | ES_READONLY
+	LTEXT           "NumEvents", IDC_STATIC,
+	                8, 120, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_NUMEVENT, 
+	                60, 120, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL | ES_READONLY
+	LTEXT           "Total Length", IDC_STATIC,
+	                8, 136, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_ENDMILLISEC, 
+	                60, 136, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL | ES_READONLY
+	LTEXT           "Total Length", IDC_STATIC,
+	                8, 152, 52, 12;  
+	EDITTEXT        IDC_FILEPROPERTY_ENDTIME, 
+	                60, 152, 200, 12, WS_TABSTOP | ES_AUTOHSCROLL | ES_READONLY
+
+	GROUPBOX        "SMF Format", IDC_FILEPROPERTY_SMFFORMAT,
+	                4, 176, 256, 52
+	AUTORADIOBUTTON "SMF Format 0", IDC_FILEPROPERTY_SMFFORMAT0,
+	                8, 188, 248, 12, WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "SMF Format 1 (recommended)", IDC_FILEPROPERTY_SMFFORMAT1,
+	                8, 200, 248, 12
+	AUTORADIOBUTTON "SMF Format 2", IDC_FILEPROPERTY_SMFFORMAT2,
+	                8, 212, 248, 12
+
+	GROUPBOX        "Time Mode Resolution", IDC_FILEPROPERTY_TIMEMODE,
+	                4, 236, 256, 96,  WS_GROUP
+	AUTORADIOBUTTON "TPQN Base (recommended)", IDC_FILEPROPERTY_TPQNBASE,
+	                8, 248, 248, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "SMPTE24 Base (24Frames/sec)", IDC_FILEPROPERTY_SMPTE24BASE,
+	                8, 260, 248, 12
+	AUTORADIOBUTTON "SMPTE25 Base (25Frames/sec)", IDC_FILEPROPERTY_SMPTE25BASE,
+	                8, 272, 248, 12
+	AUTORADIOBUTTON "SMPTE30 Base Drop (29.97Frames/sec)", IDC_FILEPROPERTY_SMPTE29BASE,
+	                8, 284, 248, 12
+	AUTORADIOBUTTON "SMPTE30 Base Non Drop (30Frames/sec)", IDC_FILEPROPERTY_SMPTE30BASE,
+	                8, 296, 248, 12
+
+	LTEXT           "Resolution", IDC_STATIC,
+	                8, 314, 52, 12, WS_GROUP;
+	COMBOBOX        IDC_FILEPROPERTY_RESOLUTION, 
+	                60, 312, 40, 120, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWN
+	LTEXT           "[ticks / quarter note]", IDC_FILEPROPERTY_RESOLUTIONU,
+	                104, 314, 152, 12;
+
+
+	DEFPUSHBUTTON   "OK", IDOK,
+	                268, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                268, 24, 48, 14, WS_TABSTOP | WS_GROUP
+
+END
+
+// Modify Event's Track Dialog
+IDD_EDITTRACK DIALOG DISCARDABLE 0, 0, 232, 72
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify Event's Track"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Track Index or Shift Amount", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITTRACK_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITTRACK_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "Unit", IDC_EDITTRACK_UNIT,
+	                4, 24, 168, 44,  WS_GROUP
+	AUTORADIOBUTTON "Absolute specify", IDC_EDITTRACK_ABSOLUTEUNIT,
+	                8, 36, 160, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Relative shift", IDC_EDITTRACK_RELATIVEUNIT,
+	                8, 48, 160, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+// Modify Event's Time (for TPQN Base) Dialog
+IDD_EDITTIME DIALOG DISCARDABLE 0, 0, 232, 72
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify Event's Time (for TPQN Base)"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Amount", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITTIME_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITTIME_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "Unit", IDC_EDITTIME_UNIT,
+	                4, 24, 168, 44,  WS_GROUP
+	AUTORADIOBUTTON "Tick", IDC_EDITTIME_TICKUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Beat", IDC_EDITTIME_BEATUNIT,
+	                88, 36, 80, 12
+	AUTORADIOBUTTON "Measure", IDC_EDITTIME_MEASUREUNIT,
+	                8, 48, 80, 12
+	AUTORADIOBUTTON "Percent", IDC_EDITTIME_PERCENTUNIT,
+	                88, 48, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// Modify Event's Time (for SMPTE Base) Dialog
+IDD_EDITTIMESMP DIALOG DISCARDABLE 0, 0, 232, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify Event's Time (for SMPTE Base)"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Amount", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITTIMESMP_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITTIMESMP_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "Unit", IDC_EDITTIMESMP_UNIT,
+	                4, 24, 168, 56,  WS_GROUP
+	AUTORADIOBUTTON "Subframe", IDC_EDITTIMESMP_TICKUNIT,
+	                8, 36, 160, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Frame", IDC_EDITTIMESMP_FRAMEUNIT,
+	                8, 48, 160, 12
+	AUTORADIOBUTTON "Percent", IDC_EDITTIMESMP_PERCENTUNIT,
+	                8, 60, 160, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+// Modify Event's Channel Dialog
+IDD_EDITCHANNEL DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify Event's Channel"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Channel Number or Shift Amount", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITCHANNEL_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITCHANNEL_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "Mode", IDC_EDITCHANNEL_UNIT,
+	                4, 24, 168, 60,  WS_GROUP
+	AUTORADIOBUTTON "Fit to Track's output channel", IDC_EDITCHANNEL_BYTRACKUNIT,
+	                8, 36, 160, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Absolute specify", IDC_EDITCHANNEL_ABSOLUTEUNIT,
+	                8, 48, 160, 12
+	AUTORADIOBUTTON "Relative shift", IDC_EDITCHANNEL_RELATIVEUNIT,
+	                8, 60, 160, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+
+
+// Modify Event's Key Dialog
+IDD_EDITKEY DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify Event's Key"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Amount", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITKEY_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "",	IDC_EDITKEY_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "Unit", IDC_EDITKEY_UNIT,
+	                4, 24, 168, 30,  WS_GROUP
+	AUTORADIOBUTTON "Halftone", IDC_EDITKEY_HALFUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Octave", IDC_EDITKEY_OCTAVEUNIT,
+	                88, 36, 80, 12
+	GROUPBOX        "Target", IDC_EDITKEY_TARGET,
+	                4, 60, 168, 30,  WS_GROUP
+	AUTOCHECKBOX    "NoteOn, NoteOff", IDC_EDITKEY_TARGETNOTE,
+	                8, 72, 80, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "KeyAfterTouch", IDC_EDITKEY_TARGETKEYAFTER,
+	                88, 72, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+// Modify Event's Velocity Dialog
+IDD_EDITVELOCITY DIALOG DISCARDABLE 0, 0, 232, 108
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify Event's Velocity"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Amount", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITVELOCITY_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITVELOCITY_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "Unit", IDC_EDITVELOCITY_UNIT,
+	                4, 24, 168, 42,  WS_GROUP
+	AUTORADIOBUTTON "Absolute specify", IDC_EDITVELOCITY_ABSOLUTEUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Relative shift", IDC_EDITVELOCITY_RELATIVEUNIT,
+	                88, 36, 80, 12,
+	AUTORADIOBUTTON "Percent", IDC_EDITVELOCITY_PERCENTUNIT,
+	                8, 48, 80, 12
+	GROUPBOX        "Target", IDC_EDITVELOCITY_TARGET,
+	                4, 72, 168, 30,  WS_GROUP
+	AUTOCHECKBOX    "NoteOn", IDC_EDITVELOCITY_TARGETNOTEON,
+	                8, 84, 80, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "NoteOff", IDC_EDITVELOCITY_TARGETNOTEOFF,
+	                88, 84, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+
+// Modify Event's Duration Dialog
+IDD_EDITDURATION DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify Event's Duration"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Amount", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITDURATION_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITDURATION_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "Unit", IDC_EDITDURATION_UNIT,
+	                4, 24, 168, 42,  WS_GROUP
+	AUTORADIOBUTTON "Absolute ticks", IDC_EDITDURATION_ABSOLUTEUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Relative ticks", IDC_EDITDURATION_RELATIVEUNIT,
+	                88, 36, 80, 12,
+	AUTORADIOBUTTON "Percent", IDC_EDITDURATION_PERCENTUNIT,
+	                8, 48, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK, 
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// Modify Event's Value Dialog
+IDD_EDITVALUE DIALOG DISCARDABLE 0, 0, 232, 120
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify Event's Value"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Amount", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITVALUE_AMOUNT, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITVALUE_AMOUNTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	GROUPBOX        "Unit", IDC_EDITVALUE_UNIT,
+	                4, 24, 168, 42,  WS_GROUP
+	AUTORADIOBUTTON "Absolute specify", IDC_EDITVALUE_ABSOLUTEUNIT,
+	                8, 36, 80, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Relative shift", IDC_EDITVALUE_RELATIVEUNIT,
+	                88, 36, 80, 12,
+	AUTORADIOBUTTON "Percent", IDC_EDITVALUE_PERCENTUNIT,
+	                8, 48, 80, 12
+	GROUPBOX        "Target", IDC_EDITVALUE_TARGET,
+	                4, 72, 168, 42,  WS_GROUP
+	AUTOCHECKBOX    "ChannelAfter", IDC_EDITVALUE_TARGETKEYAFTER,
+	                8, 84, 80, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "ControlChange", IDC_EDITVALUE_TARGETCONTROLCHANGE,
+	                88, 84, 80, 12,
+	AUTOCHECKBOX    "KeyAfterTouch", IDC_EDITVALUE_TARGETCHANNELAFTER,
+	                8, 96, 80, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "PitchBend", IDC_EDITVALUE_TARGETPITCHBEND,
+	                88, 96, 80, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// Quantize Dialog
+IDD_EDITQUANTIZE DIALOG DISCARDABLE 0, 0, 252, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Quantize"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Snap Time [ticks]", IDC_STATIC,
+	                4, 8, 116, 12,
+	COMBOBOX        IDC_EDITQUANTIZE_SNAPTIME, 
+	                120, 8, 72, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+	LTEXT           "Strength [%]", IDC_STATIC,
+	                4, 24, 116, 12,
+	EDITTEXT        IDC_EDITQUANTIZE_STRENGTH, 
+	                120, 24, 72, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "",	IDC_EDITQUANTIZE_STRENGTHSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	
+	GROUPBOX        "Target", IDC_EDITQUANTIZE_TARGET,
+	                4, 60, 192, 30,  WS_GROUP
+	AUTOCHECKBOX    "NoteOn", IDC_EDITQUANTIZE_TARGETNOTEON,
+	                8, 72, 90, 12,  WS_TABSTOP
+	AUTOCHECKBOX    "NoteOff", IDC_EDITQUANTIZE_TARGETNOTEOFF,
+	                98, 72, 90, 12
+	DEFPUSHBUTTON   "OK", IDOK,
+	                200, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                200, 24, 48, 14, WS_TABSTOP
+END
+
+// Break up notes and Make trill Dialog
+IDD_EDITBREAKUPANDTRILL DIALOG DISCARDABLE 0, 0, 256, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Break up note and Make trill"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Duration per note [ticks]", IDC_STATIC,
+	                4, 8, 116, 12,
+	COMBOBOX        IDC_EDITBREAKUPANDTRILL_DURATION, 
+	                120, 8, 72, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	AUTOCHECKBOX    "Enable make trill", IDC_EDITBREAKUPANDTRILL_ENABLETRILL,
+	                4, 24, 188, 12, WS_TABSTOP
+	LTEXT           "Key shift of trill", IDC_STATIC,
+	                4, 40, 116, 12,
+	EDITTEXT        IDC_EDITBREAKUPANDTRILL_KEYSHIFT, 
+	                120, 40, 72, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "",	IDC_EDITBREAKUPANDTRILL_KEYSHIFTSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	DEFPUSHBUTTON   "OK", IDOK,
+	                200, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                200, 24, 48, 14, WS_TABSTOP
+END
+
+// Scan beat and Insert tempo Dialog
+IDD_EDITBEATSCAN DIALOG DISCARDABLE 0, 0, 256, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scan Beat and Insert Tempo"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Beat Track", IDC_STATIC,
+	                4, 8, 116, 12,
+	COMBOBOX        IDC_EDITBEATSCAN_BEATTRACK, 
+	                120, 8, 72, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Beat Interval [ticks]", IDC_STATIC,
+	                4, 24, 116, 12,
+	COMBOBOX        IDC_EDITBEATSCAN_BEATINTERVAL, 
+	                120, 24, 72, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	AUTOCHECKBOX    "Insert tempo events to remain original speed"
+	                IDC_EDITBEATSCAN_INSERTTEMPO,
+	                4, 40, 188, 12, WS_TABSTOP	
+	LTEXT           "Scan beat will detect note events as beat in the specified track, \
+	                and adjust event's time at regular intervals."
+	                IDC_STATIC,
+	                4, 56, 188, 40,
+	DEFPUSHBUTTON   "OK", IDOK,
+	                200, 8, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                200, 24, 48, 14, WS_TABSTOP
+END
+
+// Insert Measure Dialog
+IDD_EDITINSERTMEASURE DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Insert Measure"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Measure position", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITINSERTMEASURE_POSITION, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITINSERTMEASURE_POSITIONSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Number of measure", IDC_STATIC,
+	                4, 24, 116, 12,
+	EDITTEXT        IDC_EDITINSERTMEASURE_NUMMEASURE, 
+	                120, 24, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITINSERTMEASURE_NUMMEASURESP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// Remove Measure Dialog
+IDD_EDITREMOVEMEASURE DIALOG DISCARDABLE 0, 0, 232, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Remove Measure"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Measure position", IDC_STATIC,
+	                4, 8, 116, 12,
+	EDITTEXT        IDC_EDITREMOVEMEASURE_POSITION, 
+	                120, 8, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITREMOVEMEASURE_POSITIONSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Number of measure", IDC_STATIC,
+	                4, 24, 116, 12,
+	EDITTEXT        IDC_EDITREMOVEMEASURE_NUMMEASURE, 
+	                120, 24, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_EDITREMOVEMEASURE_NUMMEASURESP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	DEFPUSHBUTTON   "OK", IDOK,
+	                180, 8, 48, 14, WS_TABSTOP | WS_GROUP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                180, 24, 48, 14, WS_TABSTOP
+END
+
+// Note Property Dialog
+IDD_PROPERTYNOTE DIALOG DISCARDABLE 0, 0, 256, 144
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Note Property"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Track", IDC_STATIC,
+	                4, 8, 124, 12,
+	COMBOBOX        IDC_PROPERTYNOTE_TRACKINDEX, 
+	                128, 8, 124, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Time", IDC_STATIC,
+	                4, 24, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_TIME, 
+	                128, 24, 124, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	LTEXT           "Channel (1~16)", IDC_STATIC,
+	                4, 40, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_CHANNEL, 
+	                200, 40, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_PROPERTYNOTE_CHANNELSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Key (0~127)", IDC_STATIC,
+	                4, 56, 124, 12,
+	COMBOBOX        IDC_PROPERTYNOTE_KEY, 
+	                128, 56, 124, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Note On Velocity (1~127)", IDC_STATIC,
+	                4, 72, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_ONVELOCITY, 
+	                200, 72, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_PROPERTYNOTE_ONVELOCITYSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Note Off Velocity (0~127)", IDC_STATIC,
+	                4, 88, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_OFFVELOCITY, 
+	                200, 88, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_PROPERTYNOTE_OFFVELOCITYSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Duration (1~)", IDC_STATIC,
+	                4, 104, 124, 12,
+	EDITTEXT        IDC_PROPERTYNOTE_DURATION, 
+	                200, 104, 52, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_PROPERTYNOTE_DURATIONSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	DEFPUSHBUTTON   "OK", IDOK,
+	                152, 120, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                204, 120, 48, 14, WS_TABSTOP
+END
+
+
+
+// MIDI In Device Page
+IDD_MIDIINDEVICE DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI In Device"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "In Port01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIINDEVICE_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+END
+
+// MIDI Out Device Page
+IDD_MIDIOUTDEVICE DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI Out Device"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Out Port01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIOUTDEVICE_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+// MIDI Instrument definition (Normal) Page
+IDD_MIDIINSTDEFNORM DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI Inst Def (Normal)"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Out Port01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFNORM_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+// MIDI Instrument Definition (Drum) Page
+IDD_MIDIINSTDEFDRUM DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI Inst Def (Drum)"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Out Port01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIINSTDEFDRUM_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+
+// MIDI Sync (Receive) Page
+IDD_MIDIINSYNCMODE DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI Sync (Receive)"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "In Port01", IDC_STATIC,
+	                8, 8, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port02", IDC_STATIC,
+	                8, 24, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port03", IDC_STATIC,
+	                8, 40, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port04", IDC_STATIC,
+	                8, 56, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port05", IDC_STATIC,
+	                8, 72, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port06", IDC_STATIC,
+	                8, 88, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port07", IDC_STATIC,
+	                8, 104, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port08", IDC_STATIC,
+	                8, 120, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port09", IDC_STATIC,
+	                8, 136, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port10", IDC_STATIC,
+	                8, 152, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port11", IDC_STATIC,
+	                8, 168, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port12", IDC_STATIC,
+	                8, 184, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port13", IDC_STATIC,
+	                8, 200, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port14", IDC_STATIC,
+	                8, 216, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port15", IDC_STATIC,
+	                8, 232, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "In Port16", IDC_STATIC,
+	                8, 248, 52, 16;  
+	COMBOBOX        IDC_MIDIINSYNCMODE_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+// MIDI Sync (Send) Page
+IDD_MIDIOUTSYNCMODE DIALOG DISCARDABLE 0, 0, 300, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MIDI Sync (Send)"
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Out Port01", IDC_STATIC,
+	                8, 8, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_01, 
+	                60, 8, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port02", IDC_STATIC,
+	                8, 24, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_02, 
+	                60, 24, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port03", IDC_STATIC,
+	                8, 40, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_03, 
+	                60, 40, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port04", IDC_STATIC,
+	                8, 56, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_04, 
+	                60, 56, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port05", IDC_STATIC,
+	                8, 72, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_05, 
+	                60, 72, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port06", IDC_STATIC,
+	                8, 88, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_06, 
+	                60, 88, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port07", IDC_STATIC,
+	                8, 104, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_07, 
+	                60, 104, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port08", IDC_STATIC,
+	                8, 120, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_08, 
+	                60, 120, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port09", IDC_STATIC,
+	                8, 136, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_09, 
+	                60, 136, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port10", IDC_STATIC,
+	                8, 152, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_10, 
+	                60, 152, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port11", IDC_STATIC,
+	                8, 168, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_11, 
+	                60, 168, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port12", IDC_STATIC,
+	                8, 184, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_12, 
+	                60, 184, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port13", IDC_STATIC,
+	                8, 200, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_13, 
+	                60, 200, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port14", IDC_STATIC,
+	                8, 216, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_14, 
+	                60, 216, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port15", IDC_STATIC,
+	                8, 232, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_15, 
+	                60, 232, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Port16", IDC_STATIC,
+	                8, 248, 52, 16;
+	COMBOBOX        IDC_MIDIOUTSYNCMODE_16, 
+	                60, 248, 232, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+
+END
+
+
+
+
+
+// Metronome Dialog
+IDD_METRONOME DIALOG DISCARDABLE 0, 0, 252, 196
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Metronome"
+FONT 9, "MS Sans Serif"
+BEGIN
+	AUTOCHECKBOX    "Ring metronome while recording", IDC_METRONOME_ON,
+	                4, 8, 244, 12
+	GROUPBOX        "Output", IDC_METRONOME_OUTPUT,
+	                4, 24, 244, 52,  WS_GROUP
+	LTEXT           "Out Port", IDC_STATIC,
+	                8, 40, 92, 12,
+	COMBOBOX        IDC_METRONOME_OUTPUTPORT, 
+	                100, 40, 140, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Out Channel", IDC_STATIC,
+	                8, 56, 152, 12,
+	EDITTEXT        IDC_METRONOME_OUTPUTCHANNEL, 
+	                200, 56, 40, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_METRONOME_OUTPUTCHANNELSP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+
+	GROUPBOX        "Pattern", IDC_METRONOME_PATTERN,
+	                4, 84, 244, 84,  WS_GROUP
+	LTEXT           "Main Note.Key", IDC_STATIC,
+	                8, 100, 92, 12,
+	COMBOBOX        IDC_METRONOME_NOTEKEY1, 
+	                100, 100, 140, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Main Note.Velocity", IDC_STATIC,
+	                8, 116, 192, 12,
+	EDITTEXT        IDC_METRONOME_NOTEVEL1, 
+	                200, 116, 40, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_METRONOME_NOTEVEL1SP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Sub Note.Key", IDC_STATIC,
+	                8, 132, 92, 12,
+	COMBOBOX        IDC_METRONOME_NOTEKEY2, 
+	                100, 132, 140, 100, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT           "Sub Note.Velocity", IDC_STATIC,
+	                8, 148, 192, 12,
+	EDITTEXT        IDC_METRONOME_NOTEVEL2, 
+	                200, 148, 40, 12, WS_TABSTOP | ES_AUTOHSCROLL
+	CONTROL         "", IDC_METRONOME_NOTEVEL2SP  UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+
+	DEFPUSHBUTTON   "OK", IDOK,
+	                148, 176, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                200, 176, 48, 14, WS_TABSTOP
+END
+
+// Auto Save Dialog
+IDD_AUTOSAVE DIALOG 0, 0, 252, 216
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Auto Save" 
+FONT 9, "MS Sans Serif"
+BEGIN
+	AUTOCHECKBOX    "Enable Auto Save (only when MIDIData is modified)",
+	                IDC_AUTOSAVE_ON, 4, 8, 240, 11, WS_TABSTOP | SS_LEFT
+	GROUPBOX        "Setup Auto Save", IDC_AUTOSAVE_SETUP,
+	                4, 24, 244, 92,  WS_GROUP
+	LTEXT           "Interval (1~120) [minutes]", IDC_STATIC,
+	                8, 40, 192, 16, SS_NOPREFIX
+	EDITTEXT        IDC_AUTOSAVE_INTERVAL
+	                200, 40, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         ""
+	                IDC_AUTOSAVE_INTERVALSP    UPDOWN, UDS_DEFAULT, 0, 0, 0, 0
+	AUTOCHECKBOX    "Avoid auto save during playing",
+	                IDC_AUTOSAVE_DISABLEWHILEPLAYING, 8, 56, 236, 12, WS_TABSTOP | SS_LEFT
+	AUTOCHECKBOX    "Avoid auto save during recording",
+	                IDC_AUTOSAVE_DISABLEWHILERECORDING, 8, 72, 236, 12, WS_TABSTOP | SS_LEFT
+	LTEXT           "Note: While saving, playing or recording will be locked about 1 sec.", IDC_STATIC,
+	                8, 88, 236, 24, SS_NOPREFIX | WS_GROUP
+	GROUPBOX        "Delete Auto Saved Files", IDC_AUTOSAVE_DELETE,
+	                4, 120, 244, 40,  WS_GROUP
+	PUSHBUTTON      "Delete all auto saved files now", IDC_AUTOSAVE_DELETEALLFILENOW,
+	                8, 136, 236, 14, WS_TABSTOP | WS_GROUP
+	LTEXT           "Note: Auto Save function saves working MIDIData at fixed intervals \
+	                to autosave folder, just in case Sekaiju is damaged or crashed." IDC_STATIC,
+	                4, 164, 244, 36, SS_NOPREFIX | WS_GROUP
+	DEFPUSHBUTTON   "OK", IDOK,
+	                148, 192, 48, 14, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                200, 192, 48, 14, WS_TABSTOP
+
+END
+
+// Language Dialog
+IDD_LANGUAGE DIALOG 0, 0, 184, 64
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Language" 
+FONT 9, "MS Sans Serif" {
+	LTEXT           "Language", IDC_NONE, 
+	                4, 8, 76, 12, SS_NOPREFIX;
+	COMBOBOX        IDC_LANGUAGE_COMBO, 
+	                80, 8, 100, 200, WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	DEFPUSHBUTTON   "OK", IDOK, 
+	                80, 40, 48, 15, WS_TABSTOP
+	PUSHBUTTON      "Cancel", IDCANCEL, 
+	                132, 40, 48, 15, WS_TABSTOP
+}
+
+// General Option Page
+IDD_GENERALOPTION DIALOG 20, 20, 320, 308
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "General"
+FONT 9, "MS Sans Serif"
+BEGIN
+	CHECKBOX        "Allow multiple execution",
+	                IDC_GENERALOPTION_ENABLEMULTIEXEC, 4, 4, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "Allow multiple open",
+	                IDC_GENERALOPTION_ENABLEMULTIOPEN, 4, 20, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "Restore window position when Sekaiju is executed",
+	                IDC_GENERALOPTION_RESTOREWINDOWPLACEMENT, 4, 36, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "Open last used MIDIData automatically when Sekaijud is executed",
+	                IDC_GENERALOPTION_EXECOPEN, 4, 52, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "Start playing automatically when MIDIData is opended.",
+	                IDC_GENERALOPTION_OPENPLAY, 4, 68, 312, 16, WS_GROUP | BS_AUTOCHECKBOX
+	CHECKBOX        "Update Patch, Controller, PitchBend, RPN, NRPN when position is moved",
+	                IDC_GENERALOPTION_SEARCHUPDATE, 4, 84, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "Update Patch, Controller, PitchBend, RPN, NRPN when start playing"
+	                IDC_GENERALOPTION_PLAYUPDATE, 4, 100, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+    CHECKBOX        "Loop from CC#111 position when auto repeat (RPG Tsukuru method)",
+	                IDC_GENERALOPTION_ENABLECC111LOOP, 4, 116, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "Search only avail tone when CC#0, CC#32, or ProgramNumber is up or downed",
+	                IDC_GENERALOPTION_PATCHSEARCH, 4, 132, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "Invert position move direction when mouse wheel is turned with Ctrl key.",
+	                IDC_GENERALOPTION_INVERTCTRLMOUSEWHEEL, 4, 148, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "Count track number from 0",
+		            IDC_GENERALOPTION_TRACKZEROORIGIN, 4, 164, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "Count event number from 0",
+		            IDC_GENERALOPTION_EVENTZEROORIGIN, 4, 180, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "Turn on auto page update when position moved or start playing",
+		            IDC_GENERALOPTION_ENABLEAUTOPAGEUPDATE, 4, 196, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	CHECKBOX        "Send note off and hold off at the end of MIDIData."
+	                IDC_GENERALOPTION_SENDNOTEOFFHOLDOFFATEND, 4, 212, 312, 16, WS_GROUP | BS_AUTOCHECKBOX | SS_LEFT
+	LTEXT           "Tempo scale at Speed=Slow (1~<50>~1000)[%]", IDC_STATIC,
+	                4, 228, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_SPEEDSLOW
+	                276, 228, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         ""
+	                IDC_GENERALOPTION_SPEEDSLOWSP    UPDOWN, UDS_DEFAULT, 0, 0, 0, 0
+	LTEXT           "Tempo scale at Speed=Normal (1~<100>~1000)[%]", IDC_NONE,
+	                4, 244, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_SPEEDNORMAL
+	                276, 244, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_GENERALOPTION_SPEEDNORMALSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Tempo scale at Speed=Fast (1~<200>~1000)[%]", IDC_STATIC,
+	                4, 260, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_SPEEDFAST
+	                276, 260, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_GENERALOPTION_SPEEDFASTSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Playback and record thread loop interval (1~1000)[millisec]", IDC_STATIC,
+	                4, 276, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_PLAYRECORDINTERVAL
+	                276, 276, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_GENERALOPTION_PLAYRECORDINTERVALSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Octave number of center 'C' (key=60) (3~5)", IDC_STATIC,
+	                4, 292, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_GENERALOPTION_OCTAVESIGNATURE
+	                276, 292, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_GENERALOPTION_OCTAVESIGNATURESP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+END
+
+
+// Track List Option Page (1)
+IDD_TRACKLISTOPTION1 DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Track List (1)" 
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Default zoom scale of Row (16~64)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFROWZOOM
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFROWZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default zoom scale of Column (2~16)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFCOLUMNZOOM
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFCOLUMNZOOMSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "Default zoom scale of Time (2~16)", IDC_STATIC,
+	                4, 36, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFTIMEZOOM
+	                276, 36, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION1_DEFTIMEZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Track Name (1~32)", IDC_STATIC,
+	                4, 52, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFNAMEWIDTH
+	                276, 52, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION1_DEFNAMEWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Color (1~32)", IDC_STATIC,
+	                4, 68, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFCOLORWIDTH
+	                276, 68, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFCOLORWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Input On (1~32)", IDC_STATIC,
+	                4, 84, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFINPUTONWIDTH
+	                276, 84, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFINPUTONWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Input Port (1~32)", IDC_STATIC,
+	                4, 100, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFINPUTPORTWIDTH
+	                276, 100, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFINPUTPORTWIDTHSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "Default width of Input Channel (1~32)", IDC_STATIC,
+	                4, 116, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFINPUTCHWIDTH
+	                276, 116, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION1_DEFINPUTCHWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Output On (1~32)", IDC_STATIC,
+	                4, 132, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFOUTPUTONWIDTH
+	                276, 132, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION1_DEFOUTPUTONWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Output Port (1~32)", IDC_STATIC,
+	                4, 148, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFOUTPUTPORTWIDTH
+	                276, 148, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFOUTPUTPORTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Output Channel (1~32)", IDC_STATIC,
+	                4, 164, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFOUTPUTCHWIDTH
+	                276, 164, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION1_DEFOUTPUTCHWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of View Mode (1~32)", IDC_STATIC,
+	                4, 180, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION1_DEFVIEWMODEWIDTH
+	                276, 180, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "" IDC_TRACKLISTOPTION1_DEFVIEWMODEWIDTHSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+END
+
+
+// Track List (2) Page
+IDD_TRACKLISTOPTION2 DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Track List (2)" 
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Default width of CC#0 (1~32)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC000WIDTH
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION2_DEFCC000WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of CC#32 (1~32)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC032WIDTH
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         ""
+	                IDC_TRACKLISTOPTION2_DEFCC032WIDTHSP    UPDOWN, UDS_DEFAULT, 0, 0, 0, 0
+	LTEXT           "Default width of Program number (1~32)", IDC_STATIC,
+	                4, 36, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFPCWIDTH
+	                276, 36, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         ""
+	                IDC_TRACKLISTOPTION2_DEFPCWIDTHSP    UPDOWN, UDS_DEFAULT, 0, 0, 0, 0
+	LTEXT           "Default width of Volume (1~32)", IDC_STATIC,
+	                4, 52, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC007WIDTH
+	                276, 52, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION2_DEFCC007WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Pan (1~32)", IDC_STATIC,
+	                4, 68, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC010WIDTH
+	                276, 68, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_TRACKLISTOPTION2_DEFCC010WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Reverb (1~32)", IDC_STATIC,
+	                4, 84, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC091WIDTH
+	                276, 84, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFCC091WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Chorus (1~32)", IDC_STATIC,
+	                4, 100, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC093WIDTH
+	                276, 100, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFCC093WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Delay (1~32)", IDC_STATIC,
+	                4, 116, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFCC094WIDTH
+	                276, 116, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFCC094WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Key Shift (1~32)", IDC_STATIC,
+	                4, 132, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFKEYSHIFTWIDTH
+	                276, 132, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFKEYSHIFTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Velocity Shift (1~32)", IDC_STATIC,
+	                4, 148, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFVELSHIFTWIDTH
+	                276, 148, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFVELSHIFTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Time Shift (1~32)", IDC_STATIC,
+	                4, 164, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFTIMESHIFTWIDTH
+	                276, 164, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFTIMESHIFTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of NumEvents (1~32)", IDC_STATIC,
+	                4, 180, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_TRACKLISTOPTION2_DEFNUMEVENTWIDTH
+	                276, 180, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_TRACKLISTOPTION2_DEFNUMEVENTWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+END
+
+
+
+// Piano Roll Option Page
+IDD_PIANOROLLOPTION DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Piano Roll" 
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Default zoom scale of Key (4~16)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_PIANOROLLOPTION_DEFKEYZOOM
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_PIANOROLLOPTION_DEFKEYZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default zoom scale of Velocity (1~4)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_PIANOROLLOPTION_DEFVELZOOM
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_PIANOROLLOPTION_DEFVELZOOMSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "Default zoom scale of Time (1~16)", IDC_STATIC,
+	                4, 36, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_PIANOROLLOPTION_DEFTIMEZOOM
+	                276, 36, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_PIANOROLLOPTION_DEFTIMEZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+END
+
+// Event List Option Dialog
+IDD_EVENTLISTOPTION DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Event List" 
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Default zoom scale of Row (16~32)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFROWZOOM
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFROWZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default zoom scale of Column (1~16)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFCOLUMNZOOM
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFCOLUMNZOOMSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "Default width of Track (1~32)", IDC_STATIC,
+	                4, 36, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFTRACKWIDTH
+	                276, 36, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_EVENTLISTOPTION_DEFTRACKWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Hour:Minute:Second:Millisec (1~32)", IDC_STATIC,
+	                4, 52, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFMILLISECWIDTH
+	                276, 52, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_EVENTLISTOPTION_DEFMILLISECWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Time (1~32)", IDC_STATIC,
+	                4, 68, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFTIMEWIDTH
+	                276, 68, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFTIMEWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Kind (1~32)", IDC_STATIC,
+	                4, 84, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFKINDWIDTH
+	                276, 84, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFKINDWIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Channel (1~32)", IDC_STATIC,
+	                4, 100, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFCHWIDTH
+	                276, 100, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFCHWIDTHSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+	LTEXT           "Default width of Value1 (1~32)", IDC_STATIC,
+	                4, 116, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFVAL1WIDTH
+	                276, 116, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "",	IDC_EVENTLISTOPTION_DEFVAL1WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Value2 (1~32)", IDC_STATIC,
+	                4, 132, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFVAL2WIDTH
+	                276, 132, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "", IDC_EVENTLISTOPTION_DEFVAL2WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default width of Value3 (1~32)", IDC_STATIC,
+	                4, 148, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_EVENTLISTOPTION_DEFVAL3WIDTH
+	                276, 148, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_EVENTLISTOPTION_DEFVAL3WIDTHSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+
+	GROUPBOX        "Insert Event", IDC_EVENTLISTOPTION_INSERTEVENT,
+	                4, 164, 272, 42,  WS_GROUP
+	AUTORADIOBUTTON "Insert before the same time event", IDC_EVENTLISTOPTION_INSERTEVENTBEFORE,
+	                8, 176, 264, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Insert after the same time event", IDC_EVENTLISTOPTION_INSERTEVENTAFTER,
+	                8, 188, 264, 12,
+	GROUPBOX        "Duplicate Event", IDC_EVENTLISTOPTION_DUPLICATEEVENT,
+	                4, 208, 272, 42,  WS_GROUP
+	AUTORADIOBUTTON "Insert before the current event", IDC_EVENTLISTOPTION_DUPLICATEEVENTBEFORE,
+	                8, 220, 264, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Insert after the current event", IDC_EVENTLISTOPTION_DUPLICATEEVENTAFTER,
+	                8, 232, 264, 12,
+	GROUPBOX        "Delete Event", IDC_EVENTLISTOPTION_DELETEEVENT,
+	                4, 252, 272, 42,  WS_GROUP
+	AUTORADIOBUTTON "Focus the previous event of the deleted event", IDC_EVENTLISTOPTION_DELETEEVENTBEFORE,
+	                8, 264, 264, 12,  WS_TABSTOP | WS_GROUP
+	AUTORADIOBUTTON "Focus the next event of the deleted event", IDC_EVENTLISTOPTION_DELETEEVENTAFTER,
+	                8, 276, 264, 12,
+
+					
+END
+
+// Musical Score Option Page
+IDD_MUSICALSCOREOPTION DIALOG 20, 20, 320, 196
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Musical Score" 
+FONT 9, "MS Sans Serif"
+BEGIN
+	LTEXT           "Default zoom scale of Track (1~8)", IDC_STATIC,
+	                4, 4, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_MUSICALSCOREOPTION_DEFTRACKZOOM
+	                276, 4, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_MUSICALSCOREOPTION_DEFTRACKZOOMSP    UPDOWN, UDS_DEFAULT, 
+	                0, 0, 0, 0
+	LTEXT           "Default zoom scale of Time (1~16)", IDC_STATIC,
+	                4, 20, 272, 16, SS_NOPREFIX
+	EDITTEXT        IDC_MUSICALSCOREOPTION_DEFTIMEZOOM
+	                276, 20, 40, 12, WS_TABSTOP | ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER
+	CONTROL         "" IDC_MUSICALSCOREOPTION_DEFTIMEZOOMSP    UPDOWN, UDS_DEFAULT,
+	                0, 0, 0, 0
+END
+
+
+//-----------------------------------------------------------------------------
+// Strings Tables
+//-----------------------------------------------------------------------------
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+	IDR_MAINFRAME           "Sekaiju"
+	IDR_SEKAIJUTYPE         "\nUntitled\nMIDIData\n\n\nSekaiju.Document\nSekaiju Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+	AFX_IDS_APP_TITLE       "Sekaiju3.1"
+	AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_INDICATOR_EXT        "EXT"
+	ID_INDICATOR_CAPS       "CAP"
+	ID_INDICATOR_NUM        "NUM"
+	ID_INDICATOR_SCRL       "SCRL"
+	ID_INDICATOR_OVR        "OVR"
+	ID_INDICATOR_REC        "REC"
+	ID_INDICATOR_KANA       "KANA"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_FILE_NEW             "New File\nNew File"
+	ID_FILE_OPEN            "Open File\nOpen File"
+	ID_FILE_CLOSE           "Close File\nClose File"
+	ID_FILE_SAVE            "Save File\nSave File"
+	ID_FILE_SAVE_AS         "Save File as new filename\nSave File as new filename"
+	ID_FILE_PAGE_SETUP      "Setup Page\nSetup Page"
+	ID_FILE_PRINT_SETUP     "Setup Print\nSetup Print"
+	ID_FILE_PRINT           "Print\nPirnt"
+	ID_FILE_PRINT_PREVIEW   "Print Preview\nPrint Preview"
+	ID_APP_ABOUT            "Show Version Info\nShow Version Info"
+	ID_APP_EXIT             "Exit application\nExit application"
+	ID_FILE_MRU_FILE1       "Open specified file"
+	ID_FILE_MRU_FILE2       "Open specified file"
+	ID_FILE_MRU_FILE3       "Open specified file"
+	ID_FILE_MRU_FILE4       "Open specified file"
+	ID_FILE_MRU_FILE5       "Open specified file"
+	ID_FILE_MRU_FILE6       "Open specified file"
+	ID_FILE_MRU_FILE7       "Open specified file"
+	ID_FILE_MRU_FILE8       "Open specified file"
+	ID_FILE_MRU_FILE9       "Open specified file"
+	ID_FILE_MRU_FILE10      "Open specified file"
+	ID_FILE_MRU_FILE11      "Open specified file"
+	ID_FILE_MRU_FILE12      "Open specified file"
+	ID_FILE_MRU_FILE13      "Open specified file"
+	ID_FILE_MRU_FILE14      "Open specified file"
+	ID_FILE_MRU_FILE15      "Open specified file"
+	ID_FILE_MRU_FILE16      "Open specified file"
+	ID_NEXT_PANE             "Show Next Window\nShow Next Window"
+	ID_PREV_PANE             "Show Prev Window\nShow Prev Window"
+	ID_WINDOW_NEW            "Show New Window\nShow New Widnow"
+	ID_WINDOW_ARRANGE        "Arrange Windows as Icon\nArrange Windows as Icon"
+	ID_WINDOW_CASCADE        "Cascade Windows\nCascade Windows"
+	ID_WINDOW_TILE_HORZ      "Tile Windows Horizontally\nTile Windows Horizontally"
+	ID_WINDOW_TILE_VERT      "Tile Windows Vertically\nTile Windows Vertically"
+	ID_WINDOW_SPLIT          "Split Window\nSplit Window"
+	ID_EDIT_CUT              "Cut Selected Events\nCut Selected Events"
+	ID_EDIT_COPY             "Copy Selected Events\nCopy Selected Events"
+	ID_EDIT_PASTE            "Paste\nPaste"
+	ID_EDIT_DELETE           "Delete Selected Events\nDelete Selected Events"
+	ID_EDIT_SELECTALL        "Select all Events\nSelect all Events"
+	ID_EDIT_SELECTNONE       "Select no Events\nSelect no Events"
+	ID_EDIT_SELECTBEFORE     "Select Events before Current Position\nSelect Events before Current Position"
+	ID_EDIT_DESELECTBEFORE   "Deselect Events before Current Position\nDeselect Events before Current Position"
+	ID_EDIT_SELECTAFTER      "Select Events after Current Position\nSelect Events after Current Position"
+	ID_EDIT_DESELECTAFTER    "Deselect Events after Current Position\nDeselect Events after Current Position"
+	ID_EDIT_FIND             "Find\nFind"
+	ID_EDIT_REPEAT           "Repeat\nRepeat"
+	ID_EDIT_REPLACE          "Replace\nReplace"
+	ID_EDIT_SELECT_ALL       "Select All\nSelect All"
+	ID_EDIT_UNDO             "Undo\nUndo"
+	ID_EDIT_REDO             "Redo\nRedo"
+	ID_EDIT_INITHISTORY      "Initiazlize History\nInitialize History"
+	ID_EDIT_TRACK            "Modify Event's Track\nModify Event's Track" 
+	ID_EDIT_TIME             "Modify Event's Time\nModify Event's Time"
+	ID_EDIT_CHANNEL          "Modify Event's Channel\nModify Event's Channel"
+	ID_EDIT_KEY              "Modify Event's Key\nModify Event's Key"
+	ID_EDIT_VELOCITY         "Modify Event's Velocity\nModify Event's Velocity"
+	ID_EDIT_DURATION         "Modify Event's Duration\nModify Event's Duration"
+	ID_EDIT_VALUE            "Modify Event's Value\nModify Event's Value"
+	ID_EDIT_BREAKUPANDTRILL  "Break up note and make trill\nBreak up note and make trill"
+	ID_EDIT_QUANTIZE         "Quantize\nQuantize"
+	ID_EDIT_BEATSCAN         "Scan beat and Insert Tempo\nScan beat and Insert Tempo"
+	ID_EDIT_INSERTMEASURE    "Insert Measure\nInsert Measure"
+	ID_EDIT_REMOVEMEASURE    "Remove Measure\nRemove Measure"
+END
+
+STRINGTABLE DISCARDABLE {
+	ID_VIEW_TOOLBAR1             "Show or Hide Toolbar1\nShow or Hide Toolbar1"
+	ID_VIEW_TOOLBAR2             "Show or Hide Toolbar2\nShow or Hide Toolbar2"
+	ID_VIEW_STATUS_BAR           "Show or Hide Statusbar\nShow or Hide Statusbar"
+	ID_VIEW_TRACKLIST            "Show new Track List Window\nShow new Track List Window"
+	ID_VIEW_PIANOROLL            "Show new Piano Roll Window\nShow new Piano Roll Window"
+	ID_VIEW_EVENTLIST            "Show new Event List Window\nShow new Event List Window"
+	ID_VIEW_MUSICALSCORE         "Show new Musical Score Window\nShow new Musical Score Window"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_CONTROL_TOBEGIN           "Jump to Begin\nJump to Begin"
+	ID_CONTROL_PLAY              "Playback or Stop\nPlayback or Stop"
+	ID_CONTROL_RECORD            "Record or Stop\nRecord or Stop"
+	ID_CONTROL_TOEND             "Jump to End\nJump to End"
+	ID_CONTROL_SPEEDNONE         "Speed = Pause\nSpeed = Pause"
+	ID_CONTROL_SPEEDSLOW         "Speed = Slow\nSpeed = Slow"
+	ID_CONTROL_SPEEDNORMAL       "Speed = Normal\nSpeed = Normal"
+	ID_CONTROL_SPEEDFAST         "Speed = Fast\nSpeed = Fast"
+	ID_CONTROL_SPEEDSLAVE        "Speed = Slave to other machine\nSpeed = Slave to other machine"
+	ID_CONTROL_AUTOREPEAT        "Auto Repeat\nAuto Repeat"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_SETUP_MIDIDEVICE          "MIDI Device and Instrument\nMIDI Device and Instrument"
+	ID_SETUP_METRONOME           "Metronome\nMetronome"
+	ID_SETUP_AUTOSAVE            "Auto Save\nAuto Save"
+	ID_SETUP_LANGUAGE            "Language\nLanguage"
+	ID_SETUP_OPTIONS             "Option\nOption"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_HELP_README               "readme.txt\nreadme.txt"
+	ID_HELP_LICENSE              "License\nLicense"
+	ID_HELP_MANUAL               "Documentations\nDocumentations"
+	ID_HELP_PROJECTHOMEPAGE      "Project Home Page\nProject Home Page"
+	ID_HELP_ABOUT                "Version Info\nVersion Info"
+}
+
+STRINGTABLE DISCARDABLE {
+	IDC_MILLISECEDIT             "Hour:Minute:Second:Millisec\nHour:Minute:Second:Millisec"
+	IDC_TIMEEDIT                 "Measure:Beat:Tick\nMeasure:Beat:Tick"
+	IDC_POSITIONSCROLL           "Playback Position\nPlayback Position"
+	IDC_MEASUREEDIT              "Time Signature and Key Signature\nTime Signature and Key Signature"
+	IDC_TEMPOEDIT                "Tempo[BPM]\nTempo[BPM]"
+}
+
+STRINGTABLE DISCARDABLE {
+	IDC_TRACKCOMBO               "Track\nTrack"
+	IDC_CHANNELCOMBO             "Channel\nChannel"
+	IDC_SNAPCOMBO                "Snap [ticks]\nSnap [ticks]"
+	IDC_VELOCITYCOMBO            "Velocity\nVelocity"
+	IDC_DURATIONCOMBO            "Duration [ticks]\nDuration [ticks]"
+	IDC_GRAPHKINDCOMBO           "Graph Kind\nGraph Kind"
+	IDC_GRAPHSNAPCOMBO           "Graph Snap [ticks]\nGraph Snap [ticks]"
+	IDC_RESOLUTIONCOMBO          "View Resolution [ticks]\nView Resolution [ticks]"
+}
+
+
+STRINGTABLE DISCARDABLE {
+	IDC_EVENTTRACKCOMBO          "Track\nTrack"
+	IDC_EVENTTIMEEDIT            "Event Time\nEvent Time"
+	IDC_EVENTKINDCOMBO           "Event Kind\nEvent Kind"
+	IDC_EVENTCHANNELCOMBO        "Event Channel\nEvent Channel"
+}
+
+
+STRINGTABLE DISCARDABLE {
+	ID_TRACKLIST_INSERTTRACK     "Insert Track\nInsert Track(Ins)"
+	ID_TRACKLIST_DUPLICATETRACK  "Duplicate Track\nDuplicate Track(Ctrl+Ins)"
+	ID_TRACKLIST_DELETETRACK     "Delete Track\nDelete Track(Del)"
+	ID_TRACKLIST_MOVEUPTRACK     "Move up Track\nMove up Track"
+	ID_TRACKLIST_MOVEDOWNTRACK   "Move down Track\nMove down Track"
+	ID_TRACKLIST_SELECT          "Select\nSelect(S)"
+	ID_TRACKLIST_SPEAKER         "Preview\nPreview(B)"
+	ID_TRACKLIST_AUTOPAGEUPDATE  "Auto Page Update\nAuto Page Update"
+	ID_TRACKLIST_SAVEAS          "Save this list as CSV or Text\nSave this list as CSV or Text"
+}
+
+
+STRINGTABLE DISCARDABLE {
+	ID_PIANOROLL_PEN            "Pen\nPen(P)(D)"
+	ID_PIANOROLL_LINE           "Line\nLine(L)"
+	ID_PIANOROLL_ERASER         "Eraser\nEraser(E)"
+	ID_PIANOROLL_SELECT         "Select\nSelect(S)"
+	ID_PIANOROLL_SPEAKER        "Preview\nPreview(B)"
+	ID_PIANOROLL_ONLYCURTRACK   "Show Only Current Track\nShow Only Current Track(F9)"
+	ID_PIANOROLL_SHOWALLTRACK   "Show All Tracks\nShow All Tracks(F10)"
+	ID_PIANOROLL_ONLYCURGRAPH   "Show Only Current Graph\nShow Only Current Graph(F11)"
+	ID_PIANOROLL_SHOWALLGRAPH   "Show All Graphs\nShow All Graphs(F12)"
+	ID_PIANOROLL_AUTOPAGEUPDATE "Auto Page Udpate\nAuto Page Update"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_EVENTLIST_INSERTEVENT    "Insert Event\nInset Event(Ins)"
+	ID_EVENTLIST_DUPLICATEEVENT "Duplicate Event\nDuplicate Event(Ctrl+Ins)"
+	ID_EVENTLIST_DELETEEVENT    "Delete Event\nDelete Event(Del)"
+	ID_EVENTLIST_DUMMY1         "Dummy1\nDummy1"
+	ID_EVENTLIST_DUMMY2         "Dummy2\nDummy2"
+	ID_EVENTLIST_DUMMY3         "Dummy3\nDummy3"
+	ID_EVENTLIST_ONLYCURTRACK   "Show Only Current Track\nShow Only Current Track(F9)"
+	ID_EVENTLIST_SHOWALLTRACK   "Show All Tracks\nShow All Tracks(F10)"
+	ID_EVENTLIST_ONLYCURGRAPH   "Show Only Current Event Kind\nShow Only Current Event Kind(F11)"
+	ID_EVENTLIST_SHOWALLGRAPH   "Show All Event Kind\nShow All Event Kind(F12)"
+	ID_EVENTLIST_AUTOPAGEUPDATE "Auto Page Update\nAuto Page Update"
+	ID_EVENTLIST_SAVEAS         "Save this list as CSV or Text\nSave this list as CSV or Text"
+}
+
+STRINGTABLE DISCARDABLE {
+	ID_MUSICALSCORE_PEN            "Pen\nPen(P)(D)"
+	ID_MUSICALSCORE_ERASER         "Eraser\nEraser(E)"
+	ID_MUSICALSCORE_SELECT         "Select\nSelect(S)"
+	ID_MUSICALSCORE_SPEAKER        "Preview\nPreview(B)"
+	ID_MUSICALSCORE_WHOLENOTE      "WholeNote\nWholeNote(1)"
+	ID_MUSICALSCORE_HALFNOTE       "HalfNote\nHalfNote(2)"
+	ID_MUSICALSCORE_QUARTERNOTE    "QuarterNote\nQuarterNote(4)"
+	ID_MUSICALSCORE_QUAVERNOTE     "QuaverNote\nQuaverNote(8)"
+	ID_MUSICALSCORE_SEMIQUAVERNOTE "SemiQuaverNote\nSemiQuaverNote(6)"
+	ID_MUSICALSCORE_DEMISEMIQUAVERNOTE "DemiSemiQuaverNote\nDemiSemiQuaverNote(9)"
+	ID_MUSICALSCORE_DOTTED         "Dotted\nDotted(.)"
+	ID_MUSICALSCORE_TRIPLET        "Triplet\nTriplet(t)"
+	ID_MUSICALSCORE_ONLYCURTRACK   "Show Only Current Track\nShow Only Current Track(F9)"
+	ID_MUSICALSCORE_SHOWALLTRACK   "Show All Tracks\nShow All Tracks(F10)"
+	ID_MUSICALSCORE_AUTOPAGEUPDATE "Auto Page Udpate\nAuto Page Update"
+}
+
+
+STRINGTABLE DISCARDABLE {
+	AFX_IDS_SCSIZE              "Modify Window Size"
+	AFX_IDS_SCMOVE              "Modify Window Position"
+	AFX_IDS_SCMINIMIZE          "Minimize Window"
+	AFX_IDS_SCMAXIMIZE          "Maximize Window"
+	AFX_IDS_SCNEXTWINDOW        "Next Window"
+	AFX_IDS_SCPREVWINDOW        "Prev Window"
+	AFX_IDS_SCCLOSE             "Close Window"
+	AFX_IDS_SCRESTORE           "Restore Window Size"
+	AFX_IDS_SCTASKLIST          "Change Application"
+	AFX_IDS_MDICHILD            "Show Specified Window"
+	AFX_IDS_PREVIEW_CLOSE       "Close Preview\nClose Preview"
+}
+
+STRINGTABLE DISCARDABLE {
+	IDS_CONTROL_SPEEDSLOW       "Speed = Slow [%d%%]"
+	IDS_CONTROL_SPEEDNORMAL     "Speed = Normal [%d%%]"
+	IDS_CONTROL_SPEEDFAST       "Speed = Fast [%d%%]"
+}
+
+
+
+//-----------------------------------------------------------------------------
+// Cursors
+//-----------------------------------------------------------------------------
+
+IDC_SIZEALLCOPY        CURSOR    DISCARDABLE     "..\\res\\SizeAllCopy.cur"
+IDC_RESIZEWE           CURSOR    DISCARDABLE     "..\\res\\ResizeWE.cur"
+IDC_RESIZENS           CURSOR    DISCARDABLE     "..\\res\\ResizeNS.cur"
+IDC_RESIZEALL          CURSOR    DISCARDABLE     "..\\res\\ResizeAll.cur"
+IDC_DRAW               CURSOR    DISCARDABLE     "..\\res\\Draw.cur"
+IDC_LINE               CURSOR    DISCARDABLE     "..\\res\\Line.cur"
+IDC_ERASER             CURSOR    DISCARDABLE     "..\\res\\Eraser.cur"
+IDC_SELECT             CURSOR    DISCARDABLE     "..\\res\\Select.cur"
+IDC_SELECTADD          CURSOR    DISCARDABLE     "..\\res\\SelectAdd.cur"
+IDC_SELECT2            CURSOR    DISCARDABLE     "..\\res\\Select2.cur"
+IDC_SELECTADD2         CURSOR    DISCARDABLE     "..\\res\\SelectAdd2.cur"
+IDC_SPEAKER            CURSOR    DISCARDABLE     "..\\res\\Speaker.cur"
+
+//-----------------------------------------------------------------------------
+// Strings Tables (MIDI proper name)
+//-----------------------------------------------------------------------------
+
+// Event Kind (128 Kind)
+STRINGTABLE DISCARDABLE {
+	IDS_EVENTKIND_00           "Sequence Number"
+	IDS_EVENTKIND_01           "Text"
+	IDS_EVENTKIND_02           "Copyright"
+	IDS_EVENTKIND_03           "Track Name"
+	IDS_EVENTKIND_04           "Instrument Name"
+	IDS_EVENTKIND_05           "Lyrics"
+	IDS_EVENTKIND_06           "Marker"
+	IDS_EVENTKIND_07           "Cue Point"
+	IDS_EVENTKIND_08           "Program Name"
+	IDS_EVENTKIND_09           "Device Name"
+	IDS_EVENTKIND_0A           ""
+	IDS_EVENTKIND_0B           ""
+	IDS_EVENTKIND_0C           ""
+	IDS_EVENTKIND_0D           ""
+	IDS_EVENTKIND_0E           ""
+	IDS_EVENTKIND_0F           ""
+
+	IDS_EVENTKIND_10           ""
+	IDS_EVENTKIND_11           ""
+	IDS_EVENTKIND_12           ""
+	IDS_EVENTKIND_13           ""
+	IDS_EVENTKIND_14           ""
+	IDS_EVENTKIND_15           ""
+	IDS_EVENTKIND_16           ""
+	IDS_EVENTKIND_17           ""
+	IDS_EVENTKIND_18           ""
+	IDS_EVENTKIND_19           ""
+	IDS_EVENTKIND_1A           ""
+	IDS_EVENTKIND_1B           ""
+	IDS_EVENTKIND_1C           ""
+	IDS_EVENTKIND_1D           ""
+	IDS_EVENTKIND_1E           ""
+	IDS_EVENTKIND_1F           ""
+
+	IDS_EVENTKIND_20           "Channel Prefix"
+	IDS_EVENTKIND_21           "Port Prefix"
+	IDS_EVENTKIND_22           ""
+	IDS_EVENTKIND_23           ""
+	IDS_EVENTKIND_24           ""
+	IDS_EVENTKIND_25           ""
+	IDS_EVENTKIND_26           ""
+	IDS_EVENTKIND_27           ""
+	IDS_EVENTKIND_28           ""
+	IDS_EVENTKIND_29           ""
+	IDS_EVENTKIND_2A           ""
+	IDS_EVENTKIND_2B           ""
+	IDS_EVENTKIND_2C           ""
+	IDS_EVENTKIND_2D           ""
+	IDS_EVENTKIND_2E           ""
+	IDS_EVENTKIND_2F           "End of Track"
+
+	IDS_EVENTKIND_30           ""
+	IDS_EVENTKIND_31           ""
+	IDS_EVENTKIND_32           ""
+	IDS_EVENTKIND_33           ""
+	IDS_EVENTKIND_34           ""
+	IDS_EVENTKIND_35           ""
+	IDS_EVENTKIND_36           ""
+	IDS_EVENTKIND_37           ""
+	IDS_EVENTKIND_38           ""
+	IDS_EVENTKIND_39           ""
+	IDS_EVENTKIND_3A           ""
+	IDS_EVENTKIND_3B           ""
+	IDS_EVENTKIND_3C           ""
+	IDS_EVENTKIND_3D           ""
+	IDS_EVENTKIND_3E           ""
+	IDS_EVENTKIND_3F           ""
+
+	IDS_EVENTKIND_40           ""
+	IDS_EVENTKIND_41           ""
+	IDS_EVENTKIND_42           ""
+	IDS_EVENTKIND_43           ""
+	IDS_EVENTKIND_44           ""
+	IDS_EVENTKIND_45           ""
+	IDS_EVENTKIND_46           ""
+	IDS_EVENTKIND_47           ""
+	IDS_EVENTKIND_48           ""
+	IDS_EVENTKIND_49           ""
+	IDS_EVENTKIND_4A           ""
+	IDS_EVENTKIND_4B           ""
+	IDS_EVENTKIND_4C           ""
+	IDS_EVENTKIND_4D           ""
+	IDS_EVENTKIND_4E           ""
+	IDS_EVENTKIND_4F           ""
+
+	IDS_EVENTKIND_50           ""
+	IDS_EVENTKIND_51           "Tempo"
+	IDS_EVENTKIND_52           ""
+	IDS_EVENTKIND_53           ""
+	IDS_EVENTKIND_54           "SMPTE Offset"
+	IDS_EVENTKIND_55           ""
+	IDS_EVENTKIND_56           ""
+	IDS_EVENTKIND_57           ""
+	IDS_EVENTKIND_58           "Time Signature"
+	IDS_EVENTKIND_59           "Key Signature"
+	IDS_EVENTKIND_5A           ""
+	IDS_EVENTKIND_5B           ""
+	IDS_EVENTKIND_5C           ""
+	IDS_EVENTKIND_5D           ""
+	IDS_EVENTKIND_5E           ""
+	IDS_EVENTKIND_5F           ""
+
+	IDS_EVENTKIND_60           ""
+	IDS_EVENTKIND_61           ""
+	IDS_EVENTKIND_62           ""
+	IDS_EVENTKIND_63           ""
+	IDS_EVENTKIND_64           ""
+	IDS_EVENTKIND_65           ""
+	IDS_EVENTKIND_66           ""
+	IDS_EVENTKIND_67           ""
+	IDS_EVENTKIND_68           ""
+	IDS_EVENTKIND_69           ""
+	IDS_EVENTKIND_6A           ""
+	IDS_EVENTKIND_6B           ""
+	IDS_EVENTKIND_6C           ""
+	IDS_EVENTKIND_6D           ""
+	IDS_EVENTKIND_6E           ""
+	IDS_EVENTKIND_6F           ""
+
+	IDS_EVENTKIND_70           ""
+	IDS_EVENTKIND_71           ""
+	IDS_EVENTKIND_72           ""
+	IDS_EVENTKIND_73           ""
+	IDS_EVENTKIND_74           ""
+	IDS_EVENTKIND_75           ""
+	IDS_EVENTKIND_76           ""
+	IDS_EVENTKIND_77           ""
+	IDS_EVENTKIND_78           ""
+	IDS_EVENTKIND_79           ""
+	IDS_EVENTKIND_7A           ""
+	IDS_EVENTKIND_7B           ""
+	IDS_EVENTKIND_7C           ""
+	IDS_EVENTKIND_7D           ""
+	IDS_EVENTKIND_7E           ""
+	IDS_EVENTKIND_7F           "Sequencer Specific"
+
+	IDS_EVENTKIND_80           "Note Off"
+	IDS_EVENTKIND_81           "Note Off"
+	IDS_EVENTKIND_82           "Note Off"
+	IDS_EVENTKIND_83           "Note Off"
+	IDS_EVENTKIND_84           "Note Off"
+	IDS_EVENTKIND_85           "Note Off"
+	IDS_EVENTKIND_86           "Note Off"
+	IDS_EVENTKIND_87           "Note Off"
+	IDS_EVENTKIND_88           "Note Off"
+	IDS_EVENTKIND_89           "Note Off"
+	IDS_EVENTKIND_8A           "Note Off"
+	IDS_EVENTKIND_8B           "Note Off"
+	IDS_EVENTKIND_8C           "Note Off"
+	IDS_EVENTKIND_8D           "Note Off"
+	IDS_EVENTKIND_8E           "Note Off"
+	IDS_EVENTKIND_8F           "Note Off"
+
+
+	IDS_EVENTKIND_90           "Note On"
+	IDS_EVENTKIND_91           "Note On"
+	IDS_EVENTKIND_92           "Note On"
+	IDS_EVENTKIND_93           "Note On"
+	IDS_EVENTKIND_94           "Note On"
+	IDS_EVENTKIND_95           "Note On"
+	IDS_EVENTKIND_96           "Note On"
+	IDS_EVENTKIND_97           "Note On"
+	IDS_EVENTKIND_98           "Note On"
+	IDS_EVENTKIND_99           "Note On"
+	IDS_EVENTKIND_9A           "Note On"
+	IDS_EVENTKIND_9B           "Note On"
+	IDS_EVENTKIND_9C           "Note On"
+	IDS_EVENTKIND_9D           "Note On"
+	IDS_EVENTKIND_9E           "Note On"
+	IDS_EVENTKIND_9F           "Note On"
+
+	IDS_EVENTKIND_A0           "KeyAfterTouch"
+	IDS_EVENTKIND_A1           "KeyAfterTouch"
+	IDS_EVENTKIND_A2           "KeyAfterTouch"
+	IDS_EVENTKIND_A3           "KeyAfterTouch"
+	IDS_EVENTKIND_A4           "KeyAfterTouch"
+	IDS_EVENTKIND_A5           "KeyAfterTouch"
+	IDS_EVENTKIND_A6           "KeyAfterTouch"
+	IDS_EVENTKIND_A7           "KeyAfterTouch"
+	IDS_EVENTKIND_A8           "KeyAfterTouch"
+	IDS_EVENTKIND_A9           "KeyAfterTouch"
+	IDS_EVENTKIND_AA           "KeyAfterTouch"
+	IDS_EVENTKIND_AB           "KeyAfterTouch"
+	IDS_EVENTKIND_AC           "KeyAfterTouch"
+	IDS_EVENTKIND_AD           "KeyAfterTouch"
+	IDS_EVENTKIND_AE           "KeyAfterTouch"
+	IDS_EVENTKIND_AF           "KeyAfterTouch"
+
+	IDS_EVENTKIND_B0           "Control Change"
+	IDS_EVENTKIND_B1           "Control Change"
+	IDS_EVENTKIND_B2           "Control Change"
+	IDS_EVENTKIND_B3           "Control Change"
+	IDS_EVENTKIND_B4           "Control Change"
+	IDS_EVENTKIND_B5           "Control Change"
+	IDS_EVENTKIND_B6           "Control Change"
+	IDS_EVENTKIND_B7           "Control Change"
+	IDS_EVENTKIND_B8           "Control Change"
+	IDS_EVENTKIND_B9           "Control Change"
+	IDS_EVENTKIND_BA           "Control Change"
+	IDS_EVENTKIND_BB           "Control Change"
+	IDS_EVENTKIND_BC           "Control Change"
+	IDS_EVENTKIND_BD           "Control Change"
+	IDS_EVENTKIND_BE           "Control Change"
+	IDS_EVENTKIND_BF           "Control Change"
+
+	IDS_EVENTKIND_C0           "Program Change"
+	IDS_EVENTKIND_C1           "Program Change"
+	IDS_EVENTKIND_C2           "Program Change"
+	IDS_EVENTKIND_C3           "Program Change"
+	IDS_EVENTKIND_C4           "Program Change"
+	IDS_EVENTKIND_C5           "Program Change"
+	IDS_EVENTKIND_C6           "Program Change"
+	IDS_EVENTKIND_C7           "Program Change"
+	IDS_EVENTKIND_C8           "Program Change"
+	IDS_EVENTKIND_C9           "Program Change"
+	IDS_EVENTKIND_CA           "Program Change"
+	IDS_EVENTKIND_CB           "Program Change"
+	IDS_EVENTKIND_CC           "Program Change"
+	IDS_EVENTKIND_CD           "Program Change"
+	IDS_EVENTKIND_CE           "Program Change"
+	IDS_EVENTKIND_CF           "Program Change"
+
+	IDS_EVENTKIND_D0           "ChannelAfterTouch"
+	IDS_EVENTKIND_D1           "ChannelAfterTouch"
+	IDS_EVENTKIND_D2           "ChannelAfterTouch"
+	IDS_EVENTKIND_D3           "ChannelAfterTouch"
+	IDS_EVENTKIND_D4           "ChannelAfterTouch"
+	IDS_EVENTKIND_D5           "ChannelAfterTouch"
+	IDS_EVENTKIND_D6           "ChannelAfterTouch"
+	IDS_EVENTKIND_D7           "ChannelAfterTouch"
+	IDS_EVENTKIND_D8           "ChannelAfterTouch"
+	IDS_EVENTKIND_D9           "ChannelAfterTouch"
+	IDS_EVENTKIND_DA           "ChannelAfterTouch"
+	IDS_EVENTKIND_DB           "ChannelAfterTouch"
+	IDS_EVENTKIND_DC           "ChannelAfterTouch"
+	IDS_EVENTKIND_DD           "ChannelAfterTouch"
+	IDS_EVENTKIND_DE           "ChannelAfterTouch"
+	IDS_EVENTKIND_DF           "ChannelAfterTouch"
+
+	IDS_EVENTKIND_E0           "Pitch Bend"
+	IDS_EVENTKIND_E1           "Pitch Bend"
+	IDS_EVENTKIND_E2           "Pitch Bend"
+	IDS_EVENTKIND_E3           "Pitch Bend"
+	IDS_EVENTKIND_E4           "Pitch Bend"
+	IDS_EVENTKIND_E5           "Pitch Bend"
+	IDS_EVENTKIND_E6           "Pitch Bend"
+	IDS_EVENTKIND_E7           "Pitch Bend"
+	IDS_EVENTKIND_E8           "Pitch Bend"
+	IDS_EVENTKIND_E9           "Pitch Bend"
+	IDS_EVENTKIND_EA           "Pitch Bend"
+	IDS_EVENTKIND_EB           "Pitch Bend"
+	IDS_EVENTKIND_EC           "Pitch Bend"
+	IDS_EVENTKIND_ED           "Pitch Bend"
+	IDS_EVENTKIND_EE           "Pitch Bend"
+	IDS_EVENTKIND_EF           "Pitch Bend"
+
+	IDS_EVENTKIND_F0           "SysEx(Normal)"
+	IDS_EVENTKIND_F1           ""
+	IDS_EVENTKIND_F2           ""
+	IDS_EVENTKIND_F3           ""
+	IDS_EVENTKIND_F4           ""
+	IDS_EVENTKIND_F5           ""
+	IDS_EVENTKIND_F6           ""
+	IDS_EVENTKIND_F7           "SysEx(Arbitrary)"
+	IDS_EVENTKIND_F8           ""
+	IDS_EVENTKIND_F9           ""
+	IDS_EVENTKIND_FA           ""
+	IDS_EVENTKIND_FB           ""
+	IDS_EVENTKIND_FC           ""
+	IDS_EVENTKIND_FD           ""
+	IDS_EVENTKIND_FE           ""
+	IDS_EVENTKIND_FF           ""
+}
+
+
+
+// Default Note.Key Name (12 keys * 15 key signatures)
+STRINGTABLE DISCARDABLE {
+	// 0 - C / Am
+	IDS_NOTEKEY_0S00           "C"
+	IDS_NOTEKEY_0S01           "C#"
+	IDS_NOTEKEY_0S02           "D"
+	IDS_NOTEKEY_0S03           "Eb"
+	IDS_NOTEKEY_0S04           "E"
+	IDS_NOTEKEY_0S05           "F"
+	IDS_NOTEKEY_0S06           "F#"
+	IDS_NOTEKEY_0S07           "G"
+	IDS_NOTEKEY_0S08           "G#"
+	IDS_NOTEKEY_0S09           "A"
+	IDS_NOTEKEY_0S10           "Bb"
+	IDS_NOTEKEY_0S11           "B"
+	IDS_NOTEKEY_0S12           ""
+	IDS_NOTEKEY_0S13           ""
+	IDS_NOTEKEY_0S14           ""
+	IDS_NOTEKEY_0S15           ""
+	// 1# - G / Em
+	IDS_NOTEKEY_1S00           "C"
+	IDS_NOTEKEY_1S01           "C#"
+	IDS_NOTEKEY_1S02           "D"
+	IDS_NOTEKEY_1S03           "D#"
+	IDS_NOTEKEY_1S04           "E"
+	IDS_NOTEKEY_1S05           "F"
+	IDS_NOTEKEY_1S06           "F#"
+	IDS_NOTEKEY_1S07           "G"
+	IDS_NOTEKEY_1S08           "G#"
+	IDS_NOTEKEY_1S09           "A"
+	IDS_NOTEKEY_1S10           "Bb"
+	IDS_NOTEKEY_1S11           "B"
+	IDS_NOTEKEY_1S12           ""
+	IDS_NOTEKEY_1S13           ""
+	IDS_NOTEKEY_1S14           ""
+	IDS_NOTEKEY_1S15           ""
+	// 2# - D / Bm
+	IDS_NOTEKEY_2S00           "C"
+	IDS_NOTEKEY_2S01           "C#"
+	IDS_NOTEKEY_2S02           "D"
+	IDS_NOTEKEY_2S03           "D#"
+	IDS_NOTEKEY_2S04           "E"
+	IDS_NOTEKEY_2S05           "F"
+	IDS_NOTEKEY_2S06           "F#"
+	IDS_NOTEKEY_2S07           "G"
+	IDS_NOTEKEY_2S08           "G#"
+	IDS_NOTEKEY_2S09           "A"
+	IDS_NOTEKEY_2S10           "A#"
+	IDS_NOTEKEY_2S11           "B"
+	IDS_NOTEKEY_2S12           ""
+	IDS_NOTEKEY_2S13           ""
+	IDS_NOTEKEY_2S14           ""
+	IDS_NOTEKEY_2S15           ""
+	// 3# - A / F#m
+	IDS_NOTEKEY_3S00           "C"
+	IDS_NOTEKEY_3S01           "C#"
+	IDS_NOTEKEY_3S02           "D"
+	IDS_NOTEKEY_3S03           "D#"
+	IDS_NOTEKEY_3S04           "E"
+	IDS_NOTEKEY_3S05           "E#"
+	IDS_NOTEKEY_3S06           "F#"
+	IDS_NOTEKEY_3S07           "G"
+	IDS_NOTEKEY_3S08           "G#"
+	IDS_NOTEKEY_3S09           "A"
+	IDS_NOTEKEY_3S10           "A#"
+	IDS_NOTEKEY_3S11           "B"
+	IDS_NOTEKEY_3S12           ""
+	IDS_NOTEKEY_3S13           ""
+	IDS_NOTEKEY_3S14           ""
+	IDS_NOTEKEY_3S15           ""
+	// 4# - E / C#m
+	IDS_NOTEKEY_4S00           "C"
+	IDS_NOTEKEY_4S01           "C#"
+	IDS_NOTEKEY_4S02           "D"
+	IDS_NOTEKEY_4S03           "D#"
+	IDS_NOTEKEY_4S04           "E"
+	IDS_NOTEKEY_4S05           "E#"
+	IDS_NOTEKEY_4S06           "F#"
+	IDS_NOTEKEY_4S07           "G"
+	IDS_NOTEKEY_4S08           "G#"
+	IDS_NOTEKEY_4S09           "A"
+	IDS_NOTEKEY_4S10           "A#"
+	IDS_NOTEKEY_4S11           "B"
+	IDS_NOTEKEY_4S12           ""
+	IDS_NOTEKEY_4S13           ""
+	IDS_NOTEKEY_4S14           ""
+	IDS_NOTEKEY_4S15           ""
+	// 5# - B / G#m
+	IDS_NOTEKEY_5S00           "B#"
+	IDS_NOTEKEY_5S01           "C#"
+	IDS_NOTEKEY_5S02           "D"
+	IDS_NOTEKEY_5S03           "D#"
+	IDS_NOTEKEY_5S04           "E"
+	IDS_NOTEKEY_5S05           "E#"
+	IDS_NOTEKEY_5S06           "F#"
+	IDS_NOTEKEY_5S07           "F##"
+	IDS_NOTEKEY_5S08           "G#"
+	IDS_NOTEKEY_5S09           "A"
+	IDS_NOTEKEY_5S10           "A#"
+	IDS_NOTEKEY_5S11           "B"
+	IDS_NOTEKEY_5S12           ""
+	IDS_NOTEKEY_5S13           ""
+	IDS_NOTEKEY_5S14           ""
+	IDS_NOTEKEY_5S15           ""
+	// 6# - F# / D#m
+	IDS_NOTEKEY_6S00           "B#"
+	IDS_NOTEKEY_6S01           "C#"
+	IDS_NOTEKEY_6S02           "C##"
+	IDS_NOTEKEY_6S03           "D#"
+	IDS_NOTEKEY_6S04           "E"
+	IDS_NOTEKEY_6S05           "E#"
+	IDS_NOTEKEY_6S06           "F#"
+	IDS_NOTEKEY_6S07           "F##"
+	IDS_NOTEKEY_6S08           "G#"
+	IDS_NOTEKEY_6S09           "A"
+	IDS_NOTEKEY_6S10           "A#"
+	IDS_NOTEKEY_6S11           "B"
+	IDS_NOTEKEY_6S12           ""
+	IDS_NOTEKEY_6S13           ""
+	IDS_NOTEKEY_6S14           ""
+	IDS_NOTEKEY_6S15           ""
+	// 7# - C# / A#m
+	IDS_NOTEKEY_7S00           "B#"
+	IDS_NOTEKEY_7S01           "C#"
+	IDS_NOTEKEY_7S02           "C##"
+	IDS_NOTEKEY_7S03           "D#"
+	IDS_NOTEKEY_7S04           "E"
+	IDS_NOTEKEY_7S05           "E#"
+	IDS_NOTEKEY_7S06           "F#"
+	IDS_NOTEKEY_7S07           "F##"
+	IDS_NOTEKEY_7S08           "G#"
+	IDS_NOTEKEY_7S09           "G##"
+	IDS_NOTEKEY_7S10           "A#"
+	IDS_NOTEKEY_7S11           "B"
+	IDS_NOTEKEY_7S12           ""
+	IDS_NOTEKEY_7S13           ""
+	IDS_NOTEKEY_7S14           ""
+	IDS_NOTEKEY_7S15           ""
+	// 8b - ERROR
+	IDS_NOTEKEY_8F00           ""
+	IDS_NOTEKEY_8F01           ""
+	IDS_NOTEKEY_8F02           ""
+	IDS_NOTEKEY_8F03           ""
+	IDS_NOTEKEY_8F04           ""
+	IDS_NOTEKEY_8F05           ""
+	IDS_NOTEKEY_8F06           ""
+	IDS_NOTEKEY_8F07           ""
+	IDS_NOTEKEY_8F08           ""
+	IDS_NOTEKEY_8F09           ""
+	IDS_NOTEKEY_8F10           ""
+	IDS_NOTEKEY_8F11           ""
+	IDS_NOTEKEY_8F12           ""
+	IDS_NOTEKEY_8F13           ""
+	IDS_NOTEKEY_8F14           ""
+	IDS_NOTEKEY_8F15           ""
+	// 7b - Cb / Abm
+	IDS_NOTEKEY_7F00           "C"
+	IDS_NOTEKEY_7F01           "Db"
+	IDS_NOTEKEY_7F02           "Ebb"
+	IDS_NOTEKEY_7F03           "Eb"
+	IDS_NOTEKEY_7F04           "Fb"
+	IDS_NOTEKEY_7F05           "F"
+	IDS_NOTEKEY_7F06           "Gb"
+	IDS_NOTEKEY_7F07           "G"
+	IDS_NOTEKEY_7F08           "Ab"
+	IDS_NOTEKEY_7F09           "Bbb"
+	IDS_NOTEKEY_7F10           "Bb"
+	IDS_NOTEKEY_7F11           "Cb"
+	IDS_NOTEKEY_7F12           ""
+	IDS_NOTEKEY_7F13           ""
+	IDS_NOTEKEY_7F14           ""
+	IDS_NOTEKEY_7F15           ""
+	// 6b - Gb / Ebm
+	IDS_NOTEKEY_6F00           "C"
+	IDS_NOTEKEY_6F01           "Db"
+	IDS_NOTEKEY_6F02           "D"
+	IDS_NOTEKEY_6F03           "Eb"
+	IDS_NOTEKEY_6F04           "Fb"
+	IDS_NOTEKEY_6F05           "F"
+	IDS_NOTEKEY_6F06           "Gb"
+	IDS_NOTEKEY_6F07           "G"
+	IDS_NOTEKEY_6F08           "Ab"
+	IDS_NOTEKEY_6F09           "Bbb"
+	IDS_NOTEKEY_6F10           "Bb"
+	IDS_NOTEKEY_6F11           "Cb"
+	IDS_NOTEKEY_6F12           ""
+	IDS_NOTEKEY_6F13           ""
+	IDS_NOTEKEY_6F14           ""
+	IDS_NOTEKEY_6F15           ""
+	// 5b - Db / Bbm
+	IDS_NOTEKEY_5F00           "C"
+	IDS_NOTEKEY_5F01           "Db"
+	IDS_NOTEKEY_5F02           "D"
+	IDS_NOTEKEY_5F03           "Eb"
+	IDS_NOTEKEY_5F04           "Fb"
+	IDS_NOTEKEY_5F05           "F"
+	IDS_NOTEKEY_5F06           "Gb"
+	IDS_NOTEKEY_5F07           "G"
+	IDS_NOTEKEY_5F08           "Ab"
+	IDS_NOTEKEY_5F09           "A"
+	IDS_NOTEKEY_5F10           "Bb"
+	IDS_NOTEKEY_5F11           "Cb"
+	IDS_NOTEKEY_5F12           ""
+	IDS_NOTEKEY_5F13           ""
+	IDS_NOTEKEY_5F14           ""
+	IDS_NOTEKEY_5F15           ""
+	// 4b - Ab / Fm
+	IDS_NOTEKEY_4F00           "C"
+	IDS_NOTEKEY_4F01           "Db"
+	IDS_NOTEKEY_4F02           "D"
+	IDS_NOTEKEY_4F03           "Eb"
+	IDS_NOTEKEY_4F04           "E"
+	IDS_NOTEKEY_4F05           "F"
+	IDS_NOTEKEY_4F06           "Gb"
+	IDS_NOTEKEY_4F07           "G"
+	IDS_NOTEKEY_4F08           "Ab"
+	IDS_NOTEKEY_4F09           "A"
+	IDS_NOTEKEY_4F10           "Bb"
+	IDS_NOTEKEY_4F11           "Cb"
+	IDS_NOTEKEY_4F12           ""
+	IDS_NOTEKEY_4F13           ""
+	IDS_NOTEKEY_4F14           ""
+	IDS_NOTEKEY_4F15           ""
+	// 3b - Eb / Cm
+	IDS_NOTEKEY_3F00           "C"
+	IDS_NOTEKEY_3F01           "Db"
+	IDS_NOTEKEY_3F02           "D"
+	IDS_NOTEKEY_3F03           "Eb"
+	IDS_NOTEKEY_3F04           "E"
+	IDS_NOTEKEY_3F05           "F"
+	IDS_NOTEKEY_3F06           "Gb"
+	IDS_NOTEKEY_3F07           "G"
+	IDS_NOTEKEY_3F08           "Ab"
+	IDS_NOTEKEY_3F09           "A"
+	IDS_NOTEKEY_3F10           "Bb"
+	IDS_NOTEKEY_3F11           "B"
+	IDS_NOTEKEY_3F12           ""
+	IDS_NOTEKEY_3F13           ""
+	IDS_NOTEKEY_3F14           ""
+	IDS_NOTEKEY_3F15           ""
+	// 2b - Bb / Gm
+	IDS_NOTEKEY_2F00           "C"
+	IDS_NOTEKEY_2F01           "Db"
+	IDS_NOTEKEY_2F02           "D"
+	IDS_NOTEKEY_2F03           "Eb"
+	IDS_NOTEKEY_2F04           "E"
+	IDS_NOTEKEY_2F05           "F"
+	IDS_NOTEKEY_2F06           "F#"
+	IDS_NOTEKEY_2F07           "G"
+	IDS_NOTEKEY_2F08           "Ab"
+	IDS_NOTEKEY_2F09           "A"
+	IDS_NOTEKEY_2F10           "Bb"
+	IDS_NOTEKEY_2F11           "B"
+	IDS_NOTEKEY_2F12           ""
+	IDS_NOTEKEY_2F13           ""
+	IDS_NOTEKEY_2F14           ""
+	IDS_NOTEKEY_2F15           ""
+	// 1b - F / Dm
+	IDS_NOTEKEY_1F00           "C"
+	IDS_NOTEKEY_1F01           "C#"
+	IDS_NOTEKEY_1F02           "D"
+	IDS_NOTEKEY_1F03           "Eb"
+	IDS_NOTEKEY_1F04           "E"
+	IDS_NOTEKEY_1F05           "F"
+	IDS_NOTEKEY_1F06           "F#"
+	IDS_NOTEKEY_1F07           "G"
+	IDS_NOTEKEY_1F08           "Ab"
+	IDS_NOTEKEY_1F09           "A"
+	IDS_NOTEKEY_1F10           "Bb"
+	IDS_NOTEKEY_1F11           "B"
+	IDS_NOTEKEY_1F12           ""
+	IDS_NOTEKEY_1F13           ""
+	IDS_NOTEKEY_1F14           ""
+	IDS_NOTEKEY_1F15           ""
+}                              
+
+// Key Signature and Name
+STRINGTABLE DISCARDABLE {
+	// Major
+	IDS_KEYSIGNATURE_0MA       "C-Major"
+	IDS_KEYSIGNATURE_1SMA      "G-Major"
+	IDS_KEYSIGNATURE_2SMA      "D-Major"
+	IDS_KEYSIGNATURE_3SMA      "A-Major"
+	IDS_KEYSIGNATURE_4SMA      "E-Major"
+	IDS_KEYSIGNATURE_5SMA      "B-Major"
+	IDS_KEYSIGNATURE_6SMA      "F#-Major"
+	IDS_KEYSIGNATURE_7SMA      "C#-Major"
+	IDS_KEYSIGNATURE_8MA       "None-Major"
+	IDS_KEYSIGNATURE_7FMA      "Cb-Major"
+	IDS_KEYSIGNATURE_6FMA      "Gb-Major"
+	IDS_KEYSIGNATURE_5FMA      "Db-Major"
+	IDS_KEYSIGNATURE_4FMA      "Ab-Major"
+	IDS_KEYSIGNATURE_3FMA      "Eb-Major"
+	IDS_KEYSIGNATURE_2FMA      "Bb-Major"
+	IDS_KEYSIGNATURE_1FMA      "F-Major"
+	// Minor
+	IDS_KEYSIGNATURE_0MI       "A-Minor"
+	IDS_KEYSIGNATURE_1SMI      "E-Minor"
+	IDS_KEYSIGNATURE_2SMI      "B-Minor"
+	IDS_KEYSIGNATURE_3SMI      "F#-Minor"
+	IDS_KEYSIGNATURE_4SMI      "C#-Minor"
+	IDS_KEYSIGNATURE_5SMI      "G#-Minor"
+	IDS_KEYSIGNATURE_6SMI      "D#-Minor"
+	IDS_KEYSIGNATURE_7SMI      "A#-Minor"
+	IDS_KEYSIGNATURE_8MI       "None-Minor"
+	IDS_KEYSIGNATURE_7FMI      "Ab-Minor"
+	IDS_KEYSIGNATURE_6FMI      "Eb-Minor"
+	IDS_KEYSIGNATURE_5FMI      "Bb-Minor"
+	IDS_KEYSIGNATURE_4FMI      "F-Minor"
+	IDS_KEYSIGNATURE_3FMI      "C-Minor"
+	IDS_KEYSIGNATURE_2FMI      "G-Minor"
+	IDS_KEYSIGNATURE_1FMI      "D-Minor"
+}
+
+
+STRINGTABLE DISCARDABLE {
+	IDS_TRACKLIST              "Track List"
+	IDS_PIANOROLL              "Piano Roll"
+	IDS_EVENTLIST              "Event List"
+	IDS_MUSICALSCORE           "Musical Score"
+}
+
+STRINGTABLE DISCARDABLE {
+	IDS_DEFAULTFONTNAME        "MS Sans Serif"
+	IDS_TIMEMEASUREFONTNAME    "System"
+}
+
+
+//-----------------------------------------------------------------------------
+// Strings Tables
+//-----------------------------------------------------------------------------
+
+// File Name And Folder Name
+STRINGTABLE DISCARDABLE {
+	IDS_READMEFILENAME         "readme_en.txt"
+	IDS_READMEDIRNAME          ""
+	IDS_LICENSEFILENAME        "license.txt"
+	IDS_LICENSEDIRNAME         ""
+	IDS_MANUALFILENAME         "docs\\Sekaiju_en.pdf"
+	IDS_MANUALDIRNAME          "docs\\"
+	IDS_INSTRUMENTFILENAME     "instrument\\*.ins"
+	IDS_INSTRUMENTDIRNAME      "instrument\\"
+	IDS_AUTOSAVEFILEFORMAT     "autosave\\%04d%02d%02d_%02d%02d%02d_%08X.skj"
+	IDS_AUTOSAVEFILENAME       "autosave\\*.skj"
+	IDS_AUTOSAVEDIRNAME        "autosave\\"
+	IDS_HOMEPAGEADDRESS        "http://openmidiproject.sourceforge.jp/"
+}
+
+// Strings Tables for Application Class
+STRINGTABLE DISCARDABLE {
+	IDS_NONE
+		"(None)"
+	IDS_MIDI_MAPPER
+		"MIDI Mapper"
+	IDS_RECEIVE_MIDI_TIMING_CLOCK
+		"Receive MIDI Timing Clock"
+	IDS_RECEIVE_SMPTE_MTC
+		"Receive SMPTE/MTC"
+	IDS_SEND_MIDI_TIMING_CLOCK
+		"Send MIDI Timing Clock"
+	IDS_SEND_SMPTE24_MTC
+		"Send SMPTE24/MTC"
+	IDS_SEND_SMPTE25_MTC
+		"Send SMPTE25/MTC"
+	IDS_SEND_SMPTE29P97_MTC
+		"Send SMPTE29.97/MTC"
+	IDS_SEND_SMPTE30_MTC
+		"Send SMPTE30/MTC"
+	IDS_MIDIDEVICE_AND_INSTRUMENT
+		"MIDI Device and Instrument"
+	IDS_MIDISYNCMODE
+		"MIDI Sync Mode"
+	IDS_OPTIONS
+		"Options"
+	IDS_TICKS_PER_QUARTER_NOTE
+		"[Ticks / Quarter Note]"
+	IDS_SUBFRAMES_PER_FRAME
+		"[Subframes / Frame]"
+}
+
+// Strings Tables for Application Class Messages
+STRINGTABLE DISCARDABLE {
+	IDS_INSUFFICIENT_MEMORY_FOR_EXEFILENAME       
+		"Insufficient memory for exe file name."
+	IDS_SHAREMEMORY_FOR_SEND_OPEN_ERROR          
+		"Shared memory for send open error."
+	IDS_SHAREMEMORY_FOR_SEND_MAPPING_ERROR       
+		"Shared memory for send mapping error."
+	IDS_SHAREMEMORY_FOR_RECV_OPEN_ERROR          
+		"Shared memory for receive open error."
+	IDS_SHAREMEMORY_FOR_RECV_MAPPING_ERROR       
+		"Shared memory for receive mapping error."
+	IDS_RECPLAYTHREAD_CREATE_ERROR                
+		"Thread for recording and playing create error."
+	IDS_S_N_MIDIINSTDEF_D_FIND_FAILED
+		"%s\nMIDI instrument definition [%d] is not found."
+	IDS_S_N_MIDIINDEVICE_D_OPEN_FAILED
+		"%s\nMIDI in device [%d] open failed."
+	IDS_S_N_MIDIOUTDEVICE_D_OPEN_FAILED
+		"%s\nMIDI out device [%d] open failed."
+	IDS_INSUFFICIENT_MEMORY_OR_INSUFFICIENT_RESOURCE
+		"Insufficient memory or insufficient resource."
+	IDS_S_N_FILE_OPEN_FAILED
+		"%s\nFile open failed"
+	IDS_ARE_YOU_SURE_TO_DELETE_ALL_AUTOSAVEFILE_NOW_REALLY
+		"Are you sure to delete all auto save files now really?."
+	IDS_LANGUAGE_WILL_BE_CHANGED_AT_THE_NEXT_STARTUP
+		"Language will be changed at the next startup. Please restart Sekaiju."
+}
+
+// Strings Tables for Document Class Messages
+STRINGTABLE DISCARDABLE {
+	IDS_MIDIDATA_CREATE_FAILED
+		"MIDIData create failed."
+	IDS_MIDICLOCK_CREATE_FAILED
+		"MIDIClock create failed."
+	IDS_S_N_FILE_LOAD_FAILED
+		"%s\nFile load failed."
+	IDS_THIS_MIDIDATA_IS_FORMAT0_N_CONVERT_TO_FORMAT1
+		"This MIDIData is format 0.\nAre you sure to convert to Format1?"
+	IDS_S_N_INVALID_EXT_N_FILE_LOAD_FAILED
+		"%s\nInvalid extension.\nFile load failed."
+	IDS_S_N_MIDIDATA_SAVE_FAILED
+		"%s\nMIDIData save failed."
+	IDS_S_N_INVALID_EXT_N_FILE_SAVE_FAILED
+		"%s\nInvalid extention.\nFile save failed."
+	IDS_D_MIDIEVENTS_CHANNEL_IS_CONFLICTED_N_CONVERT_TO_MIDITRACKS_CHANNEL
+"%d MIDIEvent's channel is different from that of track output channel.\012\
+Are you sure to fix these channel to track output channel ?"
+	IDS_D_MIDIEVENTS_DURATION_IS_LESS_THAN_0_N_DELETE_THESE_MIDIEVENTS
+"%d NoteEvent's duration is below zero.\012\
+Are you sure to delete these NoteEvent ?" 
+	IDS_D_ENDOFTRACKEVENT_IS_NOT_LAST_PLACE_N_DELETE_THESE_ENDOFTRACKEVENTS
+"%d EndofTrack Events are exist at during track.\012\
+Are you sure to delete these EndofTrack Events ?" 
+	IDS_D_MIDITRACK_DOESNT_HAVE_ENDOFTRACKEVENT_N_INSERT_ENDOFTRACKEVENTS
+"%d Tracks has no EndofTrack Event at the last of track.\012\
+Are you sure to insert EndofTrack Event to these tracks ?"
+	IDS_TIMEMODE_OF_CLIPBOARD_IS_ABNORMAL
+		"Time mode of clipboard is abnormal."
+	IDS_INSUFFICIENT_MEMORY
+		"Insufficient memory."
+	IDS_05D_02D_03D_MEASURE_BEAT_TICK
+		"%05d:%02d:%03d [Measure:Beat:Tick]"
+	IDS_08D_03D_FRAME_TICK
+		"%08d:%03d [Frame:SubFrame]"
+	IDS_02D_02D_02D_03D_HOUR_MINUTE_SECOND_MILLISEC
+		"%02d:%02d:%02d:%03d [Hour:Minute:Second:Millisec]"
+	IDS_UNABLE_TO_UNDO_ANYMORE
+		"Unable to undo anymore."
+	IDS_UNABLE_TO_UNDO_T_CTRL_Z
+		"Unable to &Undo\tCtrl+Z"
+	IDS_UNDO_02D_02D_02D_S_T_CTRL_Z
+		"&Undo[%02d:%02d:%02d %s]\tCtrl+Z"
+	IDS_UNABLE_TO_REDO_ANYMORE
+		"Unable to redo anymore."
+	IDS_UNABLE_TO_REDO_T_CTRL_Y
+		"Unable to &Redo\tCtrl+Y"
+	IDS_REDO_02D_02D_02D_S_T_CTRL_Y
+		"&Redo[%02d:%02d:%02d %s]\tCtrl+Y"
+	IDS_INITIALIZE_HISTORY
+"All Undo and Redo data now remaining will be deleted.\012\
+Are you sure to initialize history really ?"
+	IDS_UNABLE_TO_WRITE_TO_CLIPBOARD
+		"Unable to write to clipboard."
+	IDS_UNABLE_TO_READ_FROM_CLIPBOARD
+		"Unable to read from clipboard."
+	IDS_NO_AVAILABLE_MIDIDATA_IN_THE_CLIPBOARD
+		"No avaliable MIDIData in the clipboard."
+	IDS_PASTE_FAILED
+		"Paste failed."
+	IDS_D_MIDIEVENTS_WERE_INSERTED
+		"%d MIDIEvents have been inserted."
+	IDS_D_MIDIEVENTS_TRACKINDEX_ISNT_CHANGED
+		"%d MIDIEvent's track index have not been changed."
+	IDS_UNABLE_TO_BEATSCAN_WITH_FORMAT0_MIDIDATA
+		"Unable to scan beat in format 0 MIDIData."
+	IDS_UNABLE_TO_BEATSCAN_WITH_SMPTEBASE_MIDIDATA
+		"Unable to scan beat in SMPTEBase MIDIData."
+	IDS_SELECTED_NOTEEVENT_IS_TOO_FEW_IN_THE_SPECIFIED_TRACK
+		"Selected NoteEvent is too few in the specified track."
+	IDS_D_NOTEVENT_IS_DETECTED_IN_THE_SPECIFIED_TRACK_CONTINUE
+"%d selected NoteEvents is detected as beat in the specified track.\012\
+Scan beat begin at = %05d:%02d:%03d\012\
+Scan beat end at = %05d:%02d:%03d\012\
+Are you sure to continue ?"
+	IDS_ABNORMAL_FORMAT_MIDIDATA_IN_THE_CLIPBOARD
+		"Abnormal format MIDIData (Format0/1/2) is detected in the clipboard."
+	IDS_D_MIDICHANNELEVENTS_ARE_IN_THE_FIRST_TRACK_ARE_YOU_SURE_TO_REPAIR_THEM
+"%d MIDI channel events are found in the first track.\012\
+Are you sure to move these events into the second or later track ?\012\
+(if you select No, this MIDI data will be opened but you can't edit or save it.)"
+	IDS_D_TEMPOEVENTS_ARE_IN_THE_SECOND_TRACK_ARE_YOU_SURE_TO_REPAIR_THEM
+"%d Tempo, SMPTEOffset, TimeSignature or KeySignature events are found in the second or later track.\012\
+Are you sure to move these events into the first track ?\012\
+(if you select No, this MIDI data will be opened but you can't edit or save it.)"
+	IDS_THIS_MIDIDATA_CANT_BE_EDITED_OR_SAVED_BECAUSE_IT_IS_ABNORMAL
+		"This MIDI data can't be edited or saved because this MIDI data is abnormal."
+	IDS_UNABLE_TO_SAVE_SMPTE_BASE_SAVE_AS_MIDICSV
+		"Unable to save SMPTE base MIDI data as MIDICSV format."
+}
+
+
+
+
+// Strings Tables for Track List Column Name
+STRINGTABLE DISCARDABLE {
+	IDS_NAME "Name"
+	IDS_COLOR "Color"
+	IDS_INPUTON "InputON"
+	IDS_INPUTPORT "InputPort"
+	IDS_INPUTCHANNEL "InputChannel"
+	IDS_OUTPUTON "OutputOn"
+	IDS_OUTPUTPORT "OutputPort"
+	IDS_OUTPUTCHANNEL "OutputChannel"
+	IDS_VIEWMODE "ViewMode"
+	IDS_CC_0 "CC#0"
+	IDS_CC_32 "CC#32"
+	IDS_PROGRAM_NUMBER "Program Number"
+	IDS_VOLUME "Volume"
+	IDS_PAN "Pan"
+	IDS_REVERB "Reverb"
+	IDS_CHORUS "Chorus"
+	IDS_DELAY "Delay"
+	IDS_TIMEPLUS "Time+"
+	IDS_KEYPLUS "Key+"
+	IDS_VELPLUS "Vel+"
+	IDS_NUMEVENT "NumEvents"
+}
+
+// Strings Tables for Track List Window
+STRINGTABLE DISCARDABLE {
+	IDS_SHOW "show"
+	IDS_HIDE "hide"
+	IDS_ENABLE "enable"
+	IDS_LOCK "lock"
+	IDS_ON "on"
+	IDS_OFF "off"
+	IDS_DRUM "Drum"
+	IDS_NORM "Normal"
+	IDS_N_A "n/a"
+}
+
+// Strings Tables for Track List Window Messages
+STRINGTABLE DISCARDABLE {
+	IDS_UNABLE_TO_ADD_TRACK_IN_FORMAT0_MIDIDATA
+		"Unable to add track in format0 MIDIData."
+	IDS_UNABLE_TO_ADD_TRACK_BEFORE_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to add track before the first track in format1 MIDIData."
+	IDS_UNABLE_TO_ADD_TRACK_ANY_MORE
+		"Unable to add track Anymore"
+	IDS_UNABLE_TO_DUPLICATE_TRACK_IN_FORMAT0_MIDIDATA
+		"Unable to duplicate track in format0 MIDIData."
+	IDS_UNABLE_TO_DUPLICATE_THE_FIRST_TRACK_IN_FORMAT1_MIDIATA
+		"Unable to duplicate the first track in format1 MIDIData."
+	IDS_THE_SOURCE_TRACK_IS_EMPTY
+		"The source track is empty."
+	IDS_UNABLE_TO_DELETE_THE_FIRST_TRACK
+		"Unable to delete the first track."
+	IDS_THE_SPECIFIED_TRACK_IS_EMPTY
+		"The specified track is empty."
+	IDS_NO_TRACK_IS_SELECTED_TO_BE_MOVED
+		"No track is selected to be moved."
+	IDS_UNABLE_TO_MOVE_TRACK_IN_FORMAT0_MIDIDATA
+		"Unable to move track in format0 MIDIData."
+	IDS_UNABLE_TO_MOVE_UP_THE_FIRST_AND_THE_SECOND_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to move up the first and the second track in format1 MIDIData."
+	IDS_UNABLE_TO_MOVE_UP_THE_FIRST_TRACK_IN_FORMAT2_MIDIDATA
+		"Unable to move up the first track in format2 MIDIData."
+	IDS_TRACK_MOVE_FAILED
+		"Track move failed."
+	IDS_UNABLE_TO_MOVE_DOWN_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to move down the first track in format1 MIDIData."
+	IDS_UNABLE_TO_MOVE_DOWN_THIS_TRACK_ANY_MORE
+		"Unable to move down this track anymore."
+	IDS_CURRENT_VIEW_IS_NOT_EXIST
+		"Current view is not exist."
+	IDS_INPUT_HALF_WIDTH_NUMBER_FROM_1_TO_16
+		"Input half width number from 1 to 16."
+	IDS_INPUT_HALF_WIDTH_NUMBER_FROM_0_TO_16
+		"Input half width number from 0 to 16."
+	IDS_UNABLE_TO_INSERT_CONTROLCHANGE_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to insert control change to the first track in format1 MIDIData."
+	IDS_UNABLE_TO_INSERT_PROGRAMCHANGE_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to insert program change to the first track in format1 MIDIData."
+	IDS_INPUT_HALF_WIDTH_NUMBER_FROM_0_TO_127
+		"Input half width number from 0 to 127."
+	IDS_INPUT_HALF_WIDTH_NUMBER_FROM_M127_TO_127
+		"Input half width number from -127 to 127"
+	IDS_UNABLE_TO_EDIT_THIS_TRACK_IN_FORMAT0_MIDIDATA
+		"Unable to edit this track in format0 MIDIData."
+	IDS_UNABLE_TO_SET_TIMEPLUS_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to set timeplus to the first track in format1 MIDIData."
+	IDS_UNABLE_TO_SET_KEYPLUS_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to set keyplus to the first track in format1 MIDIData."
+	IDS_UNABLE_TO_SET_VELPLUS_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to set velplus to the first track in format1 MIDIData."
+}
+
+// Strings Tables for Event List Column Name
+STRINGTABLE DISCARDABLE {
+	IDS_TRACK "Track"
+	IDS_HOUR_MINUTE_SECOND_MILLISEC "Hour:Minute:Second:Millisec"
+	IDS_MEASURE_BEAT_TICK "Measure:Beat:Tick"
+	IDS_EVENT_KIND "Event.Kind"
+	IDS_CHANNEL "Channel"
+	IDS_VALUE1 "Value1"
+	IDS_VALUE2 "Value2"
+	IDS_VALUE3 "Value3"
+	IDS_FRAME_SUBFRAME "Frame:SubFrame"
+}
+
+// Strings Tables for Event List Window
+STRINGTABLE DISCARDABLE {
+	IDS_INCLUDING_VELOCITY0_NOTEON "(including velocity0 NoteOn)"
+	IDS_UNKNOWN_EVENT_KIND "Unknown Event Kind"
+	IDS_1P2LF_BPM_EQ_D_MICROSEC_PER_QUARTER_NOTE "%1.2lf[BPM] (=%d[Microsec / Quarter note])"
+	IDS_S_FPS_D_HOUR_D_MINUTE_D_SEC_D_FRAME_D_SUBFRAME 
+		"%s[FPS] : %d[Hour] : %d[Minute] : %d[Second] : %d[Frame] : %d[SubFrame]"
+	IDS_24 "24"
+	IDS_25 "25"
+	IDS_29P97 "29.97"
+	IDS_30 "30"
+	IDS_ERROR "Error"
+	IDS_D_PER_D_D_CLOCK_PER_BEAT_D_32DIVNOTE_PER_BEAT
+		"%d/%d : %d[Clocks / Quarter note] : %d[Demisemiquaver / Quarter note]"
+	IDS_SHARP "#"
+	IDS_FLAT "b"
+	IDS_MAJOR "major"
+	IDS_MINOR "minor"
+	IDS_D_S_S_EQ_S "%d%s : %s (=%s)"
+
+}
+
+// Strings Tables for Event List Messages
+STRINGTABLE DISCARDABLE {
+	IDS_A_SEPARATOR_BETWEEN_MEASURE_AND_BEAT_IS_NOT_FOUND
+		"A separator between measure and beat is not found."
+	IDS_MEASURE_MUST_BE_HALF_WIDTH_NUMBER
+		"Measure must be half width number."
+	IDS_MEASURE_VALUE_IS_OUT_OF_RANGE
+		"Measure value is out of range."
+	IDS_A_SEPARATOR_BETWEEN_BEAT_AND_TICK_IS_NOT_FOUND
+		"A separator between beat and tick is not found."
+	IDS_BEAT_MUST_BE_HALF_WIDTH_NUMBER
+		"Beat must be half width number."
+	IDS_BEAT_VALUE_IS_OUT_OF_RANGE
+		"Beat value is out of range."
+	IDS_TICK_MUST_BE_HALF_WIDTH_NUMBER
+		"Tick must be half width number."
+	IDS_TICK_VALUE_IS_OUT_OF_RANGE
+		"Tick value is out of range."
+	IDS_UNABLE_TO_INSERT_THE_EVENT_TO_THIS_TRACK
+		"Unable to insert the event to this track."
+	IDS_UNABLE_TO_INSERT_ENDOFTRACK_TO_THIS_TRACK_ANY_MORE
+		"Unable to insert EndofTrack to this track anymore."
+	IDS_UNABLE_TO_INSERT_THIS_EVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+"Unable to insert NoteOn, NoteOff, KeyAfterTouch, ControlChange, \012\
+ProgramChange, ChannelAfterTouch, PitchBend event \012\
+to the first track in format1 MIDI data."
+	IDS_UNABLE_TO_INSERT_THIS_EVENT_TO_THE_SECOND_TRACK_IN_FORMAT1_MIDIDATA
+"Unable to insert Tempo, SMPTEOffset, TimeSignature, KeySignature event \012\
+to the second or later track in format1 MIDI data."
+	IDS_INSERT_EVENT_FAILED
+		"Insert event failed."
+	IDS_CURRENT_MIDIEVENT_IS_EMPTY
+		"Current MIDIEvent is empty."
+	IDS_MIDIEVENT_DUPLICATE_FAILED
+		"MIDIEvent duplicate failed."
+	IDS_UNABLE_TO_DELETE_THE_LAST_ENDOFTRACK_IN_A_TRACK
+		"Unable to delete the last EndofTrack event in the track."
+	IDS_TRACK_MUST_BE_HALF_WIDTH_NUMBER
+		"Track must be half width number."
+	IDS_TRACK_VALUE_IS_OUT_OF_RANGE
+		"Track value is out of range."
+	IDS_UNABLE_TO_MOVE_THE_LAST_ENDOFTRACK_TO_THE_OTHER_TRACK
+		"Unable to move the last EndofTrack event to the other track."
+	IDS_MODIFY_EVENT_TRACK_FAILED
+		"Modify event's track failed."
+	IDS_A_SEPARATOR_BETWEEN_FRAME_AND_TICK_IS_NOT_FOUND
+		"A separator between frame and subframe is not found."
+	IDS_FRAME_MUST_BE_HALF_WIDTH_NUMBER
+		"Frame must be half width number."
+	IDS_FRAME_VALUE_IS_OUT_OF_RANGE
+		"Frame value is out of range."
+	IDS_SUBFRAME_MUST_BE_HALF_WIDTH_NUMBER
+		"SubFrame must be half width number."
+	IDS_SUBFRAME_VALUE_IS_OUT_OF_RANGE
+		"SubFrame value is out of range."
+	IDS_UNABLE_TO_MODIFY_THE_LAST_ENDOFTRADK
+		"Unable to modify the last EndofTrack event."
+	IDS_FAILED_TO_MODIFY_EVENT_KIND
+		"Failed to modify event kind."
+	IDS_ARE_YOU_SURE_TO_MOVE_THIS_EVENT_TO_THE_FIRST_TRACK
+"Tempo, SMPTEOffset, TimeSignature, KeySignature event must be \012\
+in the first track in format1 MIDIData.\012\
+Are you sure to move this event to the first track ?"
+	IDS_UNEXPECTED_EVENT_KIND
+		"Unexped event kind."
+	IDS_UNABLE_TO_SPECIFIY_EVENT_CHANNEL_OF_THIS_EVENT
+		"Unable to specify event channel of this event."
+	IDS_CHANNEL_MUST_BE_HALF_WIDTH_NUMBER_FROM_1_TO_16
+		"Channel must be half width number from 1 to 16."
+	IDS_SEQUENCENUMBER_MUST_BE_HALF_WIDTH_NUMBER_FROM_0_TO_65535
+		"Sequence Number must be half width number from 0 to 65535."
+	IDS_CHANNELPREFIX_MUST_BE_HALF_WIDTH_NUMBER_FROM_1_TO_16
+		"Channel Prefix must be half width number from 1 to 16."
+	IDS_PORTPREFIX_MUST_BE_HALF_WIDTH_NUMBER_FROM_0_TO_255
+		"Port Prefix must be half width number form 0 to 255."
+	IDS_ENDOFTRACK_HAS_NO_VALUE
+		"EndofTrack Event has no value."
+	IDS_A_SEPARATOR_IS_NOT_FOUND
+		"A Separator is not found."
+	IDS_FPS_MUST_BE_24_OR_25_OR_29P97_OR_30
+		"[FPS] must be 24 or 25 or 29.97 or 30"
+	IDS_HOUR_MUST_BE_HALF_WIDTH_NUMBER
+		"[Hour] must be half width number from 0 to 23."
+	IDS_MINUTE_MUST_BE_HALF_WIDTH_NUMBER
+		"[Minute] must be half width number from 0 to 59."
+	IDS_SECOND_MUST_BE_HALF_WIDTH_NUMBER
+		"[Second] must be half width number form 0 to 59."
+//	IDS_FRAME_MUST_BE_HALF_WIDTH_NUMBER
+//		"[Frame] must be half width number."
+	IDS_NUMERATOR_MUST_BE_HALF_WIDTH_NUMBER
+		"Numerator must be half width number."
+	IDS_DENOMINATOR_MUST_BE_HALF_WIDTH_NUMBER
+		"Denominator must be half width number."
+	IDS_A_SEPARATOR_BETWEEN_NUMERATOR_AND_DENOMINATOR_IS_NOT_FOUND
+		"A separator between numerator and denominator is not found."
+	IDS_DENOMINATOR_MUST_BE_1_OR_2_OR_4_OR_8_OR_16_OR_32
+		"Denominator must be 1 or 2 or 4 or 8 or 16 or 32."
+	IDS_CLOCKSPERBEAT_MUST_BE_HALF_WIDTH_NUMBER
+		"Clocks per beat must be half width number."
+	IDS_32DIVNOTEPERBEAT_MUST_BE_HALF_WIDTH_NUMBER
+		"Demisemiquaver per beat must be half width number."
+	IDS_KEYSIGNATURE_MUST_BE_7B_6B_5B_4B_3B_2B_1B_0_1S_2S_3S_4S_5S_6S_7S
+		"KeySignature must be 7b, 6b, 5b, 4b, 3b, 2b, 1b, 0, 1#, 2#, 3#, 4#, 5#, 6#, or 7#."
+	IDS_KEYSCALE_MUST_BE_MAJOR_OR_MINOR
+		"KeyScale must be major or minor."
+	IDS_SYSEX_DATA_MUST_BEGIN_WITH_F0
+		"SysEx data must begin with F0."
+	IDS_SYSEX_DATA_BETWEE_F0_AND_F7_MUST_BE_FROM_00_TO_7F
+		"SysEx data between F0 and F7 must be from 00 to 7F in Hex."
+	IDS_SYSEX_DATA_MUST_END_WITH_F7
+		"SysEx data must end with F7."
+	IDS_UNABLE_TO_MODIFY_UNDEFINED_EVENT
+		"Unable to modify undefined event."
+}
+
+
+// Strings Tables for Piano Roll Window / for Musical Score Window
+STRINGTABLE DISCARDABLE {
+	IDS_TEMPO "Tempo"
+	IDS_VELOCITY "Velocity"
+	IDS_CHANNELAFTERTOUCH "ChannelAfterTouch"
+	IDS_PITCHBEND "PitchBend"
+	IDS_CC_D_S "CC#%d-%s"
+	IDS_D_4DIVNOTE "%d-Quarter Note"
+	IDS_D_8DIVNOTE "%d-Quaver"
+	IDS_D_12DIVNOTE "%d-Triplet Quaver"
+	IDS_D_16DIVNOTE "%d-Semiquaver"
+	IDS_D_24DIVNOTE "%d-Triplet Semiquaver"
+	IDS_D_32DIVNOTE "%d-Demisemiquaver"
+	IDS_D_48DIVNOTE "%d-Triplet Demisemiquaver"
+	IDS_D_FREE "%d-Free"
+	IDS_D_1FRAME "%d-1 Frame"
+	IDS_D_2DIVFRAME "%d-1/2 Frame"
+	IDS_D_3DIVFRAME "%d-1/3 Frame"
+	IDS_D_4DIVFRAME "%d-1/4 Frame"
+	IDS_D_6DIVFRAME "%d-1/6 Frame"
+	IDS_D_8DIVFRAME "%d-1/8 Frame"
+	IDS_D_12DIVFRAME "%d-1/12 Frame"
+}
+
+
+// Strings Tables for Piano Roll Message / for Musical Score Window
+STRINGTABLE DISCARDABLE {
+	IDS_UNABLE_TO_INSERT_NOTEEVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to insert NoteEvent to the first track in format1 MIDIData."
+	IDS_UNABLE_TO_INSERT_NOTEEVENT_ANY_MORE_BEACUSE_OF_INSUFFICIENT_MEMORY
+		"Unable to insert NoteEvent anymore because of insufficient memory."
+	IDS_UNABLE_TO_DELETE_NOTEEVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to delete NoteEvent to the first track in format1 MDIDIata."
+	IDS_UNABLE_TO_INSERT_GRAPHEVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to insert GraphEvent to the first track in format1 MIDIData."
+	IDS_UNABLE_TO_DELETE_GRAPHEVENT_TO_THE_FIRST_TRACK_IN_FORMAT1_MIDIDATA
+		"Unable to delete GraphEvent to the first track in format1 MIDIData."
+}
+
+// Strings Tables for File Dialog
+STRINGTABLE DISCARDABLE {
+	IDS_ALL_MIDI_SEQUENCE_AD_SKJ_AD_CHY_AD_MID_AD_VSQ
+		"All MIDI sequence (*.skj;*.chy;*.mid;*.csv;*.vsq)"
+	IDS_AD_SKJ_AD_CHY_AD_MID_AD_VSQ
+		"*.skj;*.chy;*.mid;*.csv;*.vsq"
+	IDS_SEKAIJU_SEQUENCE_FILES_AD_SKJ
+		"Sekaiju Sequence Files (*.skj)"
+	IDS_AD_SKJ
+		"*.skj"
+	IDS_D_SKJ
+		".skj"
+	IDS_CHERRY_SEQUENCE_FILES_AD_CHY
+		"Cherry Sequence Files (*.chy)"
+	IDS_AD_CHY
+		"*.chy"
+	IDS_D_CHY
+		".chy"
+	IDS_STANDARD_MIDI_FILES_AD_MID
+		"Standard MIDI Files (*.mid)"
+	IDS_AD_MID
+		"*.mid"
+	IDS_D_MID
+		".mid"
+	IDS_MIDI_CSV_FILES_AD_CSV
+		"MIDICSV Files (*.csv)"
+	IDS_AD_CSV
+		"*.csv"
+	IDS_D_CSV
+		".csv"
+	IDS_VOCALOID2_FILES_AD_VSQ
+		"vocaloid2 Sequence Files (*.vsq)"
+	IDS_AD_VSQ
+		"*.vsq"
+	IDS_D_VSQ
+		".vsq"
+	IDS_ALL_FILES_AD_A
+		"All Files (*.*)"
+	IDS_AD_A
+		"*.*"
+	IDS_COMMA_SEPARATED_TEXT_FILES_AD_CSV
+		"Comma Separated Text Files (*.csv)"
+	//IDS_AD_CSV
+	//	"*.csv"
+	//IDS_D_CSV
+	//	".csv"
+	IDS_TAB_SEPARATED_TEXT_FILES_AD_TXT
+		"Tab Separated Text Files (*.txt)"
+	IDS_AD_TXT
+		"*.txt"
+	IDS_D_TXT
+		".txt"
+}
+
+
+// Strings Tables for History Name
+STRINGTABLE DISCARDABLE {
+	IDS_MODIFY_MIDICHANNEL
+		"Modify MIDI Channel"
+	IDS_DELETE_NOTEEVENT
+		"Delete Note Event"
+	IDS_DELETE_ENDOFTRACKEVENT
+		"Delete EndofTrack Event"
+	IDS_ADD_ENDOFTRACKEVENT
+		"Add EndofTrack Event"
+	IDS_FILE_MODIFY_PROPERTY
+		"Modify File Property"
+	IDS_EDIT_CUT
+		"Edit - Cut"
+	IDS_EDIT_COPY
+		"Edit - Copy"
+	IDS_EDIT_PASTE
+		"Edit - Paste"
+	IDS_EDIT_DELETE
+		"Edit - Delete"
+	IDS_EDIT_SELECT_ALL
+		"Edit - Select All"
+	IDS_EDIT_DESELECT_ALL
+		"Edit - Select None"
+	IDS_EDIT_SELECT_BEFORE
+		"Edit - Select Before"
+	IDS_EDIT_DESELECT_BEFORE
+		"Edit - Deselect Before"
+	IDS_EDIT_SELECT_AFTER
+		"Edit - Select After"
+	IDS_EDIT_DESELECT_AFTER
+		"Edit - Deselect After"
+	IDS_EDIT_MODIFY_TRACKINDEX
+		"Edit - Modify Event's Track"
+	IDS_EDIT_MODIFY_TIME
+		"Edit - Modify Event's Time"
+	IDS_EDIT_MODIFY_CHANNEL
+		"Edit - Modify Event's Channel"
+	IDS_EDIT_MODIFY_KEY
+		"Edit - Modify Event's Key"
+	IDS_EDIT_MODIFY_VELOCITY
+		"Edit - Modify Event's Velocity"
+	IDS_EDIT_MODIFY_DURATION
+		"Edit - Modify Evnet's Duration"
+	IDS_EDIT_MODIFY_VALUE
+		"Edit - Modify Event's Value"
+	IDS_EDIT_BREAKUP_AND_TRILL
+		"Edit - Break up note and Make Trill"
+	IDS_EDIT_QUANTIZE
+		"Edit - Quantize"
+	IDS_EDIT_BEATSCAN
+		"Edit - Scan beat and Insert Tempo"
+	IDS_EDIT_INSERTMEASURE
+		"Edit - Insert measure"
+	IDS_EDIT_REMOVEMEASURE
+		"Edit - Remove measure"
+	IDS_ONLY_THIS_TRACK_INPUT_ON
+		"Only this track Input On"
+	IDS_ONLY_THIS_TRACK_INPUT_OFF
+		"Only this track Input Off"
+	IDS_ALL_TRACK_INPUT_ON
+		"All tracks Input On"
+	IDS_ONLY_THIS_TRACK_OUTPUT_ON
+		"Only this track Output On"
+	IDS_ONLY_THIS_TRACK_OUTPUT_OFF
+		"Only this track Output Off"
+	IDS_ALL_TRACK_OUTPUT_ON
+		"All track Output On"
+	
+}
+
+STRINGTABLE DISCARDABLE {
+	IDS_INSERT_TRACK
+		"Insert Track"
+	IDS_DUPLICATE_TRACK
+		"Duplicate Track"
+	IDS_MOVE_TRACK
+		"Move Track"
+	IDS_DELETE_TRACK
+		"Delete Track"
+	IDS_INSERT_EVENT
+		"Insert Event"
+	IDS_DUPLICATE_EVENT
+		"Duplicate Event"
+	IDS_MOVE_EVENT
+		"Move Event"
+	IDS_DELETE_EVENT
+		"Delete Event"
+	IDS_MODIFY_COLOR
+		"Modify Color"
+	IDS_MODIFY_TRACKNAME
+		"Modify TrackName"
+	IDS_MODIFY_INPUTPORT
+		"Modify InputPort"
+	IDS_MODIFY_INPUTCHANNEL
+		"Modify InputChannel"
+	IDS_MODIFY_OUTPUTPORT
+		"Modify OutputPort"
+	IDS_MODIFY_OUTPUTCHANNEL
+		"Modify OutputChannel"
+	IDS_SET_VALUE
+		"Set Value"
+	IDS_MODIFY_CONTROLCHANGE
+		"Modify ControlChange"
+	IDS_MODIFY_PROGRAMCHANGE
+		"Modify ProgramChange"
+	IDS_SWITCH_VALUE
+		"Switch value"
+	IDS_MODIFY_TIMEPLUS
+		"Modify Time+"
+	IDS_MODIFY_KEYPLUS
+		"Modify Key+"
+	IDS_MODIFY_VELPLUS
+		"Modify Vel+"
+	IDS_MODIFY_VISIBLE_ON_OFF
+		"Modify Visible on / off"
+	IDS_MODIFY_ENABLE_ON_OFF
+		"Modify Enable on / off"
+	IDS_MODIFY_INPUT_ON_OFF
+		"Modify Input on / off"
+	IDS_MODIFY_OUTPUT_ON_OFF
+		"Modify Output on / off"
+	IDS_MODIFY_VIEWMODE
+		"Modify ViewMode"
+	IDS_MODIFY_EVENT_TIME
+		"Modify Event's Time"
+	IDS_MODIFY_EVENT_CHANNEL
+		"Modify Event's Channel"
+	IDS_MODIFY_EVENT_VALUE
+		"Modify Event's Value"
+	IDS_MODIFY_EVENT_TRACK
+		"Modify Event's Track"
+	IDS_MODIFY_EVENT_KIND
+		"Modify Event's Kind"
+	IDS_MODIFY_SEQUENCENUMBER_VALUE
+		"Modify SequenceNumber's Value"
+	IDS_MODIFY_TEXTEVENT_VALUE
+		"Modify Text Event's String"
+	IDS_MODIFY_CHANNELPREFIX_VALUE
+		"Modify ChannelPrefix's Value"
+	IDS_MODIFY_PORTPREFIX_VALUE
+		"Modify PortPrefix's Value"
+	IDS_MODIFY_TEMPO_VALUE
+		"Modify Tempo's Value"
+	IDS_MODIFY_SMPTEOFFSET_VALUE
+		"Modify SMPTEOffset's Value"
+	IDS_MODIFY_TIMESIGNATURE
+		"Modify TimeSignature"
+	IDS_MODIFY_KEYSIGNATURE
+		"Modify KeySignature"
+	IDS_MODIFY_SEQUENCERSPECIFIC
+		"Modify SequencerSpecific"
+	IDS_MODIFY_MIDIEVENT_VALUE
+		"Modify MIDIEvent's Value"
+	IDS_MODIFY_SYSEX_NORMAL
+		"Modify SysExEvent(Normal)"
+	IDS_MODIFY_SYSEX_ARBITRARY
+		"Modify SysExEvent(Arbitrary)"
+	IDS_SELECT_DESELECT
+		"Select / Deselect"
+	IDS_MODIFY_NOTE
+		"Modify Note"
+	IDS_INSERT_NOTE
+		"Insert Note"
+	IDS_DELETE_NOTE
+		"Delete Note"
+	IDS_DUPLICATE_NOTE
+		"Duplicate Note"
+	IDS_MOVE_NOTE
+		"Move Note"
+	IDS_SELECT_DESELECT_NOTE
+		"Select / Deselect Note"
+	IDS_INSERT_GRAPH
+		"Insert Graph"
+	IDS_DELETE_GRAPH
+		"Delete Graph"
+	IDS_SELECT_DESELECT_GRAPH
+		"Select / Deselect Graph"
+	IDS_DUPLICATE_MEASURE
+		"Duplicate Measure"
+	IDS_MOVE_MEASURE
+		"Move Measure"
+	IDS_DELETE_MEASURE
+		"Delete Measure"
+}
+
