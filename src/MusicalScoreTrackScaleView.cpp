@@ -377,6 +377,7 @@ void CMusicalScoreTrackScaleView::DrawTimeAndKeySignature
 		pDC->DrawText (strText2, &rcText2, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 		break;
 	case 3: // ‘å•ˆ•\
+		
 		y = pMusicalScoreFrame->TrackIndexLineNotoY (lTrackIndex, 39);
 		DrawGClef (pDC, x + rx * 4, y, rx, ry);
 		if (lsf > 0) {
@@ -706,6 +707,7 @@ void CMusicalScoreTrackScaleView::OnDraw (CDC* pDC) {
 					}
 					break;
 				case 3: // ‘å•ˆ•\
+
 					for (ii = -5; ii <= -1; ii++) {
 						y = yc + ii * 2 * ry;
 						pDC->MoveTo (40, y);

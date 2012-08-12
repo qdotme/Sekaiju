@@ -274,6 +274,7 @@ long CMusicalScorePrintView::TrackIndexLineNotoY (long lTrackIndex, long lLineNo
 		lKey000Y = (lTrackTopPrint + lTrackHeightPrint / 2) + 29 * ry;
 		break;
 	case 3: // 大譜表
+
 		lKey000Y = (lTrackTopPrint + lTrackHeightPrint / 2) + 35 * ry;
 		break;
 	default:
@@ -835,6 +836,7 @@ void CMusicalScorePrintView::DrawNote
 		}
 		break;
 	case 3: // 大譜表
+		
 		if (lLineNo >= 47) {
 			for (i = 47; i <= lLineNo; i += 2) {
 				y = this->TrackIndexLineNotoY (lTrackIndex, i);
@@ -1215,6 +1217,7 @@ void CMusicalScorePrintView::DrawTimeAndKeySignature
 		pDC->DrawText (strText2, &rcText2, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 		break;
 	case 3: // 大譜表
+		
 		y = this->TrackIndexLineNotoY (lTrackIndex, 39);
 		DrawGClef (pDC, x + rx * 4, y, rx, ry);
 		if (lsf > 0) {
@@ -1371,6 +1374,7 @@ void CMusicalScorePrintView::DrawTrackScaleView (CDC* pDC, CPrintInfo* pInfo) {
 					}
 					break;
 				case 3: // 大譜表
+
 					for (ii = -5; ii <= -1; ii++) {
 						y = lTrackHeight * m_lMaxRowPage - (yc + ii * 2 * ry);
 						pDC->MoveTo (120, y);
@@ -1500,6 +1504,7 @@ void CMusicalScorePrintView::DrawTrackTimeView (CDC* pDC, CPrintInfo* pInfo) {
 					}
 					break;
 				case 3: // 大譜表
+
 					for (ii = -5; ii <= -1; ii++) {
 						y = lTrackHeight * m_lMaxRowPage - (yc + ii * 2 * ry);
 						pDC->MoveTo (0, y);

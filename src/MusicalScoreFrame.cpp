@@ -374,6 +374,7 @@ long CMusicalScoreFrame::TrackIndexLineNotoY (long lTrackIndex, long lLineNo) {
 		lKey000Y = (lTrackTop + lTrackHeight / 2) * m_lTrackZoom + 29 * ry;
 		break;
 	case 3: // ‘å•ˆ•\
+
 		lKey000Y = (lTrackTop + lTrackHeight / 2) * m_lTrackZoom + 35 * ry;
 		break;
 	default:
@@ -1291,6 +1292,7 @@ BOOL CMusicalScoreFrame::UpdateTrackInfoArray () {
 				pTrackInfo->m_lHeight = 24;
 			}
 			// ‘å•ˆ•\
+
 			else {
 				pTrackInfo->m_lFlags = 3;
 				pTrackInfo->m_lHeight = 36;

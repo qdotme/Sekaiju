@@ -2096,6 +2096,7 @@ void CTrackListTrackModeView::OnKeyDown (UINT nChar, UINT nRepCnt, UINT nFlags) 
 				return;
 			}
 			// フォーマット0の場合は最初のトラック以外操作不能
+			 
 			if (lFormat == 0 && m_lCurRow >= 1) {
 				pSekaijuDoc->m_theCriticalSection.Unlock ();
 				CString strMsg;
@@ -2225,6 +2226,7 @@ void CTrackListTrackModeView::OnKeyDown (UINT nChar, UINT nRepCnt, UINT nFlags) 
 				return;
 			}
 			// フォーマット0の場合は最初のトラック以外操作不能
+			
 			if (lFormat == 0 && m_lCurRow >= 1) {
 				pSekaijuDoc->m_theCriticalSection.Unlock ();
 				CString strMsg;
@@ -2326,6 +2328,7 @@ void CTrackListTrackModeView::OnKeyDown (UINT nChar, UINT nRepCnt, UINT nFlags) 
 				return;
 			}
 			// フォーマット0の場合は最初のトラック以外操作不能
+			
 			if (lFormat == 0 && m_lCurRow >= 1) {
 				pSekaijuDoc->m_theCriticalSection.Unlock ();
 				CString strMsg;
@@ -2578,6 +2581,7 @@ void CTrackListTrackModeView::OnLButtonDown (UINT nFlags, CPoint point) {
 				;
 			}
 			// フォーマット0の場合は最初のトラック以外操作不能
+
 			else if (lFormat == 0 && m_lCurRow >= 1) {
 				pSekaijuDoc->m_theCriticalSection.Unlock ();
 				CString strMsg;
@@ -2737,6 +2741,7 @@ void CTrackListTrackModeView::OnRButtonDown (UINT nFlags, CPoint point) {
 				;
 			}
 			// フォーマット0の場合は最初のトラック以外操作不能
+
 			else if (lFormat == 0 && m_lCurRow >= 1) {
 				pSekaijuDoc->m_theCriticalSection.Unlock ();
 				CString strMsg;
@@ -3033,6 +3038,7 @@ void CTrackListTrackModeView::OnLButtonDblClk (UINT nFlags, CPoint point) {
 		// セル内のボタン以外の部分
 		if (point.x < rcCell.right - lButtonWidth) {
 			// フォーマット0の場合は最初のトラック以外操作不能
+
 			if (lFormat == 0 && m_lCurRow >= 1) {
 				pSekaijuDoc->m_theCriticalSection.Unlock ();
 				CString strMsg;
@@ -3095,6 +3101,7 @@ void CTrackListTrackModeView::OnLButtonDblClk (UINT nFlags, CPoint point) {
 	else if ((lColumnContent & 0xFFFF) == TRACKLISTFRAME_FORECOLOR ||
 		(lColumnContent & 0xFFFF) == TRACKLISTFRAME_BACKCOLOR) {
 		// フォーマット0の場合は最初のトラック以外操作不能
+
 		if (lFormat == 0 && m_lCurRow >= 1) {
 			pSekaijuDoc->m_theCriticalSection.Unlock ();
 			CString strMsg;
@@ -3117,6 +3124,7 @@ void CTrackListTrackModeView::OnLButtonDblClk (UINT nFlags, CPoint point) {
 		(lColumnContent & 0xFFFF) == TRACKLISTFRAME_OUTPUTON ||
 		(lColumnContent & 0xFFFF) == TRACKLISTFRAME_VIEWMODE) {
 		// フォーマット0の場合は最初のトラック以外操作不能
+
 		if (lFormat == 0 && m_lCurRow >= 1) {
 			pSekaijuDoc->m_theCriticalSection.Unlock ();
 			CString strMsg;
@@ -3261,6 +3269,7 @@ void CTrackListTrackModeView::OnMouseWheel40 (UINT nFlags, CPoint point) {
 			(lColumnContent & 0xFFFF) == TRACKLISTFRAME_VELOCITYPLUS) {
 			long lFormat = MIDIData_GetFormat (pMIDIData);
 			// フォーマット0の場合は最初のトラック以外操作不能
+
 			if (lFormat == 0 && m_lCurRow >= 1) {
 				pSekaijuDoc->m_theCriticalSection.Unlock ();
 				CString strMsg;
